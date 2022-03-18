@@ -228,6 +228,7 @@ padding: 10px;
 }
 .menu2_link{
     text-decoration: none;
+    color: #111;
 }
 .menu_items:hover .menu2{
     display: block;
