@@ -29,7 +29,7 @@ marquee{
 }
 .logo{
     width: 15%;
-    padding: 20px 0;
+    padding: 20px ;
 }
 .navbar_bottom{
     background-color: #111;
@@ -55,7 +55,7 @@ marquee{
     list-style: none;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+   
 
     
 }
@@ -192,6 +192,7 @@ ins{
 }
 .footer_items{
     list-style: none;
+    margin-bottom: 8px;
     padding: 0 30px;
 }
 .items_link{
@@ -202,8 +203,32 @@ ins{
     
 }
 .items_list{
-    line-height: 2;
+    line-height: 1.5;
 }
 .items_link:hover{
    text-decoration: underline;
+}
+.menu_items{
+    position: relative;
+    padding: 15px;
+}
+.menu2{
+    position: absolute;
+    
+    background-color: white;
+    box-shadow: 0 0 10px rgb(0 0 0 / 50%);
+    margin-top: 15px;
+    list-style: none;
+    width: 160px;
+    display: none;
+    border-radius: 5px;
+}
+.menu2_item{
+padding: 10px;
+}
+.menu2_link{
+    text-decoration: none;
+}
+.menu_items:hover .menu2{
+    display: block;
 }
