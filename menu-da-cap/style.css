@@ -34,7 +34,7 @@ padding: 10px;
 }
 .navbar_bottom{
     padding-top: 10px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
     
 }
 .navbar_bottom_lists{
@@ -43,7 +43,8 @@ padding: 10px;
 
 }
 .logo_img{
-    width: 100%;
+    width: 150px;
+    padding-right: 20px;
 }
 .nav_search{
     display: flex;
@@ -62,9 +63,15 @@ padding: 10px;
 .search_box_text{
      background: #eff0f5;
      width: 680px;
+     border-top-left-radius:6px ;
+     border-bottom-left-radius:6px ;
+
 }
 .search_btn{
     background: #f57224 ;
+    cursor: pointer;
+    border-top-right-radius:6px ;
+    border-bottom-right-radius:6px ;
 }
 .search_btn > i{
     color: white;
@@ -75,6 +82,7 @@ padding: 10px;
 }
 .cart >a> i{
     font-size: 25px;
+    color: #0f146e;
 }
 .banner_pay{
     margin-left: 50px;
@@ -85,9 +93,10 @@ padding: 10px;
 .main_slider{
     background: rgb(92, 36, 255);
     position: relative;
+    height: 355px;
 }
 .slider{
-    margin-left: 180px;
+    margin-left: 200px;
 }
 .slide_img{
     width: 100%;
@@ -99,18 +108,18 @@ padding: 10px;
     border-bottom: 1px solid #ccc; */
     box-shadow: 0 0 2px 0 rgb(0 0 0 / 25%);
     
-
+height: 100%;
     position: absolute;
-   
     top: 0; 
-    padding:8px 0 11px;
+    
     list-style: none;
-    width: 180px;
+    width: 200px;
     background-color: white;
 }
 .category_items,.list_menuc2_items{
     /* position: relative; */
-    padding: 5px;
+    padding:10px 5px 5px 10px;
+    
     z-index: 0;
     cursor: pointer;
 }
@@ -123,10 +132,11 @@ padding: 10px;
     list-style: none;
     background-color: white;
     z-index: 999;
-    margin-left: 175px;
+    margin-left: 190px;
     top: 0;
     width: 180px;
-    padding: 8px 0 11px;
+    height: 100%;
+    
     display: none;
     border: none;
     box-shadow: 0 0 4px 0 rgb(0 0 0 / 25%);
@@ -138,9 +148,25 @@ padding: 10px;
 .category_items:hover .list_menuc2{
     display: block;
 }
-.category_text:hover{
+.category_items:hover .category_text {
+   
     color: #f36d00;
 }
-.menuc2_text:hover{
+.list_menuc2_items:hover{
+    background: #eceff1;
+}
+.category_items:hover{
+    background: #eceff1;
+}
+.category_text>i{
+    float: right;
+    display: none;
+    font-size: 20px;
+}
+.category_items:hover .category_text>i{
+    display: block;
+    color: #f36d00;
+}
+.list_menuc2_items:hover .menuc2_text{
     color: #f36d00;
 }
