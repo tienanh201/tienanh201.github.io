@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    background-color: #30598c;
+}
+.navbar-nav{
+    display: flex;
+    align-items: center;
+}
+.dropdown{
+    list-style: none;
+}
+.navbar-collapse{
+    flex-grow: 0 !important;
+}
+.list-menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0 ;
+
+}
+.input-search{
+    display: flex;
+    align-items: center;
+   
+    margin-bottom: 20px;
+}
+.form-control{
+    position: relative;
+}
+.icon-search{
+    position: absolute;
+    transform: translateX(270px);
+}
+.menu-item{
+    display: flex;
+    align-items: center;
+    min-height: 60px;
+    margin: 0 10px;
+}
+.img-logo{
+  width: 120px;
+}
+.text-link{
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+.text-link:hover{
+    color: #ccc;
+}
+/*  */
+.main{
+    padding: 50px 0;
+}
+.tech-card{
+    box-shadow: 0 2px 4px rgb(0 0 0 / 15%);
+    background-color: #fff;
+    border: 0;
+  
+    height: 100%;
+}
+.setmargin{
+    margin-bottom: 25px;
+}
+.card-img{
+    min-height: 210px;
+    width: 100%;
+    object-fit: cover;
+}
+.card-info{
+   margin: 20px 24px;
+}
+.card-title{
+    color: #333;
+    font-size: 18px;
+}
+.card-description{
+    color: rgb(153, 144, 144);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+}
+a{
+    text-decoration: none !important;
+    color: #fff !important;
+}
+.md-radio{
+    margin-bottom: 10px;
+}
+.radio-text{
+    font-size: 18px;
+    padding-left: 5px;
+}
+/* ----- */
+.footer{
+    background-color: #30598c;
+    padding: 50px 0;
+    text-align: center;
+}
+.footer-info{
+    list-style: none;
+    padding: 0;
+}
+.footer-info-text{
+    color: #fff;
+    font-size: 15px;
+   
+}
+.footer_list{
+    padding-bottom: 10px;
+}
+a:hover{
+    color: #ccc !important;
+}
+.user-img{
+    width: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+@media (max-width : 740px){
+
+    .header{
+        box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
+    }
+    .nav-bar{
+        padding: 10px;
+    }
+    .icon-search{
+        
+        transform: translateX(310px);
+    }
+    .list-menu{
+        display: none;
+    }
+    .icon-cart{
+        display: none;
+    }
+    .menu-mobile-icon{
+        font-size: 25px;
+        color: #fff;
+        padding: 5px;
+        cursor: pointer;
+    }
+    .img-logo{
+        width: 100px;
+        
+    }
+    .filter-field{
+        display: none;
+    }
+}
+@media (min-width:992px){
+    .menu-mobile{
+       display: none;
+    }
+    .user_icon{
+        /* display: none; */
+    }
+}
