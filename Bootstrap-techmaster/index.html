@@ -26,14 +26,14 @@
                     </a>
                 </div> -->
                 <nav class="navbar navbar-expand-lg navbar-light ">
-                    <div class="container-fluid">
+                    <div class="container-fluid resetpadding">
                         <div class="navbar-brand" href="#">
                             <img src="img/logo.png" alt="" class="img-logo">
                         </div>
-                        <button class="navbar-toggler text-light"style="border:none" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="">
+                        <button class="navbar-toggler text-light" style="border:none" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="mobile-icon">
                                 <i class="fa-solid fa-bars menu-mobile-icon"></i>
 
                             </span>
@@ -167,48 +167,57 @@
     <div class="main">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-xs-0">
-                    <div class="filter-field">
-                        <p style="font-size: 20px;">Chủ đề</p>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                AWS
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                DevOps
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Lập trình
-                            </label>
-                        </div>
-                    </div>
+                <div class="col-lg-2 col-xs-0">
+                    <div class="sticky">
 
+                        <div class="filter-field">
+                            <p style="font-size: 25px;">Chủ đề</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    AWS
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    DevOps
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                                <label class="form-check-label" for="flexRadioDefault3">
+                                    Lập trình
+                                </label>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
 
 
                 <!-- ------ -->
-                <div class="col-lg-9 col-sm-12">
+                <div class="col-lg-10 col-sm-12">
                     <div class="row">
-                        <div class="row">
-                            <div class="col-lg-4 col-sm-4 input-search">
-                                <input type="text" class="form-control"placeholder="Tìm kiếm khóa học">
-                                <i class="fa-solid fa-magnifying-glass icon-search"></i>
-                            </div>
-                            
-                            <span class="">
-                                <i class="fa-solid fa-bars menu-mobile-icon"></i>
+                        <div class="col-lg-4 col-sm-4 ">
+                            <div class="list-search-content">
 
-                            </span>
-                        </button>
-                            
+                                <div class="input-search">
+                                    <input type="text" class="form-control" placeholder="Tìm kiếm khóa học">
+                                    <!-- <i class="fa-solid fa-magnifying-glass icon-search"></i> -->
+                                </div>
+                                <button class="btn btn-green">
+                                    <i class="fa-solid fa-filter"></i>
+                                </button>
+                            </div>
                         </div>
+                    </div>
+                    <div class="row">
+
+
+
+
+
 
                         <div class="col-lg-4 col-sm-6 col-xs-12 setmargin">
                             <div class="tech-card">
