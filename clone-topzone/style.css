@@ -327,9 +327,15 @@ display: none;
 .intro-detail{
     margin-top: 20px;
 }
+.carousel-inner{
+    border-radius: 8px;
+}
 }
 @media (min-width: 992px) {
    .menu-mobile{
+       display: none;
+   }
+   .nav-mobile{
        display: none;
    }
     }
