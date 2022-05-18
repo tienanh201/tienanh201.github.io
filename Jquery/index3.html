@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<body>
+  <h1>Bài 1</h1>
+<!--  
+1. Tính xem có bao nhiêu loài động vật có vú (Mammals) có trong list và in kết quả vào thẻ li#mammal-count
+2. Tính xem có bao nhiêu loài cá (Fishes) có trong list và in kết quả vào thẻ li#fish-count
+-->
+  <ul>
+    <li >Mammals
+      <ul >
+        <li>Cows</li>
+        <li>Donkeys</li>
+        <li>Dogs</li>
+        <li>Tigers</li>
+      </ul>
+    </li>
+    <li>Fishes
+      <ul>
+        <li>Guppy</li>
+        <li>Angelfish</li>
+        <li>Sea trout</li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li id="mammal-count">We have ... Mammals</li>
+    
+    <li id="fish-count">We have ... Fish</li>
+  </ul>
+</body>
+<script>
+    
+    function anlimal(){
+        let x = $("ul li ul");
+        let y = (x[0].children.length);
+        $("#mammal-count").text("We have " +y+" Mammals");
+      
+    } 
+    anlimal();
+    
+    function anlimal2(){
+        let x =$("ul li ul");
+        let fish = (x[1].children.length);
+        $("#fish-count").text("We have " +fish+" Fish");
+       
+    } 
+    anlimal2();
+
+</script>
+</html>

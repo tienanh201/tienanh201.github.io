@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        input {
+            width: 40px;
+            height: 40px;
+        }
+
+        .div-all {
+            text-align: center;
+        }
+
+        input {
+            border: 2px solid blue;
+            text-align: center;
+        }
+        span{
+            font-weight: 700;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div-all">
+        <h1>Thử tài tính toán nào bạn ơi</h1>
+        <input type="text" id="num1">
+        <span> + </span>
+        <input type="text" id="num2">
+        <span> = </span>
+        <input type="text" id="ketqua">
+        <button onclick="checkKetqua()" id="checkKetqua">Kiểm Tra</button>
+
+    </div>
+</body>
+<script>
+    let input1 = document.getElementById("num1").value = Math.floor(Math.random() * 100);
+    let input2 = document.getElementById("num2").value = Math.floor(Math.random() * 100);
+    function checkKetqua() {
+        let rel = input1 + input2;
+        let checkRel = document.getElementById("ketqua").value;
+        
+        if (checkRel == rel) {
+            
+            alert("Kết Quả Chính Xác");
+            
+            // location.reload();
+
+        }
+        else if (checkRel != rel) {
+            alert("Kết Quả Không Chính Xác! Vui lòng nhập đúng kết quả:))");
+            // location.reload();
+
+        }
+    }
+
+
+</script>
+
+</html>

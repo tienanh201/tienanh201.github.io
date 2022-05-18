@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+        <li>Item 7</li>
+    </ul>
+
+    <script type="text/javascript">
+
+        //Câu 1
+        function showList() {
+            let fragment = new DocumentFragment();
+            for (let i = 8; i <= 10; i++) {
+                let li = document.createElement('li');
+                li.append(`Item ${i}`);
+                fragment.append(li);
+            }
+            return fragment;
+
+        }
+        document.getElementById('list').append(showList());
+        //Câu 2
+        function changeColor() {
+            const myCollection = document.getElementsByTagName("li");
+            myCollection[1].style.color = 'red';
+        }
+        changeColor();
+        //Câu 3 
+        function changeBgColor() {
+            const myCollection = document.getElementsByTagName("li");
+
+            myCollection[2].style.backgroundColor = 'blue';
+        }
+        changeBgColor();
+        //Câu 4
+        function deleteItem4() {
+            const myCollection = document.getElementsByTagName("li");
+            myCollection[3].remove();
+        }
+        deleteItem4();
+        //Câu 5
+        function replaceItem4() {
+            const myCollection = document.getElementsByTagName("li");
+            let li = document.createElement("li");
+            li.innerHTML = "Đây là Item thay thế cho item 4 vừa xóa";
+
+            let ul = document.getElementById("list");
+            ul.insertBefore(li, myCollection[3])
+        }
+        replaceItem4();
+
+
+
+
+
+    </script>
+</body>
+
+</html>

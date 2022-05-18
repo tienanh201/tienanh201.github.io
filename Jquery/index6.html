@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <h1 id="heading">Bài tập thực hành DOM</h1>
+    <p class="para para-1">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="para para-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="para para-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <div class="content">
+        <h2 id="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem voluptatibus
+                sint molestias sit odit quia labore alias! Accusamus magnam aperiam officiis? Laboriosam numquam at eum
+                dicta quos temporibus in aliquid?</p>
+    </div>
+</body>
+<script>
+//c1
+$("#heading").css({"color":"red","text-transform":"uppercase"});
+//c2
+$(".para").css({"color":"blue","font-size":"20px"});
+//c3
+$(".para-3").append('  <a href="https://www.facebook.com/">Facebook</a>');
+//c4
+$("#title").text("Đây là tiêu đề");
+//c5
+$(".description").addClass("text-bold").css("font-weight","bold");
+//c6
+$(".para-3").replaceWith("<button>Click me</button>");
+//c7
+$(".para-2").clone().appendTo(".para-2")
+//c8
+$(".para-1").remove();
+
+</script>
+
+</html>

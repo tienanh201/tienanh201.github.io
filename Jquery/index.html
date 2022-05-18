@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<body>
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div id="param-1">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the
+            1500s, when an unknown printer took a galley of type and scrambled it to
+            make a type specimen book. It has survived not only five centuries, but
+            also the leap into electronic typesetting, remaining essentially
+            unchanged. It was popularised in the 1960s with the release of Letraset
+            sheets containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem
+            Ipsum.
+        </div>
+
+        <div id="param-2">
+            Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+            roots in a piece of classical Latin literature from 45 BC, making it over
+            2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
+            College in Virginia, looked up one of the more obscure Latin words,
+            consectetur, from a Lorem Ipsum passage, and going through the cites of
+            the word in classical literature, discovered the undoubtable source. Lorem
+            Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
+            Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This
+            book is a treatise on the theory of ethics, very popular during the
+            Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
+            amet..", comes from a line in section 1.10.32.
+        </div>
+        <div id="param-3">
+            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below
+            for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus
+            Bonorum et Malorum" by Cicero are also reproduced in their exact original
+            form, accompanied by English versions from the 1914 translation by H.
+            Rackham.
+        </div>
+
+
+
+
+    </body>
+    <script>
+        //Cau1
+        function changeColor() {
+            $("#param-1").css("color", "blue");
+            $("#param-2").css("color", "yellow");
+            $("#param-3").css("color", "red");
+
+        }
+        changeColor();
+        //Cau2
+        function changeBgcolor() {
+            $("body").css("background-color", "#ccc");
+        }
+        changeBgcolor()
+        //Cau3
+        function copyContent(x, y) {
+            let text = $(`#param-${y}`).text();
+            $(`#param-${x}`).text(text);
+        }
+        copyContent(1, 2);
+        //Cau4
+        function changeFontsize(x) {
+            let textSize = x + "px";
+            $("div").css("font-size", textSize);
+        }
+        changeFontsize(10);
+        //Cau5
+        function increaseFontSize(id) {
+            let getID = "#"+ id;
+            let getSize = $(getID).css("font-size");
+            let newStyles = parseInt(getSize.replace("px",""));
+            let size = (newStyles +=1);
+            let newSize = size + "px";
+          
+           
+            if(size <= 30){
+                $(getID).css("font-size",size);
+            }
+            else{
+                $(getID).css("font-size","30px");
+            }
+        }
+        // increaseFontSize("param-1"); coment để chạy câu 6
+
+        //cau6
+        function decreaseFontSize(id) {
+            let getID = "#"+ id;
+            let getSize = $(getID).css("font-size");
+            let newStyles = parseInt(getSize.replace("px",""));
+            let size = (newStyles -=1);
+            let newSize = size + "px";
+          
+           
+            if(size <= 10){
+                $(getID).css("font-size",size);
+            }
+            else{
+                $(getID).css("font-size","10px");
+            }
+        }
+        decreaseFontSize("param-1");
+    </script>
+
+
+    </html>

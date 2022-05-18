@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<body>
+    <!-- 
+1. Thêm 3 thẻ `<li>` có nội dung **Item 8**, **Item 9**, **Item 10** vào cuối danh sách
+4. Remove thẻ `<li> 4`
+5. Thêm thẻ `<li>` mới thay thế cho thẻ `<li> 4` bị xóa ở bước trước, thẻ `<li>` mới có nội dung bất kỳ 
+-->
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+        <li>Item 7</li>
+    </ul>
+    <p id="text"></p>
+    
+
+    <script>
+        //Bài 1
+        function bai1() {
+            //Câu1
+            $("#text").css("color", "#777");
+            //Câu 2
+            $("#text").css("font-size", "2rem");
+            //Câu 3
+            $("#text").html("Tôi có thể làm <em> bất cứ điều gì </em> tôi muốn với JavaScript.");
+
+
+
+        }
+        bai1();
+        // ///////////////////////////////////////////////
+        //Bài 3
+            for (let i = 8; i <= 10; i++) {
+              let li = document.createElement("li");
+              $(li).html(`Item ${i}`);
+              $("#list").append(li);
+            }
+        
+        // Câu 4
+        function changeList() {
+            const myCollection = $("li");
+            myCollection[3].remove();
+            //Câu2
+           
+            //Câu 3
+
+            //Câu 5
+            $("<li> Item thay thế cho  có nội dung vừa xóa</li>").insertAfter(myCollection[2]);
+
+        }
+        changeList();
+
+
+    </script>
+</body>
+
+</html>

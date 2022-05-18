@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    * {
+      font-size: 20px;
+    }
+
+    span {
+      margin: 0 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <!-- 
+        1. Bấm vào nút cộng thì số cộng thêm 1
+         
+        2. Bấm vào nút trừ thì số giảm đi 1
+
+        3. Khi số > 0 thì số có màu xanh
+
+        4. Khi số < 0 thì số có màu đỏ
+
+        5. Khi số = 0 thì có màu xanh dương
+       -->
+      
+     
+
+    <button onclick="clickGiam()" id="pre">-</button>
+    <span id="kq">0</span>
+    <button onclick="clickTang()" id="next">+</button>
+
+ 
+   
+  </div>
+  <script>
+    let cong = document.getElementById("next");
+    let tru = document.getElementById("pre");
+    let result = document.getElementById("kq");
+function clickTang(){
+  let ketqua = parseInt(result.innerText)+1 ;
+  result.textContent = ketqua;
+  checkColor();
+}
+function clickGiam(){
+  let ketqua = parseInt(result.innerText)-1;
+  result.textContent = ketqua;
+  checkColor();
+
+}
+function checkColor(){
+  if(parseInt(result.innerText) > 0){
+    result.style.color ="green"
+  }
+  else if(parseInt(result.innerText) < 0){
+    result.style.color = "red";
+  }
+  else
+  result.style.color ="#333"
+}
+window.addEventListener
+  </script>
+</body>
+
+</html>

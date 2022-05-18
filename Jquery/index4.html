@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<body>
+  <h1>Bài 3</h1>
+<!--
+Hãy get các element sau:
+1. Element table với id="age-table".
+2. Tất cả element label trong table.
+3. Element td đầu tiên trong table (element có nội dung là Độ tuổi:)
+4. Element form với name="search"
+5. Element input đầu tiên trong form
+6. Element input cuối cùng trong form
+-->
+  <form name="search">
+    <label>Bạn đang tìm gì:
+      <input type="text" name="search">
+    </label>
+    <input type="submit" value="Tìm kiếm!">
+  </form>
+
+  <hr>
+
+  <form name="search-person">
+    Tìm kiếm nâng cao:
+    <table id="age-table">
+      <tbody>
+        <tr>
+          <td>Độ tuổi:</td>
+          <td id="age-list">
+            <label>
+              <input type="radio" name="age" value="young">Nhỏ hơn 18</label>
+            <label>
+              <input type="radio" name="age" value="mature">18-50</label>
+            <label>
+              <input type="radio" name="age" value="senior">Lớn hơn 50</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Điều kiện đi kèm:</td>
+          <td>
+            <input type="text" name="info[0]">
+            <input type="text" name="info[1]">
+            <input type="text" name="info[2]">
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <input type="submit" value="Tìm kiếm!">
+  </form>
+<script>
+    //c1
+    let ageList = $("#age-table");
+    console.log(ageList);
+    //c2
+    let label = $("table label");
+    console.log(label);
+    //c3
+    let tdFirts = $("table td");
+    console.log(tdFirts);
+    //c4
+    let nameSeacrh = $("form[name='search']");
+    console.log(nameSeacrh);
+    //c5
+    let firstInput = $("form input")[0];
+    console.log(firstInput);
+    //c6
+    let lastInput = $("form input")[$("form input").length-1];
+    console.log(firstInput);
+</script>
+</body>
+
+</html>

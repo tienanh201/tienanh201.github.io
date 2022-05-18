@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- viết event khi click vào thẻ div sẽ đổi màu text p sang màu đỏ -->
+  <!-- <div onclick="document.getElementById('demo').style.color='red'">Click to me please</div> -->
+  <!-- <div onclick="clickme()">Click to me please</div> -->
+  <div >Click to me please</div>
+
+  <p id="demo">Change my color please</p>
+
+</body>
+<script>
+  function clickme(){
+    document.getElementById("demo").style.color="red";
+  }
+  document.querySelector('div').addEventListener('click',clickme);
+  
+document.querySelector("div")
+
+</script>
+
+</html>
