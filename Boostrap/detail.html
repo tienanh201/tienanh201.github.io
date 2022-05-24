@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="font/fontawesome-free-6.1.0-web/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Taviraj">
     <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
@@ -36,7 +37,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse w-100" id="collapsibleNavId">
-                <ul class="navbar-nav justify-content-center" style="width: 60%;">
+                <ul class="navbar-nav justify-content-center" style="margin: auto;">
                     <li class="nav-item active">
                         <a class="nav-link cus-menu-item" href="./detail.html">Watches</a>
                     </li>
@@ -51,25 +52,160 @@
                     </li>
                 </ul>
 
-                <ul class="navbar-nav justify-content-end" style="width: 40%;">
+                <ul class="navbar-nav justify-content-end">
                     <li class="nav-item px-2">
                         <a class="nav-link cus-menu-item" href="#"><i class="fas fa-search"></i></a>
                     </li>
                     <li class="nav-item px-2">
-                        <a class="nav-link cus-menu-item" href="#"><i class="fas fa-user"></i>Log
-                            In</a>
+                        <a class="nav-link cus-menu-item" href="#"><i class="fas fa-user"></i>
+                            Log In</a>
                     </li>
                     <li class="nav-item px-2">
                         <a href="" class="nav-link cus-menu-item" data-bs-toggle="modal" data-bs-target="#modelId">
 
                             <i class="fas fa-briefcase"></i></a>
+                        <span class="cart_number">0</span>
+
                         </a>
                     </li>
                 </ul>
 
             </div>
         </nav>
+<!-- modal cart -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-body" id="delete_div1">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="modal-img">
+                                    <img src="img/image 37.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="modal-text">
+                                    <h5>
+                                        Way Kambas Mini Ebony
+                                    </h5>
+                                    <del>Rp 1.280.000</del>
+                                    <p>
+                                        Rp<span id="price_now"> 1260000</span>
 
+                                    </p>
+                                    <span>Custom Engrave</span>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="select_pagaking">
+                            <h6>Select Packaging</h6>
+                            <select>
+                                <option value="0">Wooden Packaging (Rp 50.000)</option>
+                            </select>
+                            <div class="buttons_added">
+                                <button id="pre" class="btn btn-outline-danger ">-</button>
+                                <span id="inp_kq" aria-label="quantity" class="input-qty" 
+                                    >0</span>
+                                <!-- <span id="kq">0</span> -->
+                                <button id="next" class="btn btn_cong">+</button>
+                                <span style="margin: 0 10px;">Rp</span>
+
+                                <span id="price"style="margin-right:10px">0</span>
+                                <button class="btn btn_trash" id="delete_pro">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                                <!-- <input id="cong" class="plus is-form fa-trash-can" type="button" > -->
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+
+            <div class="modal-body" id="delete_div2">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="modal-img">
+                                    <img src="img/image 37.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="modal-text">
+                                    <h5>
+                                        Sikka (Ebony & Maple)
+                                    </h5>
+                                    <span>
+                                       <span>Rp</span>
+                                        <span id="price_now2"> 1264000</span>
+
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--  -->
+                    <div class="col-lg-6">
+                        <div class="select_pagaking">
+                            <h6>Select Packaging</h6>
+                            <select>
+                                <option value="0">Default Packaging (Free)</option>
+                            </select>
+                            <div class="buttons_added">
+                                <button id="pre2" class="btn btn-outline-danger">-</button>
+                                <span id="inp_kq2" aria-label="quantity" class="input-qty">0</span>
+                                <!-- <span id="kq">0</span> -->
+                                <button id="next2" class="btn btn_cong">+</button>
+                                <span style="margin: 0 10px;">Rp</span>
+                            
+                                <span id="price2"style="margin-right:10px">0</span>
+                                <button class="btn btn_trash" id="delete_pro2">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                                <!-- <input id="cong" class="plus is-form fa-trash-can" type="button" > -->
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-foot">
+                <div class="row" style="align-items:center;">
+                    <div class="col-lg-8 setmodal_text">
+                        <span>Kode Promo</span>
+                        <input type="text" placeholder="INDONESIA">
+                        <span>35% OFF</span>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="select_total">
+                            <div>Subtotal</div>
+                            <div class="gia">
+
+                                <del>Rp 3.000.000</del>
+                                <p>
+                                    Rp <span id="total"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="modal-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+</div>
         <!--  -->
 
         <nav class="breadcrumb">
@@ -86,29 +222,29 @@
                     <div class="row cus-slide">
                         <div class="col-lg-6">
                             <div class="row cus-slide">
-                                <div class="col-4 setcol">
-                                    <div class="div">
+                                <div class="col-lg-4 setcol">
+                                    <div class="slide_watch_box">
                                         <img src="img/image 37.png" alt="">
                                     </div>
-                                    <div class="div">
+                                    <div class="slide_watch_box">
                                         <img src="img/image-removebg-preview 1.png" alt="">
                                     </div>
-                                    <div class="div">
+                                    <div class="slide_watch_box">
                                         <img src="img/image-removebg-preview1 1.png" alt="">
                                     </div>
-                                    <div class="div">
+                                    <div class="slide_watch_box">
                                         <img src="img/image-removebg-preview2 1.png" alt="">
                                     </div>
 
                                 </div>
-                                <div class="col-8">
-                                    <img src="img/image_6.png" class="cus-slide_img" alt="" >
+                                <div class="col-lg-8 set_textalign">
+                                    <img id="preview_product" src="img/image_6.png" class="cus-slide_img" alt="">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 p-5">
-                            <h2> WAY KAMBAS</h2>
-                            <h2> MINI EBONY</h2>
+                        <div class="col-lg-6 p-5">
+                            <h2 class="slide_watches_title"> WAY KAMBAS</h2>
+                            <h2 class="slide_watches_title"> MINI EBONY</h2>
                             <del>Rp 1.280.000</del>
                             <p>Rp 1.024.000</p>
                             <p>Choose Modal</p>
@@ -121,12 +257,14 @@
                             </button>
 
                             <div class="buttons_added">
-                                <input id="tru" class="minus is-form" type="button" value="-">
-                                <input id="kq" aria-label="quantity" class="input-qty" max="S" min="" name=""
-                                    type="number" value="1">
+                                <button id="tru" class="btn btn-outline-danger minus is-form">-</button>
+                                <span id="kq" aria-label="quantity" class="input-qty">0</span>
                                 <!-- <span id="kq">0</span> -->
-                                <input id="cong" class="plus is-form" type="button" value="+">
-                                <button class="btn btn-addcart">Add to cart</button>
+                                <button id="cong" class="btn plus is-form" value="+">+</button>
+                                <button class="btn btn-addcart">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                    Add to cart
+                                </button>
                                 <button class="btn btn-cicil">cicil</button>
                             </div>
 
@@ -232,19 +370,21 @@
         <div class="relate-products">
             <h1 class="card-heading">Relate Products</h1>
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-3 set_bottom">
                     <div class="card">
                         <div class="card-body">
                             <h3 class="card-title">
-                                <img src="img/section3.2.png" class="card-img" alt="">
+                                <img src="img/image 9.png" class="card-img" alt="">
                             </h3>
                             <p class="card-text">Singo Maple</p>
+                            <del>Rp 1.500.000</del>
                             <p class="card-text">Rp 1.264.000</p>
+                            <div class="sale_off">20% OFF</div>
 
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-3 set_bottom">
                     <div class="card">
                         <div class="card-body">
                             <h3 class="col-lg-12 card-title">
@@ -252,12 +392,13 @@
                             </h3>
                             <p class="card-text">Sikka (Ebony & Maple)</p>
                             <p class="card-text">Rp 1.264.000</p>
+                            <div class="new">NEW</div>
 
                         </div>
                     </div>
                 </div>
                 <!--  -->
-                <div class="col-lg-3">
+                <div class="col-lg-3 set_bottom">
                     <div class="card">
                         <div class="card-body">
                             <h3 class="card-title">
@@ -270,14 +411,19 @@
                     </div>
                 </div>
                 <!--  -->
-                <div class="col-lg-3">
+                <div class="col-lg-3 set_bottom">
                     <div class="card">
                         <div class="card-body">
                             <h3 class="card-title">
-                                <img src="img/section3.2.png" class="card-img" alt="">
+                                <img src="img/image 9.png" class="card-img" alt="">
+
                             </h3>
                             <p class="card-text">Singo Maple</p>
+                            <del>Rp 1.500.000</del>
+
                             <p class="card-text">Rp 1.264.000</p>
+                            <div class="sale_off">20% OFF</div>
+
 
                         </div>
                     </div>
@@ -288,36 +434,36 @@
     <div class="row cus-section-3 cus-colorda cus-alinecentter">
         <div class="row  cus-alinecentter80">
             <div class="col cus-alinecentter">
-                <img class="cus-img-100px" src="img/image 27.png">
+                <img class="cus-img-100px" src="img/image 25.png">
+            </div>
+            <div class="col cus-alinecentter">
+                <img class="cus-img-100px" src="img/image 26.png">
             </div>
             <div class="col cus-alinecentter">
                 <img class="cus-img-100px" src="img/image 27.png">
             </div>
             <div class="col cus-alinecentter">
-                <img class="cus-img-100px" src="img/image 27.png">
+                <img class="cus-img-100px" src="img/image 28.png">
             </div>
             <div class="col cus-alinecentter">
-                <img class="cus-img-100px" src="img/image 27.png">
-            </div>
-            <div class="col cus-alinecentter">
-                <img class="cus-img-100px" src="img/image 27.png">
+                <img class="cus-img-100px" src="img/image 29.png">
             </div>
         </div>
         <div class="row  cus-alinecentter80">
             <div class="col cus-alinecentter">
-                <img class="cus-img-100px" src="img/image 27.png">
+                <img class="cus-img-100px" src="img/image 32.png">
             </div>
             <div class="col cus-alinecentter">
-                <img class="cus-img-100px" src="img/image 27.png">
+                <img class="cus-img-100px" src="img/image 33.png">
             </div>
             <div class="col cus-alinecentter">
-                <img class="cus-img-100px" src="img/image 27.png">
+                <img class="cus-img-100px" src="img/image 34.png">
             </div>
             <div class="col cus-alinecentter">
-                <img class="cus-img-100px" src="img/image 27.png">
+                <img class="cus-img-100px" src="img/image 35.png">
             </div>
             <div class="col cus-alinecentter">
-                <img class="cus-img-100px" src="img/image 27.png">
+                <img class="cus-img-100px" src="img/image 36.png">
             </div>
         </div>
     </div>
@@ -416,168 +562,43 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-md" role="document">
-            <div class="modal-content">
-                <div class="modal-body" id="delete_div1">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="modal-img">
-                                        <img src="img/image 37.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-lg-8">
-                                    <div class="modal-text">
-                                        <h5>
-                                            Way Kambas Mini Ebony
-                                        </h5>
-                                        <del>Rp 1.280.000</del>
-                                        <p>
-                                            Rp<span id="price_now"> 1260000</span>
- 
-                                        </p>
-                                        <span>Custom Engrave</span>
+   
 
+<script>
+    
+    $(".slide_watch_box img").click(function () {
+            let src = $(this).attr('src');
+            $("#preview_product").attr("src", src);
 
-                                    </div>
-                                </div>
-                            </div>
+        })
 
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="select_pagaking">
-                                <h6>Select Packaging</h6>
-                                <select>
-                                    <option value="0">Wooden Packaging (Rp 50.000)</option>
-                                </select>
-                                <div class="buttons_added">
-                                    <button id="pre">-</button>
-                                    <input id="inp_kq" aria-label="quantity" class="input-qty" max="S" min="" name=""
-                                        type="number" value="0">
-                                    <!-- <span id="kq">0</span> -->
-                                    <button id="next" class="btn_cong">+</button>
-                                    Rp <span id="price"></span>
-                                    <button class="btn_trash" id="delete_pro">
-                                        <i class="fa-solid fa-trash-can"></i>
-                                    </button>
-                                    <!-- <input id="cong" class="plus is-form fa-trash-can" type="button" > -->
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-
-                <div class="modal-body" id="delete_div2">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="row">
-                                <div class="col-lg-4">
-                                    <div class="modal-img">
-                                        <img src="img/image 37.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-lg-8">
-                                    <div class="modal-text">
-                                        <h5>
-                                            Sikka (Ebony & Maple)
-                                        </h5>
-                                       <span>
-                                           Rp<span id="price_now2"> 1264000</span>
-
-                                       </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!--  -->
-                        <div class="col-lg-6">
-                            <div class="select_pagaking">
-                                <h6>Select Packaging</h6>
-                                <select>
-                                    <option value="0">Default Packaging (Free)</option>
-                                </select>
-                                <div class="buttons_added">
-                                    <button id="pre2">-</button>
-                                    <input id="inp_kq2" aria-label="quantity" class="input-qty" max="S" min="" name=""
-                                        type="number" value="0">
-                                    <!-- <span id="kq">0</span> -->
-                                    <button id="next2" class="btn_cong">+</button>
-                                    Rp <span id="price2"></span>
-                                    <button class="btn_trash"id="delete_pro2">
-                                        <i class="fa-solid fa-trash-can"></i>
-                                    </button>
-                                    <!-- <input id="cong" class="plus is-form fa-trash-can" type="button" > -->
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-foot">
-                    <div class="row" style="align-items:center;">
-                        <div class="col-lg-8 setmodal_text">
-                            <span>Kode Promo</span>
-                            <input type="text" placeholder="INDONESIA">
-                            <span>35% OFF</span>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="select_total">
-                                <div>Subtotal</div>
-                                <div class="gia">
-
-                                    <del>Rp 3.000.000</del>
-                                    <p>
-                                       Rp <span id="total"></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="modal-btn">Checkout</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
-
-
-
-    <script>
         $("#cong").click(function clickTang() {
-            let ketqua = parseInt($("#kq").val()) + 1;
-            $("#kq").val(ketqua);
+            let ketqua = parseInt($("#kq").text()) + 1;
+            $("#kq").text(ketqua);
         });
 
         $("#tru").click(function clickTang() {
-            let ketqua = parseInt($("#kq").val()) - 1;
-            $("#kq").val(ketqua);
+            let ketqua = parseInt($("#kq").text()) - 1;
+            $("#kq").text(ketqua);
             if (ketqua < 0) {
-                $("#kq").val("0");
+                $("#kq").text("0");
             }
         });
         // item1
         $("#next").click(function () {
-            let rel = parseInt($("#inp_kq").val()) + 1;
+            let rel = parseInt($("#inp_kq").text()) + 1;
             let a = $("#price_now").text();
-            $("#inp_kq").val(rel);
+            $("#inp_kq").text(rel);
             $("#price").text(rel * parseInt(a));
 
         });
         $("#pre").click(function () {
-            let rel = parseInt($("#inp_kq").val()) - 1;
+            let rel = parseInt($("#inp_kq").text()) - 1;
             let a = $("#price_now").text();
-            $("#inp_kq").val(rel);
+            $("#inp_kq").text(rel);
             $("#price").text(rel * parseInt(a));
             if (rel < 0) {
-                $("#inp_kq").val("0");
+                $("#inp_kq").text("0");
                 $("#price").text("0");
             }
         });
@@ -586,19 +607,19 @@
         });
         // item2
         $("#next2").click(function () {
-            let rel = parseInt($("#inp_kq2").val()) + 1;
+            let rel = parseInt($("#inp_kq2").text()) + 1;
             let a = $("#price_now2").text();
-            $("#inp_kq2").val(rel);
+            $("#inp_kq2").text(rel);
             $("#price2").text(rel * parseInt(a));
 
         });
         $("#pre2").click(function () {
             let rel = parseInt($("#inp_kq2").val()) - 1;
             let a = $("#price_now2").text();
-            $("#inp_kq2").val(rel);
+            $("#inp_kq2").text(rel);
             $("#price2").text(rel * parseInt(a));
             if (rel < 0) {
-                $("#inp_kq2").val("0");
+                $("#inp_kq2").text("0");
                 $("#price2").text("0");
             }
         });
@@ -606,7 +627,12 @@
             $("#delete_div2").remove();
         });
 
-    </script>
+   
+</script>
+
+
+
+    
 
 </body>
 
