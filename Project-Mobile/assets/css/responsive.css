@@ -1,0 +1,171 @@
+/* MÀN HÌNH DESKTOP, TABLET XOAY NGANG */
+@media screen and (max-width: 1200px) {
+    .descrip {
+        display: none;
+    }
+    /* .menu{
+        display: none;
+    } */
+    .descrip-mobile {
+        display: block;
+    }
+    .view-all {
+        text-align: center;
+        display: block;
+        padding: 10px;
+        color: #2997ff !important;
+
+        font-size: 16px;
+        width: fit-content;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+    .owl-nav {
+        display: none;
+    }
+    .owl-dots {
+        display: block;
+        margin-top: 20px;
+    }
+    .menu-mobile {
+        display: none;
+    }
+    .nav-mobile {
+        display: none;
+    }
+    .search-cart {
+        display: flex;
+    }
+}
+/* MÀN HÌNH MOBILE XOAY NGANG , MÀN HÌNH TABLET DỌC */
+
+/* Mobile xoay dọc */
+@media screen and (max-width: 480px) {
+    .menu-mobile {
+        display: flex;
+        padding-left: 0;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        margin-bottom: 0;
+    }
+    .cus-desktop {
+        display: none;
+    }
+    .cus-mobile {
+        display: block;
+    }
+    .product {
+        padding: 30px 10px;
+        margin-bottom: 20px;
+    }
+    .box-p {
+        display: block;
+    }
+    .info-title {
+        margin-top: 5px;
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 8px;
+        height: 36px;
+        color: #fff;
+        text-align: center;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        padding: 0 10px;
+        text-overflow: ellipsis;
+    }
+    .topzone-logo {
+        margin-left: 30px;
+    }
+}
+/*  */
+@media screen and (max-width: 451px) {
+    .menu {
+        display: none;
+    }
+    .menu-mobile {
+        display: block;
+    }
+    .nav-mobile {
+        display: block;
+    }
+    .item-compare span {
+        font-size: 12px;
+        padding: 8px 5px;
+    }
+    .nav-link {
+        display: inline !important;
+    }
+
+    .ft-care {
+        display: block;
+        white-space: nowrap;
+        overflow: scroll;
+        padding: 20px 20px 20px 0;
+    }
+}
+@media (max-width: 768px) {
+    /* .menu {
+        display: none;
+    } */
+    .menu-mobile {
+        display: flex;
+        padding-left: 0;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        margin-bottom: 0;
+    }
+    .menu-list-link {
+        padding: 8px;
+        font-size: 12px;
+        color: #ccc !important;
+    }
+    .search-cart {
+        line-height: 40px;
+    }
+    .search-sp,
+    .cart {
+        background: none;
+        margin-right: 0;
+        padding: 0;
+    }
+
+    .ft-cate-list {
+        padding: 0;
+        margin-right: 0;
+    }
+    .ft-cate-link {
+        font-size: 10px;
+        padding: 8px;
+    }
+
+    .office {
+        display: block;
+        text-align: center;
+    }
+    .certify {
+        justify-content: space-between;
+    }
+    .certify > a > img {
+        width: 100px !important;
+    }
+
+    .intro-detail {
+        margin-top: 20px;
+    }
+    .carousel-inner {
+        border-radius: 8px;
+    }
+}
+/* @media (min-width: 992px) {
+    .menu-mobile {
+        display: none;
+    }
+    .nav-mobile {
+        display: none;
+    }
+} */
