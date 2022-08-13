@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topzone</title>
+    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-free-6.1.0-web/css/all.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="assets/owlcarousel/owl.carousel.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="head">
+                <div class="nav-mobile">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <a href="index.html">
+
+                    <div class="topzone-logo">
+
+                        <img src="/assets/images/Property-1White.svg" alt="">
+                    </div>
+                </a>
+
+                <ul class="menu">
+                    <li class="menu-list">
+                        <a href="iphone.html" class="menu-list-link active">
+                            <span>iPhone</span>
+                        </a>
+                    </li>
+                    <li class="menu-list">
+                        <a href="mac.html" class="menu-list-link">
+                            <span>Mac</span>
+                        </a>
+                    </li>
+                    <li class="menu-list">
+                        <a href="ipad.html" class="menu-list-link">
+                            <span>iPad</span>
+                        </a>
+                    </li>
+                    <li class="menu-list">
+                        <a href="watch.html" class="menu-list-link">
+                            <span>Watch</span>
+                        </a>
+                    </li>
+                    <li class="menu-list">
+                        <a href="" class="menu-list-link">
+                            <span>Âm thanh</span>
+                        </a>
+                    </li>
+                    <li class="menu-list">
+                        <a href="" class="menu-list-link">
+                            <span>Phụ kiện</span>
+                        </a>
+                    </li>
+                    <li class="menu-list">
+                        <a href="" class="menu-list-link">
+                            <span>Dịch vụ</span>
+                        </a>
+                    </li>
+                    <li class="menu-list">
+                        <a href="" class="menu-list-link">
+                            <span>Khuyến Mại</span>
+                        </a>
+                    </li>
+                    <li class="menu-list">
+                        <a href="" class="menu-list-link">
+                            <span>Trả Góp</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="search-cart">
+                    <div type="button" data-bs-toggle="modal" data-bs-target="#myModal" class="search-sp">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <a href="cart.html" class="cart" data-bs-toggle="modal">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </a>
+                </div>
+                <!-- Modal -->
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <div class="modal-body">
+                                    <input type="text" placeholder="Tìm kiếm
+                                            sản phẩm">
+                                </div>
+                                <i data-bs-dismiss="modal" class="fa-solid
+                                        fa-xmark"></i>
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- end modal -->
+            </div>
+
+        </div>
+        <!-- mobile -->
+        <ul class="menu-mobile">
+            <li class="menu-list">
+                <a href="iphone.html" class="menu-list-link active">
+                    <span>iPhone</span>
+                </a>
+            </li>
+            <li class="menu-list">
+                <a href="mac.html" class="menu-list-link">
+                    <span>Mac</span>
+                </a>
+            </li>
+            <li class="menu-list">
+                <a href="ipad.html" class="menu-list-link">
+                    <span>iPad</span>
+                </a>
+            </li>
+            <li class="menu-list">
+                <a href="watch.html" class="menu-list-link">
+                    <span>Watch</span>
+                </a>
+            </li>
+            <li class="menu-list">
+                <a href="" class="menu-list-link">
+                    <span>Âm thanh</span>
+                </a>
+            </li>
+            <li class="menu-list">
+                <a href="" class="menu-list-link">
+                    <span>Phụ kiện</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+    <!-- End Header -->
+    <!-- Main -->
+
+    <div class="main-cart">
+        <div class="container">
+            <div class="cart_all">
+                <h1>Giỏ hàng</h1>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <form action="">
+
+                            <div class="shop-table">
+                                <table class="" style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">Sản phẩm</th>
+                                            <th scope="col">Giá</th>
+                                            <th scope="col">Số lượng</th>
+                                            <th scope="col">Tạm tính</th>
+                                            <th scope="col">Xóa</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr id="delete_div1">
+                                            <td class="set-height">
+                                                <a href="">
+                                                    <img src="./assets/images/iphone/mau-vang-1-1.png" alt=""
+                                                        width="55px">
+                                                </a>
+                                            </td>
+                                            <!--  -->
+                                            <td class="set-height">
+                                                <a href="" style="color: #0d6dfe !important;">iPhone 13 Pro Max</a>
+                                                <dl>
+                                                    <dt>Chọn màu: Gold </dt>
+                                                    <dt>Chọn dung lượng: 128GB </dt>
+
+                                                </dl>
+                                            </td>
+                                            <!--  -->
+                                            <td class="set-height">
+                                                <span>26.990.000đ</span>
+                                            </td>
+                                            <!--  -->
+                                            <td class="set-height">
+                                                <span class="btn btn-primary" onclick="clickGiam()" id="pre">-</span>
+                                                <span id="kq">1</span>
+                                                <span class="btn btn-primary" onclick="clickTang()" id="next">+</span>
+                                            </td>
+                                            <!--  -->
+                                            <td class="set-height">
+                                                <span>
+                                                    26.990.000đ
+                                                </span>
+                                            </td>
+                                            <!--  -->
+                                            <td class="set-height">
+                                                <i class="fa-solid fa-trash-can" id="delete_1"></i>
+                                            </td>
+
+
+
+
+                                        </tr>
+                                        <!--  -->
+                                        <tr>
+                                            <td class="set-height">
+                                                <a href="">
+                                                    <img src="./assets/images/iphone/mau-vang-1-1.png" alt=""
+                                                        width="55px">
+                                                </a>
+                                            </td>
+                                            <!--  -->
+                                            <td class="set-height">
+                                                <a href="" style="color: #0d6dfe !important;">iPhone 13 Pro Max</a>
+                                                <dl>
+                                                    <dt>Chọn màu: Gold </dt>
+                                                    <dt>Chọn dung lượng: 128GB </dt>
+
+                                                </dl>
+                                            </td>
+                                            <!--  -->
+                                            <td class="set-height">
+                                                <span>26.990.000đ</span>
+                                            </td>
+                                            <!--  -->
+                                            <td class="set-height">
+                                                <span class="btn btn-primary" onclick="clickGiam()" id="pre">-</span>
+                                                <span id="kq">1</span>
+                                                <span class="btn btn-primary" onclick="clickTang()" id="next">+</span>
+                                            </td>
+                                            <script>
+                                                let cong = document.getElementById("next");
+                                                let tru = document.getElementById("pre");
+                                                let result = document.getElementById("kq");
+                                                function clickTang() {
+                                                    let ketqua = parseInt(result.innerText) + 1;
+                                                    result.textContent = ketqua;
+
+                                                }
+                                                function clickGiam() {
+                                                    let ketqua = parseInt(result.innerText) - 1;
+                                                    result.textContent = ketqua;
+                                                    if (ketqua < 1) {
+                                                        result.innerText = "1"
+                                                    }
+
+                                                }
+                                                $("#delete_1").click(function () {
+                                                    $("#delete_div1").remove();
+                                                });
+                                            </script>
+                                            <!--  -->
+                                            <td class="set-height">
+                                                <span>
+                                                    26.990.000đ
+                                                </span>
+                                            </td>
+                                            <!--  -->
+                                            <td class="set-height">
+                                                <i class="fa-solid fa-trash-can" ></i>
+                                            </td>
+
+
+
+
+                                        </tr>
+                                        <!--  -->
+                                        <tr>
+                                            <td class="set-height">
+                                                <a href="">
+                                                    <img src="./assets/images/iphone/mau-vang-1-1.png" alt=""
+                                                        width="55px">
+                                                </a>
+                                            </td>
+                                            <!--  -->
+                                            <td class="set-height">
+                                                <a href="" style="color: #0d6dfe !important;">iPhone 13 Pro Max</a>
+                                                <dl>
+                                                    <dt>Chọn màu: Gold </dt>
+                                                    <dt>Chọn dung lượng: 128GB </dt>
+
+                                                </dl>
+                                            </td>
+                                            <!--  -->
+                                            <td class="set-height">
+                                                <span>26.990.000đ</span>
+                                            </td>
+                                            <!--  -->
+                                            <td class="set-height">
+                                                <span class="btn btn-primary" onclick="clickGiam()" id="pre">-</span>
+                                                <span id="kq">1</span>
+                                                <span class="btn btn-primary" onclick="clickTang()" id="next">+</span>
+                                            </td>
+                                            <!--  -->
+                                            <td class="set-height">
+                                                <span>
+                                                    26.990.000đ
+                                                </span>
+                                            </td>
+                                            <!--  -->
+                                            <td class="set-height">
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </td>
+
+
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="coupon-cart">
+                                <div class="coupon-start">
+                                    <input type="text" placeholder="Coupon code">
+                                </div>
+                                <div class="coupon-end">
+                                    <button class="coupon-btn">Áp dụng Coupon</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="cart-total">
+                            <h2>Tổng giỏ hàng</h2>
+                            <div class="order-total">
+                                <span>Tổng</span>
+                                <span>26.990.000đ</span>
+                            </div>
+                            <a href="checkout.html" class="order-button">
+                                <span> Tiến hành thanh toán</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!--  -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- coupon -->
+    <div class="register-coupon">
+        <div class="container">
+            <div class="register-info">
+                <h2>Đăng lý nhận tin từ ShopDunk</h2>
+                <span>Thông tin sản phẩm mới nhất và chương trình khuyến mãi</span>
+            </div>
+            <div class="register-email">
+                <input type="email" name="" id="" placeholder="Email của bạn" required="required" aria-required="true">
+                <button type="submit" aria-required="true" required>Đăng Ký</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-4">
+                    <div class="logo-footer">
+                        <img src="./assets/images/Property-1White.svg" alt="">
+                    </div>
+                    <p class="logo-title">Năm 2020, ShopDunk trở thành đại lý ủy quyền của Apple. Chúng tôi phát triển
+                        chuỗi cửa hàng tiêu chuẩn và Apple Mono Store nhằm mang đến trải nghiệm tốt nhất về sản phẩm và
+                        dịch vụ của Apple cho người dùng Việt Nam.</p>
+                </div>
+                <!--  -->
+                <div class="col-lg-2">
+                    <ul class="list-foot">
+                        <h4 class="foot-title">Sản phẩm</h4>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                iPhone
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                iPad
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Mac
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Apple Watch
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Âm thanh
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Phụ kiện
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Dịch vụ
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- -- -->
+                <div class="col-lg-2">
+                    <ul class="list-foot">
+                        <h4 class="foot-title">Thông tin</h4>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Giới thiệu
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Khuyến mại
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Bảo hành và sửa chữa
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Tuyển dụng
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Tin tức
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Check imei
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Phương thức thanh toán
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Gửi góp ý, khiếu nại
+                            </a>
+                        </li>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- --- -->
+                <div class="col-lg-2">
+                    <ul class="list-foot">
+                        <h4 class="foot-title">Chính sách</h4>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Trả góp
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Giao hàng
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Hủy giao dịch
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Đổi trả
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Bảo hành
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-lg-2">
+                    <ul class="list-foot">
+                        <h4 class="foot-title">Địa chỉ</h4>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Tìm Store trên Goggle Map
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Hệ thống cửa hàng
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Chính sách bảo mật thông tin
+                            </a>
+                        </li>
+                        <li class="foot-items">
+                            <a href="" class="list-txt-link">
+                                Xem bản mobile
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+            <div class="office">
+                <div class="text-cpr">
+                    <p>
+                        © 2022. Clone by Đỗ Tiến Anh. </p>
+                </div>
+                <div class="certify">
+                    <a href="">
+                        <img src="assets/images/certify-bct.png" alt="">
+                    </a>
+                    <!-- <a href="">
+                        <img src="assets/images/handle_cert.png" alt="" style="width:135px">
+                    </a>
+                    <a href="">
+                        <img src="assets/images/_dmca.png" alt="" style="width:135px;margin-left: 10px;">
+                    </a> -->
+                </div>
+            </div>
+            <!--  -->
+
+        </div>
+    </div>
+
+</body>
+<script src="lib/bootstrap-5.2.0-beta1-dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
