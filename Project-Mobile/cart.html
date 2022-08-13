@@ -174,7 +174,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr id="delete_div1">
                                             <td class="set-height">
                                                 <a href="">
                                                     <img src="./assets/images/iphone/mau-vang-1-1.png" alt=""
@@ -196,7 +196,9 @@
                                             </td>
                                             <!--  -->
                                             <td class="set-height">
-                                                <input type="number" value="1" style="width: 50px;">
+                                                <span class="btn btn-primary" onclick="clickGiam()" id="pre">-</span>
+                                                <span id="kq">1</span>
+                                                <span class="btn btn-primary" onclick="clickTang()" id="next">+</span>
                                             </td>
                                             <!--  -->
                                             <td class="set-height">
@@ -206,7 +208,7 @@
                                             </td>
                                             <!--  -->
                                             <td class="set-height">
-                                                <i class="fa-solid fa-trash-can"></i>
+                                                <i class="fa-solid fa-trash-can" id="delete_1"></i>
                                             </td>
 
 
@@ -236,8 +238,31 @@
                                             </td>
                                             <!--  -->
                                             <td class="set-height">
-                                                <input type="number" value="1" style="width: 50px;">
+                                                <span class="btn btn-primary" onclick="clickGiam()" id="pre">-</span>
+                                                <span id="kq">1</span>
+                                                <span class="btn btn-primary" onclick="clickTang()" id="next">+</span>
                                             </td>
+                                            <script>
+                                                let cong = document.getElementById("next");
+                                                let tru = document.getElementById("pre");
+                                                let result = document.getElementById("kq");
+                                                function clickTang() {
+                                                    let ketqua = parseInt(result.innerText) + 1;
+                                                    result.textContent = ketqua;
+
+                                                }
+                                                function clickGiam() {
+                                                    let ketqua = parseInt(result.innerText) - 1;
+                                                    result.textContent = ketqua;
+                                                    if (ketqua < 1) {
+                                                        result.innerText = "1"
+                                                    }
+
+                                                }
+                                                $("#delete_1").click(function () {
+                                                    $("#delete_div1").remove();
+                                                });
+                                            </script>
                                             <!--  -->
                                             <td class="set-height">
                                                 <span>
@@ -246,7 +271,7 @@
                                             </td>
                                             <!--  -->
                                             <td class="set-height">
-                                                <i class="fa-solid fa-trash-can"></i>
+                                                <i class="fa-solid fa-trash-can" ></i>
                                             </td>
 
 
@@ -276,7 +301,9 @@
                                             </td>
                                             <!--  -->
                                             <td class="set-height">
-                                                <input type="number" value="1" style="width: 50px; outline: none;">
+                                                <span class="btn btn-primary" onclick="clickGiam()" id="pre">-</span>
+                                                <span id="kq">1</span>
+                                                <span class="btn btn-primary" onclick="clickTang()" id="next">+</span>
                                             </td>
                                             <!--  -->
                                             <td class="set-height">
