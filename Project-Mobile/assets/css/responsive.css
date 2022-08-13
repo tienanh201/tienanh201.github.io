@@ -1,8 +1,5 @@
 /* MÀN HÌNH DESKTOP, TABLET XOAY NGANG */
 @media screen and (max-width: 1200px) {
-    .descrip {
-        display: none;
-    }
     /* .menu{
         display: none;
     } */
@@ -49,6 +46,38 @@
         background-color: #fff;
         margin-bottom: 0;
     }
+    .element-fit {
+        margin-bottom: 15px;
+        padding: 16px 20px;
+    }
+    .element-link-text {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .element-fit-info {
+        padding-left: 10px;
+    }
+    .element-details {
+        padding: 10px 20px;
+    }
+    .element-widget {
+        padding-bottom: 10px;
+    }
+    .element-title {
+        font-size: 18px;
+    }
+    .register-info h2 {
+        font-size: 18px;
+    }
+    .register-info span {
+        font-size: 14px;
+    }
+    .register-email input {
+        width: 65%;
+    }
+    .register-email button {
+        width: 25%;
+    }
     .cus-desktop {
         display: none;
     }
@@ -60,16 +89,27 @@
         margin-bottom: 20px;
     }
     .box-p {
-        display: block;
+        padding: 0 10px;
+    }
+    .price-old,
+    .price,.title-price {
+        font-size: 13px;
+    }
+    .info-juridical{
+        padding-left: 50px;
+    }
+    .form-check{
+        margin-right: 10px;
     }
     .info-title {
-        margin-top: 5px;
+        /* margin-top: 5px; */
+        margin-left: 0;
         font-size: 14px;
         line-height: 18px;
         margin-bottom: 8px;
         height: 36px;
-        color: #fff;
-        text-align: center;
+        color: #545454;
+        /* text-align: center; */
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
