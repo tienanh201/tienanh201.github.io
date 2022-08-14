@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/fonts/fontawesome-free-6.1.0-web/css/all.min.css">
     <link rel="stylesheet" href="lib/bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="assets/owlcarousel/owl.carousel.min.js"></script>
+    
 </head>
 
 <body>
@@ -173,15 +173,15 @@
 
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr id="delete_div1">
+                                    <tbody class="products">
+                                        <!-- <tr id="delete_div1">
                                             <td class="set-height">
                                                 <a href="">
                                                     <img src="./assets/images/iphone/mau-vang-1-1.png" alt=""
                                                         width="55px">
                                                 </a>
                                             </td>
-                                            <!--  -->
+                                            
                                             <td class="set-height">
                                                 <a href="" style="color: #0d6dfe !important;">iPhone 13 Pro Max</a>
                                                 <dl>
@@ -190,23 +190,23 @@
 
                                                 </dl>
                                             </td>
-                                            <!--  -->
+                                            
                                             <td class="set-height">
                                                 <span>26.990.000đ</span>
                                             </td>
-                                            <!--  -->
+                                            
                                             <td class="set-height">
-                                                <span class="btn btn-primary" onclick="clickGiam()" id="pre">-</span>
+                                                <span class="btn btn-primary" id="pre">-</span>
                                                 <span id="kq">1</span>
-                                                <span class="btn btn-primary" onclick="clickTang()" id="next">+</span>
+                                                <span class="btn btn-primary" id="next">+</span>
                                             </td>
-                                            <!--  -->
+                                            
                                             <td class="set-height">
                                                 <span>
                                                     26.990.000đ
                                                 </span>
                                             </td>
-                                            <!--  -->
+                                           
                                             <td class="set-height">
                                                 <i class="fa-solid fa-trash-can" id="delete_1"></i>
                                             </td>
@@ -214,112 +214,9 @@
 
 
 
-                                        </tr>
-                                        <!--  -->
-                                        <tr>
-                                            <td class="set-height">
-                                                <a href="">
-                                                    <img src="./assets/images/iphone/mau-vang-1-1.png" alt=""
-                                                        width="55px">
-                                                </a>
-                                            </td>
-                                            <!--  -->
-                                            <td class="set-height">
-                                                <a href="" style="color: #0d6dfe !important;">iPhone 13 Pro Max</a>
-                                                <dl>
-                                                    <dt>Chọn màu: Gold </dt>
-                                                    <dt>Chọn dung lượng: 128GB </dt>
-
-                                                </dl>
-                                            </td>
-                                            <!--  -->
-                                            <td class="set-height">
-                                                <span>26.990.000đ</span>
-                                            </td>
-                                            <!--  -->
-                                            <td class="set-height">
-                                                <span class="btn btn-primary" onclick="clickGiam()" id="pre">-</span>
-                                                <span id="kq">1</span>
-                                                <span class="btn btn-primary" onclick="clickTang()" id="next">+</span>
-                                            </td>
-                                            <script>
-                                                let cong = document.getElementById("next");
-                                                let tru = document.getElementById("pre");
-                                                let result = document.getElementById("kq");
-                                                function clickTang() {
-                                                    let ketqua = parseInt(result.innerText) + 1;
-                                                    result.textContent = ketqua;
-
-                                                }
-                                                function clickGiam() {
-                                                    let ketqua = parseInt(result.innerText) - 1;
-                                                    result.textContent = ketqua;
-                                                    if (ketqua < 1) {
-                                                        result.innerText = "1"
-                                                    }
-
-                                                }
-                                                $("#delete_1").click(function () {
-                                                    $("#delete_div1").remove();
-                                                });
-                                            </script>
-                                            <!--  -->
-                                            <td class="set-height">
-                                                <span>
-                                                    26.990.000đ
-                                                </span>
-                                            </td>
-                                            <!--  -->
-                                            <td class="set-height">
-                                                <i class="fa-solid fa-trash-can" ></i>
-                                            </td>
-
-
-
-
-                                        </tr>
-                                        <!--  -->
-                                        <tr>
-                                            <td class="set-height">
-                                                <a href="">
-                                                    <img src="./assets/images/iphone/mau-vang-1-1.png" alt=""
-                                                        width="55px">
-                                                </a>
-                                            </td>
-                                            <!--  -->
-                                            <td class="set-height">
-                                                <a href="" style="color: #0d6dfe !important;">iPhone 13 Pro Max</a>
-                                                <dl>
-                                                    <dt>Chọn màu: Gold </dt>
-                                                    <dt>Chọn dung lượng: 128GB </dt>
-
-                                                </dl>
-                                            </td>
-                                            <!--  -->
-                                            <td class="set-height">
-                                                <span>26.990.000đ</span>
-                                            </td>
-                                            <!--  -->
-                                            <td class="set-height">
-                                                <span class="btn btn-primary" onclick="clickGiam()" id="pre">-</span>
-                                                <span id="kq">1</span>
-                                                <span class="btn btn-primary" onclick="clickTang()" id="next">+</span>
-                                            </td>
-                                            <!--  -->
-                                            <td class="set-height">
-                                                <span>
-                                                    26.990.000đ
-                                                </span>
-                                            </td>
-                                            <!--  -->
-                                            <td class="set-height">
-                                                <i class="fa-solid fa-trash-can"></i>
-                                            </td>
-
-
-
-
-                                        </tr>
+                                        </tr> -->
+                                     
+                                       
                                     </tbody>
                                 </table>
                             </div>
@@ -338,7 +235,7 @@
                             <h2>Tổng giỏ hàng</h2>
                             <div class="order-total">
                                 <span>Tổng</span>
-                                <span>26.990.000đ</span>
+                                <span class="moneytotal">26.990.000đ</span>
                             </div>
                             <a href="checkout.html" class="order-button">
                                 <span> Tiến hành thanh toán</span>
@@ -550,5 +447,7 @@
 
 </body>
 <script src="lib/bootstrap-5.2.0-beta1-dist/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/cart.js"></script>
+
 
 </html>
