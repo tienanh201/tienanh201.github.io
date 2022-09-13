@@ -1,10 +1,13 @@
 /* MÀN HÌNH DESKTOP, TABLET XOAY NGANG */
 @media screen and (max-width: 1200px) {
-    /* .menu{
+    .menu {
         display: none;
-    } */
+    }
     .descrip-mobile {
         display: block;
+    }
+    .design_mobile{
+        padding-top: 65px;
     }
     .view-all {
         text-align: center;
@@ -17,27 +20,18 @@
         margin: auto;
         margin-bottom: 40px;
     }
-    .owl-nav {
-        display: none;
+    .active1 {
+        color: #545454;
     }
-    .owl-dots {
+    .menu-list-link,
+    .active1 {
+        padding: 8px;
+        font-size: 12px;
+        color: #ccc !important;
+    }
+    /* .menu-mobile {
         display: block;
-        margin-top: 20px;
-    }
-    .menu-mobile {
-        display: none;
-    }
-    .nav-mobile {
-        display: none;
-    }
-    .search-cart {
-        display: flex;
-    }
-}
-/* MÀN HÌNH MOBILE XOAY NGANG , MÀN HÌNH TABLET DỌC */
-
-/* Mobile xoay dọc */
-@media screen and (max-width: 480px) {
+    } */
     .menu-mobile {
         display: flex;
         padding-left: 0;
@@ -45,6 +39,44 @@
         align-items: center;
         background-color: #fff;
         margin-bottom: 0;
+    }
+    .nav-mobile {
+        display: block;
+    }
+    .search-cart {
+        display: flex;
+    }
+    .topzone-logo{
+        padding: 10px;
+    }
+   
+}
+
+/* MÀN HÌNH MOBILE XOAY NGANG , MÀN HÌNH TABLET DỌC */
+
+/* Mobile xoay dọc */
+@media screen and (max-width: 480px) {
+  .search-sp{
+    display: none;
+  }
+    .menu-mobile {
+        display: flex;
+        padding-left: 0;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        margin-bottom: 0;
+    }
+    .title-home-link,
+    .title-home-link-active {
+        font-size: 12px;
+    }
+    .size-in {
+        height: 30px !important;
+        width: 30px !important;
+    }
+    .design_mobile {
+        padding-top: 61.5px;
     }
     .element-fit {
         margin-bottom: 15px;
@@ -85,24 +117,24 @@
         display: block;
     }
     .product {
-        padding: 30px 10px;
+        padding: 30px 15px;
         margin-bottom: 20px;
     }
     .box-p {
-        padding: 0 10px;
+        padding: 0;
     }
     .price-old,
-    .price,.title-price {
+    .price,
+    .title-price {
         font-size: 13px;
     }
-    .info-juridical{
+    .info-juridical {
         padding-left: 50px;
     }
-    .form-check{
+    .form-check {
         margin-right: 10px;
     }
     .info-title {
-        /* margin-top: 5px; */
         margin-left: 0;
         font-size: 14px;
         line-height: 18px;
@@ -114,43 +146,22 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         overflow: hidden;
-        padding: 0 10px;
+        padding: 0;
         text-overflow: ellipsis;
     }
     .topzone-logo {
         margin-left: 30px;
     }
+    .main {
+        padding-top: 0;
+    }
+    
 }
 /*  */
 @media screen and (max-width: 451px) {
     .menu {
         display: none;
     }
-    .menu-mobile {
-        display: block;
-    }
-    .nav-mobile {
-        display: block;
-    }
-    .item-compare span {
-        font-size: 12px;
-        padding: 8px 5px;
-    }
-    .nav-link {
-        display: inline !important;
-    }
-
-    .ft-care {
-        display: block;
-        white-space: nowrap;
-        overflow: scroll;
-        padding: 20px 20px 20px 0;
-    }
-}
-@media (max-width: 768px) {
-    /* .menu {
-        display: none;
-    } */
     .menu-mobile {
         display: flex;
         padding-left: 0;
@@ -159,19 +170,96 @@
         background-color: #fff;
         margin-bottom: 0;
     }
-    .menu-list-link {
+    .nav-mobile {
+        display: block;
+    }
+    .set-desktop{
+        display: revert;
+      
+    }
+    .cart_sl{
+        top: 4px;
+        left: 30%;
+        height: 15px;
+        width: 15px;
+    }
+    .set-height-mobile {
+        float: right;
+    }
+    .item-compare span {
+        font-size: 12px;
+        padding: 8px 5px;
+    }
+    .nav-link {
+        display: inline !important;
+    }
+    .menu-list-link,
+    .active1 {
         padding: 8px;
         font-size: 12px;
-        color: #ccc !important;
+        color: #ccc;
+        background-color: #fff;
+    }
+    .head {
+        padding: 5px 0;
+    }
+    .topzone-logo img {
+        width: 70%;
+    }
+    .topzone-logo {
+        text-align: center;
+    }
+    .search-sp i {
+        font-size: 15px;
+        margin-right: 10px;
+    }
+    .cart i {
+        font-size: 15px;
+    }
+    .ft-care {
+        display: block;
+        white-space: nowrap;
+        overflow: scroll;
+        padding: 20px 20px 20px 0;
+    }
+    .order-now {
+        display: block;
+    }
+    .order-button,
+    .order-button2 {
+        width: 100%;
+       
+    }
+    th {
+        font-size: 12px;
+        
+    }
+    .set_mobile{
+        display: none ;
+    }
+    .set_text_mobile {
+        font-size: 13px;
+    }
+    #change-color-price{
+        font-size: 24px;
+    }
+    .coupon-cart{
+        display: block;
+    }
+    .coupon-start ,.coupon-end{
+        width: 100%;
+        margin-bottom: 10px;
+
+    }
+    
+}
+@media screen and (max-width: 575px) {
+    
+    .intro-title {
+        font-size: 20px;
     }
     .search-cart {
         line-height: 40px;
-    }
-    .search-sp,
-    .cart {
-        background: none;
-        margin-right: 0;
-        padding: 0;
     }
 
     .ft-cate-list {
@@ -201,11 +289,6 @@
         border-radius: 8px;
     }
 }
-/* @media (min-width: 992px) {
-    .menu-mobile {
-        display: none;
-    }
-    .nav-mobile {
-        display: none;
-    }
-} */
+@media (min-width: 992px) {
+    
+}

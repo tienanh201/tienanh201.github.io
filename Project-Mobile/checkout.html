@@ -6,14 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topzone</title>
-    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
+
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- <link rel="stylesheet" href="assets/css/responsive.css"> -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome-free-6.1.0-web/css/all.min.css">
     <link rel="stylesheet" href="lib/bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="assets/owlcarousel/owl.carousel.min.js"></script>
+
 </head>
 
 <body>
@@ -23,13 +22,13 @@
                 <div class="nav-mobile">
                     <i class="fa-solid fa-bars"></i>
                 </div>
-                <div class="topzone-logo">
-                    <!-- <a href="index.html" class="logo-text">
-                        top<span style="color: red;">z</span><span style="color: #00a551;">o</span><span
-                            style="color: #00aeef;">n</span><span style="color: #b1157e;">e</span>
-                    </a> -->
-                    <img src="/assets/images/Property-1White.svg" alt="">
-                </div>
+                <a href="index.html">
+
+                    <div class="topzone-logo">
+
+                        <img src="./assets/images/Property-1White.svg" alt="">
+                    </div>
+                </a>
 
                 <ul class="menu">
                     <li class="menu-list">
@@ -84,6 +83,8 @@
                     </div>
                     <a href="cart.html" class="cart">
                         <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="cart_sl"></span>
+
                     </a>
                 </div>
                 <!-- Modal -->
@@ -211,35 +212,57 @@
                 </div>
                 <form action="">
                     <div class="row">
-                        <div class="col-lg-7">
+                        <div class="col-lg-7 col-12">
                             <div class="info-customer">
 
 
                                 <h4>Thông tin khách hàng</h4>
-                                <div class="inp_sex">
+                                <!-- <div class="inp_sex">
                                     <input type="radio" id="nam" value="anh">
                                     <label for="nam">Anh</label>
                                     <input type="radio" id="nu" value="chi">
                                     <label for="nu">Chị</label>
-                                </div>
+                                </div> -->
                                 <p class="from-validate">
-                                    <label for="">Họ và tên</label> <br>
-                                    <input type="text" required>
+                                    <label for="name">Họ và tên</label> <br>
+                                    <input type="text" id="name" required>
                                 </p>
                                 <p class="from-validate">
-                                    <label for="">Số điện thoại</label> <br>
-                                    <input type="tel" required>
+                                    <label for="phone">Số điện thoại</label> <br>
+                                    <input type="tel" id="phone" required>
                                 </p>
                                 <p class="from-validate">
                                     <label for="">Email</label> <br>
                                     <input type="email" required>
+                                </p>
+                                <p class="from-validate">
+                                    <label for="">Tỉnh/Thành Phố</label> <br>
+                                    <select class="city" name="" id="" required>
+                                        <option value="">Tỉnh/Thành Phố</option>
+                                        <option value="">Hà Nội</option>
+                                        <option value="">Hồ Chí Minh</option>
+
+                                    </select>
+                                </p>
+                                <p class="from-validate">
+                                    <label for="">Quận/Huyện</label> <br>
+                                    <select class="city" name="" id="" required>
+                                        <option value="">Quận/Huyện</option>
+                                        <option value="">Hà Đông</option>
+                                        <option value="">Quốc Oai</option>
+
+                                    </select>
+                                </p>
+                                <p class="from-validate">
+                                    <label for="">Địa Chỉ Nhận Hàng</label> <br>
+                                    <input type="text" required>
                                 </p>
                                 <p class="form-validate">
                                     <label for="" style="font-weight:bold">Phương thức nhận hàng</label>
                                     <span>
                                         <input type="radio">
                                         <label for="" style="padding-right:10px">Nhận tại cửa hàng</label>
-                                        <input type="radio">
+                                        <input type="radio" checked>
                                         <label for="">Giao tận nơi</label>
                                     </span>
                                 </p>
@@ -258,19 +281,33 @@
                         <div class="col-lg-5">
                             <div class="info-order">
                                 <h4>Đơn hàng của bạn</h4>
-                                <div class="cart-item">
-                                    <img src="./assets/images/iphone/mau-vang-1-1.png" alt="" width="30%">
-                                    <div class="cart-item-title">
-                                        <span>iPhone 13 Pro Max</span>
-                                        <span>x 1</span>
+                                <div class="products-item">
+                                    <!-- <div class="cart-item">
+                                        <img src="./assets/images/iphone/mau-vang-1-1.png" alt="" width="30%">
+                                        <div class="cart-item-title">
+                                            <span>iPhone 13 Pro Max</span>
+                                            <span>x 1</span>
 
-                                        <p class="item_color">Chọn màu: Gold</p>
-                                        <p>Chọn Dung lượng: 128GB</p>
+                                            <p class="item_color">Chọn màu: Purple</p>
+                                            <p>Chọn Dung lượng: 64GB</p>
 
-                                    </div>
+                                        </div>
+                                    </div> -->
                                 </div>
                                 <!--  -->
-                                <div class="cart-item">
+                                <!-- <div class="cart-item">
+                                    <img src="./assets/images/ipad/ipad-air-5.webp" alt="" width="30%">
+                                    <div class="cart-item-title">
+                                        <span>iPad Air 5</span>
+                                        <span>x 1</span>
+
+                                        <p class="item_color">Chọn màu: Space Gray</p>
+                                        <p>Chọn Dung lượng: 256GB</p>
+
+                                    </div>
+                                </div> -->
+                                <!--  -->
+                                <!-- <div class="cart-item">
                                     <img src="./assets/images/mac/mac-m2-1.webp" alt="" width="30%">
                                     <div class="cart-item-title">
                                         <span>MacBook Pro 13 M2 2022</span>
@@ -280,11 +317,11 @@
                                         <p>Chọn Dung lượng: 256GB</p>
 
                                     </div>
-                                </div>
+                                </div> -->
                                 <!--  -->
                                 <div class="cart-info-price">
                                     <p>Tổng</p>
-                                    <p>26.990.000đ</p>
+                                    <p class="total_products">72.970.000 VND</p>
 
                                 </div>
                                 <div class="cart-pay">
@@ -313,19 +350,23 @@
                                             <label for="">ZaloPay Gateway (e-Wallet)</label> <br>
                                         </li>
                                         <li>
-                                            <input type="radio" name="" id=" "checked>
+                                            <input type="radio" name="" id=" " checked>
                                             <label for="">Giao hàng - Thu tiền (COD)</label> <br>
                                         </li>
 
                                     </ul>
-                                    
+
                                     <p class="">
                                         <input type="checkbox" checked>
-                                        <label for="" >Tôi đã đọc và đồng ý với điều khoản và điều kiện của website</label>
+                                        <label for="">Tôi đã đọc và đồng ý với điều khoản và điều kiện của
+                                            website</label>
                                     </p>
                                     <button class="order-btn" required>Đặt hàng</button>
 
+                                    <!--  -->
 
+
+                                    <!--  -->
 
                                 </div>
 
@@ -355,14 +396,16 @@
     </div>
     <div class="footer">
         <div class="container">
-            
+
             <div class="row">
 
                 <div class="col-lg-4">
                     <div class="logo-footer">
                         <img src="./assets/images/Property-1White.svg" alt="">
                     </div>
-                    <p class="logo-title">Năm 2020, ShopDunk trở thành đại lý ủy quyền của Apple. Chúng tôi phát triển chuỗi cửa hàng tiêu chuẩn và Apple Mono Store nhằm mang đến trải nghiệm tốt nhất về sản phẩm và dịch vụ của Apple cho người dùng Việt Nam.</p>
+                    <p class="logo-title">Năm 2020, ShopDunk trở thành đại lý ủy quyền của Apple. Chúng tôi phát triển
+                        chuỗi cửa hàng tiêu chuẩn và Apple Mono Store nhằm mang đến trải nghiệm tốt nhất về sản phẩm và
+                        dịch vụ của Apple cho người dùng Việt Nam.</p>
                 </div>
                 <!--  -->
                 <div class="col-lg-2">
@@ -446,10 +489,10 @@
                         </li>
                         <li class="foot-items">
                             <a href="" class="list-txt-link">
-                               Gửi góp ý, khiếu nại
+                                Gửi góp ý, khiếu nại
                             </a>
                         </li>
-                    </li>
+                        </li>
 
                     </ul>
                 </div>
@@ -511,7 +554,7 @@
                     </ul>
 
                 </div>
-                
+
             </div>
             <div class="office">
                 <div class="text-cpr">
@@ -520,7 +563,7 @@
                 </div>
                 <div class="certify">
                     <a href="">
-                        <img src="assets/images/certify-bct.png" alt="" >
+                        <img src="assets/images/certify-bct.png" alt="">
                     </a>
                     <!-- <a href="">
                         <img src="assets/images/handle_cert.png" alt="" style="width:135px">
@@ -537,7 +580,7 @@
 
 
 </body>
-<script src="./assets/js/main.js"></script>
+<script src="./assets/js/checkout.js"></script>
 <script src="lib/bootstrap-5.2.0-beta1-dist/js/bootstrap.bundle.min.js"></script>
 
 </html>

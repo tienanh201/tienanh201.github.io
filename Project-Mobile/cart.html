@@ -6,14 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topzone</title>
-    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome-free-6.1.0-web/css/all.min.css">
     <link rel="stylesheet" href="lib/bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
+
 </head>
 
 <body>
@@ -27,19 +26,14 @@
 
                     <div class="topzone-logo">
 
-                        <img src="/assets/images/Property-1White.svg" alt="">
+                        <img src="./assets/images/Property-1White.svg" alt="">
                     </div>
                 </a>
 
                 <ul class="menu">
                     <li class="menu-list">
-                        <a href="iphone.html" class="menu-list-link active">
-                            <span>iPhone</span>
-                        </a>
-                    </li>
-                    <li class="menu-list">
-                        <a href="mac.html" class="menu-list-link">
-                            <span>Mac</span>
+                        <a href="iphone.html" class="menu-list-link ">
+                            iPhone
                         </a>
                     </li>
                     <li class="menu-list">
@@ -48,32 +42,38 @@
                         </a>
                     </li>
                     <li class="menu-list">
+                        <a href="mac.html" class="menu-list-link">
+                            <span>Mac</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-list">
                         <a href="watch.html" class="menu-list-link">
                             <span>Watch</span>
                         </a>
                     </li>
                     <li class="menu-list">
-                        <a href="" class="menu-list-link">
+                        <a href="am-thanh.html" class="menu-list-link">
                             <span>Âm thanh</span>
                         </a>
                     </li>
                     <li class="menu-list">
-                        <a href="" class="menu-list-link">
+                        <a href="phu-kien.html" class="menu-list-link">
                             <span>Phụ kiện</span>
                         </a>
                     </li>
                     <li class="menu-list">
-                        <a href="" class="menu-list-link">
+                        <a href="dich-vu.html" class="menu-list-link">
                             <span>Dịch vụ</span>
                         </a>
                     </li>
                     <li class="menu-list">
-                        <a href="" class="menu-list-link">
+                        <a href="khuyen-mai.html" class="menu-list-link">
                             <span>Khuyến Mại</span>
                         </a>
                     </li>
                     <li class="menu-list">
-                        <a href="" class="menu-list-link">
+                        <a href="tra-gop.html" class="menu-list-link">
                             <span>Trả Góp</span>
                         </a>
                     </li>
@@ -82,8 +82,10 @@
                     <div type="button" data-bs-toggle="modal" data-bs-target="#myModal" class="search-sp">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <a href="cart.html" class="cart" data-bs-toggle="modal">
+                    <a href="cart.html" class="cart">
                         <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="cart_sl">3</span>
+
                     </a>
                 </div>
                 <!-- Modal -->
@@ -115,14 +117,9 @@
         </div>
         <!-- mobile -->
         <ul class="menu-mobile">
-            <li class="menu-list">
-                <a href="iphone.html" class="menu-list-link active">
+            <li class="menu-list ">
+                <a href="iphone.html" class="menu-list-link ">
                     <span>iPhone</span>
-                </a>
-            </li>
-            <li class="menu-list">
-                <a href="mac.html" class="menu-list-link">
-                    <span>Mac</span>
                 </a>
             </li>
             <li class="menu-list">
@@ -130,6 +127,12 @@
                     <span>iPad</span>
                 </a>
             </li>
+            <li class="menu-list">
+                <a href="mac.html" class="menu-list-link">
+                    <span>Mac</span>
+                </a>
+            </li>
+
             <li class="menu-list">
                 <a href="watch.html" class="menu-list-link">
                     <span>Watch</span>
@@ -157,19 +160,19 @@
             <div class="cart_all">
                 <h1>Giỏ hàng</h1>
                 <div class="row">
-                    <div class="col-lg-8">
-                        <form action="">
+                    <div class="col-lg-8 col-12">
+                        <form action="" style="margin-bottom:20px; ">
 
                             <div class="shop-table">
                                 <table class="" style="width: 100%;">
                                     <thead>
                                         <tr>
                                             <th scope="col"></th>
-                                            <th scope="col">Sản phẩm</th>
-                                            <th scope="col">Giá</th>
-                                            <th scope="col">Số lượng</th>
-                                            <th scope="col">Tạm tính</th>
-                                            <th scope="col">Xóa</th>
+                                            <th scope="col" class="set_mobile">Sản phẩm</th>
+                                            <th scope="col" class="set_mobile">Giá</th>
+                                            <th scope="col" class="set_mobile">Số lượng</th>
+                                            <th scope="col" class="set_mobile">Tạm tính</th>
+                                            <th scope="col" class="set_mobile">Xóa</th>
 
                                         </tr>
                                     </thead>
@@ -202,7 +205,7 @@
                                             </td>
                                             
                                             <td class="set-height">
-                                                <span>
+                                                <span class="price_pro">
                                                     26.990.000đ
                                                 </span>
                                             </td>
@@ -215,8 +218,8 @@
 
 
                                         </tr> -->
-                                     
-                                       
+
+
                                     </tbody>
                                 </table>
                             </div>
@@ -229,6 +232,8 @@
                                 </div>
                             </div>
                         </form>
+                        <!-- mobile -->
+                       
                     </div>
                     <div class="col-lg-4">
                         <div class="cart-total">
@@ -237,7 +242,7 @@
                                 <span>Tổng</span>
                                 <span class="moneytotal">26.990.000đ</span>
                             </div>
-                            <a href="checkout.html" class="order-button">
+                            <a href="checkout.html" class="order-button" style="width:100%">
                                 <span> Tiến hành thanh toán</span>
                             </a>
                         </div>
@@ -447,7 +452,9 @@
 
 </body>
 <script src="lib/bootstrap-5.2.0-beta1-dist/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="./assets/js/cart.js"></script> -->
 <script src="./assets/js/cart.js"></script>
+
 
 
 </html>
