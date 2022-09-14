@@ -40,6 +40,15 @@
         background-color: #fff;
         margin-bottom: 0;
     }
+    .elmentor-menu-text{
+        padding-left: 20px;
+    }
+    .cart_close{
+        padding: 15px;
+    }
+    .elementor_btn_link button{
+       padding: 10px;
+    }
     .nav-mobile {
         display: block;
     }
@@ -49,6 +58,18 @@
     .topzone-logo{
         padding: 10px;
     }
+    .menu_cart {
+        box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+        background-color: #fff;
+        height: 100vh;
+        position: absolute;
+        right: 0;
+        top: 65px;
+        width: 40%;
+        padding: 10px;
+        display: none;
+        transition: all .5s ease-in-out;
+      }
    
 }
 
@@ -58,6 +79,25 @@
 @media screen and (max-width: 480px) {
   .search-sp{
     display: none;
+  }
+  .menu_cart {
+    box-shadow: 0 0 20px rgb(0 0 0 / 20%);
+    background-color: #fff;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 61.5px;
+    width: 100%;
+    padding: 10px;
+    display: none;
+    transition: all .5s ease-in-out;
+  }
+  
+  .elementor-menu-text-name span{
+    font-size: 14px;
+  }
+  .elementor_btn_link button {
+    padding: 10px;
   }
     .menu-mobile {
         display: flex;
@@ -149,9 +189,9 @@
         padding: 0;
         text-overflow: ellipsis;
     }
-    .topzone-logo {
+    /* .topzone-logo {
         margin-left: 30px;
-    }
+    } */
     .main {
         padding-top: 0;
     }
@@ -161,6 +201,9 @@
 @media screen and (max-width: 451px) {
     .menu {
         display: none;
+    }
+    .cart-item-title span:nth-child(1),.cart-item-title p{
+        font-size: 14px;
     }
     .menu-mobile {
         display: flex;
@@ -178,10 +221,10 @@
       
     }
     .cart_sl{
-        top: 4px;
-        left: 30%;
-        height: 15px;
-        width: 15px;
+        top: -5px;
+        left: 50%;
+        height: 18px;
+        width: 18px;
     }
     .set-height-mobile {
         float: right;
@@ -234,6 +277,9 @@
         font-size: 12px;
         
     }
+    .cart i{
+        font-size: 25px;
+    }
     .set_mobile{
         display: none ;
     }
@@ -244,7 +290,7 @@
         font-size: 24px;
     }
     .coupon-cart{
-        display: block;
+        display: none;
     }
     .coupon-start ,.coupon-end{
         width: 100%;

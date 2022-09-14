@@ -1301,7 +1301,7 @@ th {
     padding: 5px;
 }
 .elementor-menu-img{
-  width: 30%;
+  width: 100px;
 }
 .elementor-menu-img img{
 width: 100%;
@@ -1309,6 +1309,8 @@ width: 100%;
 .elementor-menu-cart{
     display: flex;
     align-items: center;
+    /* justify-content: space-between; */
+    margin-bottom: 10px;
    
 }
 .menu_cart{
@@ -1343,7 +1345,7 @@ width: 100%;
 }
 .elementor_btn_link button{
     width: 100%;
-    padding: 15px;
+    padding: 10px;
     font-size: 18px;
 }
 .elmentor-menu-subtotal span{
@@ -1358,7 +1360,8 @@ width: 100%;
     width: 100%;
 }
 .elmentor-menu-text{
-    padding: 0 40px;
+    padding: 0 20px;
+    width: 320px;
 }
 .menu_cart_icon i{
     color: #000;
@@ -1406,11 +1409,18 @@ width: 100%;
     background-color: #f5f5f7;
     left: 0;
     height: 100vh;
-    width: 90%;
+    width: 100%;
     display: none;
     top: 0;
     transition: all .5s ease;
 
+}
+.modal_header{
+    font-size: 40px;
+}
+.modal-body p:nth-child(1){
+    font-size: 20px;
+    font-weight: 600;
 }
 .menu_list_link{
     color: #000 !important;

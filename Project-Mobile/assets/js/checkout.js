@@ -1,6 +1,6 @@
 let products = JSON.parse(localStorage.getItem("products"));
 let productE1 = document.querySelector(".products-item");
-console.log(productE1)
+
 
 function convertMoney(number) {
     return number.toLocaleString('vi-VN', {style : 'currency', currency : 'VND'});
