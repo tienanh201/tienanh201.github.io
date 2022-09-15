@@ -15,6 +15,9 @@
 </head>
 
 <body>
+    <div class="gototop">
+        <i class="fa-solid fa-angle-up"></i>
+    </div>
     <div class="header">
         <div class="container">
             <div class="head">
@@ -79,49 +82,62 @@
                     </li>
                 </ul>
                 <div class="search-cart">
-                    <div type="button" data-bs-toggle="modal" data-bs-target="#myModal" class="search-sp">
+                    <div type="button" data-bs-toggle="modal" data-bs-target="#myModal2" class="search-sp">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
                     <div class="cart">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                        <span class="cart_sl">3</span>
+                      
+
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            <span class="cart_sl">3</span>
+                       
 
                     </div>
                 </div>
 
                 <!-- Modal -->
-                <div class="modal" id="myModal">
+                <div class="modal" id="myModal2" style="z-index: 99;">
                     <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-
-                            <!-- Modal Header -->
-                            <div class="modal-header">
+                        <div class="modal-content set-content">
+                            <div class="modal-header set-header">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                                 <div class="modal-body">
-                                    <input type="text" placeholder="Tìm kiếm
-                                            sản phẩm">
+                                    <input type="text" class="menusearch" placeholder="Tìm kiếm sản phẩm"
+                                        onkeyup="searchfunc()">
                                 </div>
                                 <i data-bs-dismiss="modal" class="fa-solid
                                         fa-xmark"></i>
-
                             </div>
-
-
-
-
                         </div>
                     </div>
                 </div>
+                <!-- <script>
+                    function searchfunc(){
+                        let menusearch = document.querySelector(".menusearch");
+                        let  title = Array.from (document.querySelectorAll(".info-title"));
+                        menusearch.value = menusearch.value.toLowerCase();
+                        title.forEach(function(el){
+                            let text = el.innerText;
+                            if(text.indexOf(menusearch.value)>-1)
+                            el.style.display="";
+                            else el.style.display="none";
+                        })
+                    }
+                </script> -->
                 <!-- end modal -->
             </div>
             <!--cart  -->
-            <div class="menu_cart">
-                <div class="menu_cart_icon">
-                    <i class="fa-solid fa-x cart_close"></i>
-                </div>
-                <div class="elementtor_cart_items">
+            <div class="dialog overlay " >
+                <div class="overlay-close"></div>
+                <div class="menu_cart">
+                    <div class="menu_cart_icon">
+                        <i class="fa-solid fa-x cart_close"></i>
+                    </div>
 
-                    <!-- <div class="elementor-menu-cart">
+
+                    <div class="elementtor_cart_items">
+
+                        <!-- <div class="elementor-menu-cart">
                         <div class="elementor-menu-img">
                             <img src="./assets/images/iphone/iPhone-13-pro-max.webp" alt="">
                         </div>
@@ -137,29 +153,30 @@
                         </div>
                     </div> -->
 
-                </div>
-                <div class="elmentor-menu-subtotal">
-                    <span>Tạm tính: </span>
-                    <span class="elementor_total">26.850.000 VNĐ</span>
-                </div>
-                <div class="elementor-menu-btn">
+                    </div>
+                    <div class="elmentor-menu-subtotal">
+                        <span>Tạm tính: </span>
+                        <span class="elementor_total">26.850.000 VNĐ</span>
+                    </div>
+                    <div class="elementor-menu-btn">
 
-                    <a href="cart.html" class="elementor_btn_link">
+                        <a href="cart.html" class="elementor_btn_link">
 
-                        <button class="btn btn-secondary">Xem giỏ hàng</button>
-                    </a>
-                    <a href="" class="elementor_btn_link">
+                            <button class="btn btn-secondary">Xem giỏ hàng</button>
+                        </a>
+                        <a href="checkout.html" class="elementor_btn_link">
 
-                        <button class="btn btn-primary">Mua ngay</button>
-                    </a>
+                            <button class="btn btn-primary">Mua ngay</button>
+                        </a>
 
+                    </div>
                 </div>
             </div>
             <!--  -->
             <div class="mydiv_mobile">
                 <ul class="mydiv_mobile_list">
 
-                    <li>
+                    <li style="margin-bottom: 30px; margin: 10px;">
                         <i class="fa-solid fa-x btnclose"></i>
                     </li>
                     <li>
@@ -242,33 +259,36 @@
             </div>
         </div>
         <div class="container get_details">
-           <div class="center-page">
+            <div class="center-page">
                 <div class="row ">
-                    <div class="col-lg-6">
-                        <div id="carouselExampleControls" class="carousel slide custom-carousel"
-                            data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="assets/images/iphone/mau-vang-1-1.png" id="img-13-1" class="d-block w-100"
-                                        alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="assets/images/iphone/mau-vang-2-1.png" class="d-block w-100" alt="..."
-                                        id="img-13-2">
-                                </div>
 
+                    <div class="col-lg-6">
+                       
+                            <div id="carouselExampleControls" class="carousel slide custom-carousel"
+                                data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="assets/images/iphone/mau-vang-1-1.png" id="img-13-1"
+                                            class="d-block w-100" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assets/images/iphone/mau-vang-2-1.png" class="d-block w-100" alt="..."
+                                            id="img-13-2">
+                                    </div>
+
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
                             </div>
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
+                       
                     </div>
                     <div class="col-lg-6">
                         <div class="intro-detail">
@@ -339,7 +359,7 @@
 
 
 
-                           
+
 
 
                             <a href="cart.html" class="order-button2">Thêm vào giỏ hàng</a>
@@ -405,9 +425,9 @@
                             </div>
 
                         </div>
-                       
 
-                      
+
+
                         <ul class="policy set_text_mobile">
                             <li class="policy-items">
                                 <span>
@@ -440,12 +460,12 @@
                         </ul>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="container">
             <ul class="nav nav-tabs set_text_mobile" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                    <button class="nav-link active2" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
                         type="button" role="tab" aria-controls="home" aria-selected="true">Mô tả</button>
                 </li>
                 <li class="nav-item" role="presentation">
@@ -456,9 +476,9 @@
 
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active set_text_mobile" id="home" role="tabpanel" aria-labelledby="home-tab"
-                    style="padding-bottom: 50px">
-                    <p >
+                <div class="tab-pane fade show active set_text_mobile" id="home" role="tabpanel"
+                    aria-labelledby="home-tab" style="padding-bottom: 50px;padding: 20px;">
+                    <p>
                         <b>iPhone 13 Pro Max </b>
                         Một nâng cấp hệ thống camera chuyên nghiệp hoành tráng chưa từng có. Màn hình Super Retina XDR
                         với ProMotion cho cảm giác nhanh nhạy hơn. Chip A15 Bionic thần tốc. Mạng 5G siêu nhanh. Thiết
@@ -902,6 +922,7 @@
     <!-- End-Footer -->
 </body>
 <script src="./assets/js/header.js"></script>
+<script src="./assets/js/cart.js"></script>
 <script src="./assets/js/details.js"></script>
 <script src="./assets/js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

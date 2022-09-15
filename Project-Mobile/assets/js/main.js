@@ -1,3 +1,18 @@
+
+ $(window).scroll(function () {
+  if ($(this).scrollTop() >= 300) {
+      $(".gototop").fadeIn();
+  }
+  else {
+      $(".gototop").fadeOut();
+
+  }
+})
+$(".gototop").click(function(){
+  $("html,body").animate({scrollTop:0},"slow");
+})
+
+
 var btn1 = document.getElementById("flexRadioDefault1");
 var btn2 = document.getElementById("flexRadioDefault2");
 var btn3 = document.getElementById("flexRadioDefault3");
@@ -47,6 +62,7 @@ btn5.onclick = function(){
 
 
 }
+
 
 
 // // function click_btn(){

@@ -7,13 +7,17 @@ for (let i = 0; i < menuItem.length; i++) {
         menuItem[i].className = "active1"
     }
 }
-
+let closeOver = document.querySelector(".overlay-close");
 let btnmenu = document.querySelector(".nav-mobile");
 let modalmenu = document.querySelector(".mydiv_mobile");
 let cart = document.querySelector(".cart")
-let menuCart = document.querySelector(".menu_cart")
+let menuCart = document.querySelector(".dialog,.overlay")
 let close1 = document.querySelector(".btnclose")
 let cartClose = document.querySelector(".cart_close");
+
+closeOver.onclick = function(){
+    menuCart.style.display="none";
+}
 btnmenu.onclick = function () {
     modalmenu.style.display = "block";
 }
@@ -23,10 +27,16 @@ close1.onclick = function () {
 }
 cart.onclick = function () {
     menuCart.style.display = "block";
+   
 }
 cartClose.onclick = function () {
     menuCart.style.display = "none";
 }
+
+
+
+
+
 
 let products2 = JSON.parse(localStorage.getItem("products"));
 
@@ -82,7 +92,6 @@ window.updateTotalCart = function (arr) {
     totalCart.innerText = convertMoney(total);
 }
 
-renderProduct2(products2)
 
 window.removeItems = function(id){
     for(let i=0;i<products2.length;i++){
@@ -93,3 +102,4 @@ window.removeItems = function(id){
     setProductsToLocalStorage(products2);
     renderProduct2(products2)
 };
+renderProduct2(products2)
