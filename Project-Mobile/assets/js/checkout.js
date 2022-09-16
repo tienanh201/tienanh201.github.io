@@ -23,6 +23,7 @@ function renderProduct(arr){
 
             <p class="item_color">Chọn màu: ${p.color}</p>
             <p>Chọn Dung lượng: ${p.capacity}</p>
+            <p>${convertMoney(p.price)}</p>
 
         </div>
            

@@ -57,6 +57,7 @@ function convertMoney(number) {
 }
 
 let productsE1 = document.querySelector(".products");
+let cartNo = document.querySelector(".cart_no");
 // console.log(productsE1)
 
 function renderProduct(arr) {
@@ -68,7 +69,12 @@ function renderProduct(arr) {
 
     // productsE1.innerHTML = ""
     if (arr.length == 0) {
-        productsE1.insertAdjacentHTML("afterbegin", "<tr>Không có sản phẩm nào trong giỏ hàng</tr>")
+        // cartNo.style.display="none";
+        cartNo.innerHTML=`
+        <div class="empty_img">
+        <img src="./assets/images/empty-cart.png" alt="">
+        </div>
+        `
         return;
     }
 

@@ -31,7 +31,7 @@ let vouchers = [
         id: 8,
         title: "20",
         dvt: "%",
-        condition: 600000000,
+        condition: 600000,
         hsd: "30.09.2022"
     }
 ]
@@ -44,7 +44,7 @@ function renderVoucher(arr) {
     voucherId.innerHTML = "";
     let html1 = ""
     if(arr.length == 0) {
-        voucherId.innerHTML = `<p class="text-center pt-5 text-red-500 font-bold">Không có mã khuyến mại</p>`;
+        voucherId.innerHTML = `<p class="set-color">Không có mã khuyến mại</p>`;
         return
     }
     for (let i = 0; i < arr.length; i++) {
@@ -53,7 +53,8 @@ function renderVoucher(arr) {
         <div class="col-lg-6">
         <div class="vouchers">
             <div class="voucher_logo">
-                <img src="./assets/images/Sonder2.png" alt="">
+            <img src="./assets/images/vnpay.png" alt="">
+
             </div>
             <div class="voucher_content">
                 <div class="voucher_content_discount">
@@ -61,6 +62,7 @@ function renderVoucher(arr) {
                     <p class="promo-click" onclick="addVoucher(${vouchers[i].id})">Dùng ngay <i class="fa-solid fa-chevron-right"></i></p>
                 </div>
                 <p class="min_order">Đơn tối thiểu <span> ${v.condition}</span>K</p>
+
                 <p class="date_code">HSD: ${v.hsd}</p>
             </div>
         </div>
@@ -86,7 +88,7 @@ function addVoucher(id) {
             <div class="col-lg-12">
             <div class="vouchers">
                 <div class="voucher_logo">
-                    <img src="./assets/images/Sonder2.png" alt="">
+                    <img src="./assets/images/vnpay.png" alt="">
                 </div>
                 <div class="voucher_content">
                     <div class="voucher_content_discount">
@@ -97,6 +99,7 @@ function addVoucher(id) {
                        
                     </div>
                     <p class="min_order">Đơn tối thiểu <span>${vouchers[i].condition}</span>K</p>
+                    
                     <p class="date_code">HSD: ${vouchers[i].hsd}</p>
                 </div>
             </div>

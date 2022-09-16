@@ -26,14 +26,14 @@
         margin: auto;
         margin-bottom: 40px;
     }
-    .active1 {
-        color: #545454;
-    }
-    .menu-list-link,
-    .active1 {
+   .search-sp{
+    display: none;
+   }
+    .menu-list-link
+    {
         padding: 8px;
         font-size: 12px;
-        color: #ccc !important;
+        color: #545454 !important;
     }
     /* .menu-mobile {
         display: block;
@@ -90,7 +90,9 @@
         
       
     }
-  
+  .gototop{
+    display: none !important;
+  }
     .set-height-mobile {
         float: right;
     }
@@ -116,6 +118,9 @@
 
 /* Mobile xoay dọc */
 @media screen and (max-width: 480px) {
+    .gototop{
+        display: none !important;
+      }
   .search-sp{
     display: none;
   }
@@ -241,6 +246,9 @@
 }
 /*  */
 @media screen and (max-width: 451px) {
+    .gototop{
+        display: none !important;
+      }
     .menu {
         display: none;
     }
