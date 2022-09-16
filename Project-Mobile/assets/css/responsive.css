@@ -1,4 +1,10 @@
 /* MÀN HÌNH DESKTOP, TABLET XOAY NGANG */
+@media screen and (min-width:1200px) {
+    .menu-list-link{
+        padding: 20px;
+    }
+    
+}
 @media screen and (max-width: 1200px) {
     .menu {
         display: none;
@@ -75,6 +81,36 @@
    
    
 }
+@media screen and (max-width:768px) {
+    .set_mobile{
+        display: none ;
+    }
+    .set-desktop{
+        display: revert;
+        
+      
+    }
+  
+    .set-height-mobile {
+        float: right;
+    }
+    .main-cart{
+        padding-top: 65px;
+    }
+    .search-sp{
+        display: none;
+    }
+    .menu-list-link,
+    .active1 {
+        padding: 8px;
+        font-size: 12px;
+        color: #1d1d1f !important;
+        background-color: #fff;
+    }
+    .nav-mobile i{
+        font-size: 20px;
+    }
+}
 
 /* MÀN HÌNH MOBILE XOAY NGANG , MÀN HÌNH TABLET DỌC */
 
@@ -97,14 +133,7 @@
    
 
   }
-  /* @keyframes cart{
-    from{
-        top: 61.5;
-    }
-    to{
-      top: 100%;
-    }
-} */
+
   
   .elementor-menu-text-name span{
     font-size: 14px;
@@ -204,9 +233,7 @@
         padding: 0;
         text-overflow: ellipsis;
     }
-    /* .topzone-logo {
-        margin-left: 30px;
-    } */
+   
     .main {
         padding-top: 0;
     }

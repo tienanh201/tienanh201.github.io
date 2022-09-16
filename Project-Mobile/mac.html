@@ -19,17 +19,19 @@
             <div class="head">
                 <div class="nav-mobile">
                     <i class="fa-solid fa-bars"></i>
+
                 </div>
                 <a href="index.html">
-                    <div class="topzone-logo">
-                        <img src="/assets/images/Property-1White.svg" alt="">
-                    </div>
 
+                    <div class="topzone-logo">
+
+                        <img src="./assets/images/Property-1White.svg" alt="">
+                    </div>
                 </a>
 
                 <ul class="menu">
                     <li class="menu-list">
-                        <a href="iphone.html" class="menu-list-link ">
+                        <a href="iphone.html" class="menu-list-link active ">
                             <span>iPhone</span>
                         </a>
                     </li>
@@ -43,6 +45,7 @@
                             <span>Mac</span>
                         </a>
                     </li>
+
                     <li class="menu-list">
                         <a href="watch.html" class="menu-list-link">
                             <span>Watch</span>
@@ -75,43 +78,131 @@
                     </li>
                 </ul>
                 <div class="search-cart">
-                    <div type="button" data-bs-toggle="modal" data-bs-target="#myModal" class="search-sp">
+                    <div type="button" data-bs-toggle="modal" data-bs-target="#myModal2" class="search-sp">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <a href="cart.html" class="cart">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                    </a>
-                </div>
-                <!-- Modal -->
-                <div class="modal" id="myModal">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
+                    <div class="cart">
+                      
 
-                            <!-- Modal Header -->
-                            <div class="modal-header">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            <span class="cart_sl">3</span>
+                       
+
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal" id="myModal2" style="z-index: 99;">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content set-content">
+                            <div class="modal-header set-header">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                                 <div class="modal-body">
-                                    <input type="text" placeholder="Tìm kiếm
-                                            sản phẩm">
+                                    <input type="text" class="menusearch" placeholder="Tìm kiếm sản phẩm"
+                                        onkeyup="searchfunc()">
                                 </div>
                                 <i data-bs-dismiss="modal" class="fa-solid
                                         fa-xmark"></i>
-
                             </div>
-
-
-
-
                         </div>
                     </div>
                 </div>
+                <!-- <script>
+                    function searchfunc(){
+                        let menusearch = document.querySelector(".menusearch");
+                        let  title = Array.from (document.querySelectorAll(".info-title"));
+                        menusearch.value = menusearch.value.toLowerCase();
+                        title.forEach(function(el){
+                            let text = el.innerText;
+                            if(text.indexOf(menusearch.value)>-1)
+                            el.style.display="";
+                            else el.style.display="none";
+                        })
+                    }
+                </script> -->
                 <!-- end modal -->
             </div>
-            
+            <!--cart  -->
+            <div class="dialog overlay " >
+                <div class="overlay-close"></div>
+                <div class="menu_cart">
+                    <div class="menu_cart_icon">
+                        <i class="fa-solid fa-x cart_close"></i>
+                    </div>
+
+
+                    <div class="elementtor_cart_items">
+
+                        <!-- <div class="elementor-menu-cart">
+                        <div class="elementor-menu-img">
+                            <img src="./assets/images/iphone/iPhone-13-pro-max.webp" alt="">
+                        </div>
+                        <div class="elmentor-menu-text">
+                            <div class="elementor-menu-text-name">
+                                <span>iPhone 13 Pro Max 128GB-Siera Blue</span>
+
+                            </div>
+                            <div class="elementor-menu-text-price">
+                                <span>1 x</span>
+                                <span> 26.850.000 VNĐ</span>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    </div>
+                    <div class="elmentor-menu-subtotal">
+                        <span>Tạm tính: </span>
+                        <span class="elementor_total">26.850.000 VNĐ</span>
+                    </div>
+                    <div class="elementor-menu-btn">
+
+                        <a href="cart.html" class="elementor_btn_link">
+
+                            <button class="btn btn-secondary">Xem giỏ hàng</button>
+                        </a>
+                        <a href="checkout.html" class="elementor_btn_link">
+
+                            <button class="btn btn-primary">Mua ngay</button>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="mydiv_mobile">
+                <ul class="mydiv_mobile_list">
+
+                    <li style="margin-bottom: 30px; margin: 10px;">
+                        <i class="fa-solid fa-x btnclose"></i>
+                    </li>
+                    <li>
+                        <div class="list_mobile-search">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" name="" id="" class="menu_search" placeholder="Tìm kiếm sản phẩm">
+                        </div>
+                    </li>
+                    <li>
+                        <a href="" class="menu_list_link">Dịch vụ</a>
+                    </li>
+                    <li>
+                        <a href="" class="menu_list_link">Khuyến mại</a>
+                    </li>
+                    <li>
+                        <a href="" class="menu_list_link">Trả góp</a>
+                    </li>
+                    <li>
+                        <a href="" class="menu_list_link">Hệ thống cửa hàng</a>
+                    </li>
+                    <li>
+                        <a href="">Liên hệ</a>
+                    </li>
+                    <li></li>
+                </ul>
+            </div>
+
         </div>
         <!-- mobile -->
-       
-
     </div>
     <div class="design_mobile">
         <div class="container">
