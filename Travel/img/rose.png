@@ -1,0 +1,1746 @@
+
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let i;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",i=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")&&this._isValidScriptType(i)?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}_isValidScriptType(e){return!e||""===e||"string"==typeof e&&["text/javascript","text/x-javascript","text/ecmascript","text/jscript","application/javascript","application/x-javascript","application/ecmascript","application/jscript","module"].includes(e.toLowerCase())}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){const n=e[t];Object.defineProperty(e,t,{get:n||function(){},set:n=>{e["rocket"+t]=n}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let a=e.get(n);void 0===a&&(a=n.nextSibling,e.set(n,a));const o=document.createDocumentFragment();i.setStart(o,0),o.appendChild(i.createContextualFragment(t)),r.insertBefore(o,a)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","touchcancel","touchforcechange","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();
+</script>
+    <meta charset="UTF-8" />
+    <meta name="dc.language" content="VI">
+    <meta name="dc.source" content="//www.elle.vn/">
+    <meta name="dc.creator" content="Elle" />
+    <meta name="distribution" content="Global" />
+    <meta name="revisit" content="1 days" />
+    <meta name="geo.placename" content="Vietnamese" />
+    <meta name="geo.region" content="Vietnamese" />
+    <meta name="generator" content="//www.elle.vn" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="shortcut icon" href="https://www.elle.vn/favicon.ico" type="image/vnd.microsoft.icon" />
+    <!-- Pinterest verify-->
+    <meta name="p:domain_verify" content="a78a7639b10dbb6992a10b7eaad64dca"/>
+    
+<!--Plugin WP Missed Schedule 2013.1231.2013 Active - Tag 6707293c0218e2d8b7aa38d418ffa608-->
+
+<!-- This website is patched against a big problem not solved from WordPress 2.5+ to date -->
+
+
+	<!-- This site is optimized with the Yoast SEO plugin v15.9 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Hành trình toả sắc rực rỡ của Rosé - &quot;Bông hồng&quot; nhóm Blackpink | ELLE</title><style id="rocket-critical-css">:root{--wp-admin-theme-color:#007cba;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-20:#005a87}.mfp-hide{display:none!important}button::-moz-focus-inner{padding:0;border:0}@font-face{font-display:swap;font-family:FontAwesome;src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/fontawesome-webfont.eot?v=4.7.0);src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/fontawesome-webfont.eot?#iefix&v=4.7.0) format("embedded-opentype"),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/fontawesome-webfont.woff2?v=4.7.0) format("woff2"),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/fontawesome-webfont.woff?v=4.7.0) format("woff"),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/fontawesome-webfont.ttf?v=4.7.0) format("truetype"),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular) format("svg");font-weight:400;font-style:normal}.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.pull-left{float:left}.fa-search:before{content:"\f002"}.fa-chevron-up:before{content:"\f077"}.fa-camera-retro:before{content:"\f083"}.fa-facebook:before{content:"\f09a"}.fa-bars:before{content:"\f0c9"}.fa-envelope:before{content:"\f0e0"}.fa-spinner:before{content:"\f110"}.fa-youtube-play:before{content:"\f16a"}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}header,nav{display:block}a{background-color:transparent}h1{font-size:2em;margin:.67em 0}img{border:0}button,input{color:inherit;font:inherit;margin:0}button{overflow:visible}button{text-transform:none}button,input[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox]{box-sizing:border-box;padding:0}input[type=search]{-webkit-appearance:textfield;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}*,:after,:before{box-sizing:border-box}html{font-size:10px}body{font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.428571429;color:#333;background-color:#fff}button,input{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#337ab7;text-decoration:none}img{vertical-align:middle}.img-responsive{display:block;max-width:100%;height:auto}.img-circle{border-radius:50%}.container{margin-right:auto;margin-left:auto;padding-left:15px;padding-right:15px}.container:after,.container:before{content:" ";display:table}.container:after{clear:both}@media (min-width:768px){.container{width:750px}}@media (min-width:992px){.container{width:970px}}@media (min-width:1200px){.container{width:1140px}}.row{margin-left:-15px;margin-right:-15px}.row:after,.row:before{content:" ";display:table}.row:after{clear:both}.col-md-4,.col-md-6,.col-md-8{position:relative;min-height:1px;padding-left:15px;padding-right:15px}@media (min-width:992px){.col-md-4,.col-md-6,.col-md-8{float:left}.col-md-4{width:33.3333333333%}.col-md-6{width:50%}.col-md-8{width:66.6666666667%}}.clearfix:after,.clearfix:before{content:" ";display:table}.clearfix:after{clear:both}.pull-left{float:left!important}@-ms-viewport{width:device-width}@media (max-width:767px){.hidden-xs{display:none!important}}@media (min-width:768px) and (max-width:991px){.hidden-sm{display:none!important}}@media (min-width:992px) and (max-width:1199px){.hidden-md{display:none!important}}@media (min-width:1200px){.hidden-lg{display:none!important}}.mm-menu,.mm-panels,.mm-panels>.mm-panel{margin:0;left:0;right:0;top:0;z-index:0;box-sizing:border-box;background:#fff}.mm-menu{box-sizing:border-box}.mm-listview a,.mm-navbar a{text-decoration:none}.mm-listview>li:not(.mm-divider):after{content:"";bottom:0}.mm-menu,.mm-panels>.mm-panel:not(.mm-hidden){display:block}.mm-menu{padding:0;position:absolute;bottom:0}.mm-panels,.mm-panels>.mm-panel{background:#000;border-color:inherit;position:absolute;bottom:0}.mm-panels{overflow:hidden}.mm-panel{-webkit-transform:translate(100%);transform:translate(100%);-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}.mm-panel.mm-opened{-webkit-transform:translate(0);transform:translate(0);-webkit-transform:translateZ(0);transform:translateZ(0)}.mm-panels>.mm-panel{-webkit-overflow-scrolling:touch;overflow:scroll;overflow-x:hidden;overflow-y:auto;padding:0 20px}.mm-listview>li>a,.mm-navbar .mm-title{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}.mm-panels>.mm-panel:after,.mm-panels>.mm-panel:before{content:"";display:block;height:20px}.mm-navbar{border-bottom:1px solid;border-color:inherit;text-align:center;line-height:20px;height:40px;padding:0 40px;margin:0;position:absolute;top:0;left:0;right:0}.mm-navbar>*{display:block;padding:10px 0}.mm-panel .mm-navbar{display:none}.mm-listview,.mm-listview>li{list-style:none;display:block;padding:0;margin:0}.mm-listview{font:inherit;font-size:14px;line-height:20px}.mm-listview>li{position:relative}.mm-listview>li,.mm-listview>li:after{border-color:inherit}.mm-listview>li>a{color:#fff;display:block;padding:10px 10px 10px 20px;margin:0}.mm-listview>li:not(.mm-divider):after{border-bottom-width:1px;border-bottom-style:solid;display:block;position:absolute;right:0;left:20px}.mm-panels>.mm-panel>.mm-listview{margin:20px -20px}.mm-menu{background:#f3f3f3;border-color:rgba(0,0,0,.1);color:rgba(0,0,0,.75)}.mm-menu .mm-navbar>*,.mm-menu .mm-navbar a{color:hsla(0,0%,100%,.5)}.mm-menu .mm-listview{border-color:rgba(0,0,0,.1)}.mm-page{box-sizing:border-box;position:relative}.mm-slideout{z-index:1}#mm-blocker{background:rgba(3,2,1,0);display:none;width:100%;height:100%;position:fixed;top:0;left:0;z-index:10}.mm-menu.mm-offcanvas{z-index:0;display:none;position:fixed;width:80%;min-width:140px;max-width:440px}@font-face{font-display:swap;font-family:Helvetica Neue;src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue.eot);src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue.eot?#iefix) format("embedded-opentype"),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue.woff) format("woff"),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue.ttf) format("truetype");font-weight:400;font-style:normal}@font-face{font-display:swap;font-family:Helvetica Neue;src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue-BoldItalic.eot);src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue-BoldItalic.eot?#iefix) format("embedded-opentype"),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue-BoldItalic.woff) format("woff"),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue-BoldItalic.ttf) format("truetype");font-weight:700;font-style:italic}@font-face{font-display:swap;font-family:Helvetica Neue;src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue-Bold.eot);src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue-Bold.eot?#iefix) format("embedded-opentype"),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue-Bold.woff) format("woff"),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue-Bold.ttf) format("truetype");font-weight:700;font-style:normal}@font-face{font-display:swap;font-family:Helvetica Neue;src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue-Italic.eot);src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue-Italic.eot?#iefix) format("embedded-opentype"),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue-Italic.woff) format("woff"),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue-Italic.ttf) format("truetype");font-weight:400;font-style:italic}@font-face{font-display:swap;font-family:Helvetica Neue;src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue-Light.eot);src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue-Light.eot?#iefix) format("embedded-opentype"),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue-Light.woff) format("woff"),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/HelveticaNeue-Light.ttf) format("truetype");font-weight:300;font-style:normal}@font-face{font-family:'Elle Gabor Std';src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-Text.woff2) format('woff2'),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-Text.woff) format('woff');font-weight:300;font-style:normal;font-display:swap}@font-face{font-family:'Elle Gabor Std';src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-Light.woff2) format('woff2'),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-Light.woff) format('woff');font-weight:200;font-style:normal;font-display:swap}@font-face{font-family:'Elle Gabor Std';src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-Book.woff2) format('woff2'),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-Book.woff) format('woff');font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:'Elle Gabor Std';src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-UltraLight.woff2) format('woff2'),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-UltraLight.woff) format('woff');font-weight:100;font-style:normal;font-display:swap}@font-face{font-family:'Elle Gabor Std';src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-Medium.woff2) format('woff2'),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-Medium.woff) format('woff');font-weight:500;font-style:normal;font-display:swap}@font-face{font-family:'Elle Gabor Std';src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-DemiBold.woff2) format('woff2'),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-DemiBold.woff) format('woff');font-weight:600;font-style:normal;font-display:swap}@font-face{font-family:'Elle Gabor Std';src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-Bold.woff2) format('woff2'),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-Bold.woff) format('woff');font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:'Elle Gabor Std';src:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-Black.woff2) format('woff2'),url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-Black.woff) format('woff');font-weight:900;font-style:normal;font-display:swap}body{line-height:1.4}h1,h2{margin:0;padding:0}h1{font-size:2em}h2{font-size:1.5em}.list-unstyled{list-style-type:none;margin:0;padding:0}.list-inline{padding-left:0;margin-left:-5px;list-style:none}.list-inline>li{display:inline-block;padding-right:5px;padding-left:5px}.mt20{margin-top:20px}a{color:#232323}a{text-decoration:none}.form-group{margin-bottom:20px}.form-control{display:block;width:100%;padding:5px 10px;height:36px;border:1px solid rgba(0,0,0,.5);border-radius:0}body{font-size:16px;font-family:'Elle Gabor Std',Arial,sans-serif;font-weight:300}.main-content{position:relative}.form-search-header{float:right;margin-right:7px}.form-search-header .form-search-header__item:first-child{margin-left:0}.form-search-header .form-search-header__item:last-child a{width:26px;height:26px;border-radius:50%;text-align:center;background-color:rgba(0,0,0,.06)}.form-search-header .form-search-header__item:last-child a i{line-height:26px;color:#000}.form-search-header__button{width:26px;height:26px;border-radius:50%;text-align:center;background-position:50%;background-repeat:no-repeat;border-style:none;float:right;margin-left:5px;color:#000;background-color:rgba(0,0,0,.06)}.form-search-header--2{margin-top:27px}.form-search-header__item{display:inline-block;margin-left:15px}.form-search-header__link{display:inline-block;text-transform:uppercase;font-size:.875em}.form-search-header__link{color:#666;font-family:'Elle Gabor Std',Arial,sans-serif}.footer__datbao--link{text-align:center;display:none}.footer__datbao--link span{padding:5px 25px;background-color:#EF5B35;border-width:2px 4px;border-radius:40px;color:#fff;text-transform:uppercase}.banner-header{background:#79bdc0}.bottom-header{overflow:hidden;padding-top:10px;padding-bottom:10px}.logo{float:left;width:7%}.logo img{vertical-align:top}.main-menu{width:100%;overflow:auto;white-space:nowrap;scrollbar-width:none}.main-menu::-webkit-scrollbar{display:none}.main-menu .main-menu__item:last-child{margin-right:0}.main-menu__item{display:inline-block;text-align:center;padding:0 10px}.main-menu__link{font-size:.8em;color:#000;text-transform:uppercase;font-family:'Elle Gabor Std',Arial,sans-serif;font-weight:300}.main-menu .main-menu__link{vertical-align:text-top}.main-menu__item--purple.active .main-menu__link{color:#d635d7}.footer-social-list{float:left}.footer-social-list__item{display:inline-block;float:left;margin-right:6px}.footer-social-list__link{display:inline-block;width:38px;height:38px;border-radius:50%;color:#fff;text-align:center;line-height:38px}.footer-social-list__link i{line-height:38px;font-size:1.25em}.footer-social-list__link .zalo{font-size:15px}.footer-social-list__link-1{background:#39c}.footer-social-list__link-2{background:#ffdc1c}.footer-social-list__link-3{background:red}.footer-social-list__link-4{background:#0cf}.main-menu-block{overflow:hidden}.sub-menu__item{float:left;display:table-cell}.sub-menu__link{display:inline-block;padding-top:15px;padding-left:12px;padding-right:12px;border-top:4px solid transparent;color:#000;font-family:'Elle Gabor Std',Arial,sans-serif;font-size:.75em;text-transform:uppercase}.sub-menu{display:table;width:100%;margin-top:-4px;padding-bottom:15px;border-bottom:1px solid #ccc}.sub-menu__item:last-child{margin-right:0}.sub-menu--purple .active .sub-menu__link{color:#d635d7;border-top-color:#d635d7}.top-mobile-header{background:#67b1b1}.top-mobile-header__btn{position:absolute;top:50%;color:#000000;font-size:1.5em;padding:0 10px 0 0;background-color:#fff;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.top-mobile-header__btn-menu{left:0}.top-mobile-header__btn-search{right:15px}.fixed-block{display:none}.newsletter-popup{position:relative;height:100%;margin-left:auto;margin-right:auto;background:#fff}.mm-panels,.mm-panels>.mm-panel{background:none}.mm-menu{background:#000}.mm-menu .footer-social-list{float:none}.mm-menu .footer-social-list:after,.mm-menu .footer-social-list:before{content:" ";display:table}.mm-menu .footer-social-list:after{clear:both}.mm-menu .footer-social-list__link{background:#fff;color:gray}.mobile-menu-contaiiner{display:none}a.post-item__thumb{display:block;opacity:1}.top-news__title{display:block;padding:10px 5px;line-height:20px;font-size:.75em;color:#000;font-family:'Elle Gabor Std',Arial,sans-serif}.top-news__item{width:250px}.content-detail__title{display:block;padding-top:35px;color:#000;font-family:'Elle Gabor Std',Georgia,serif;font-size:1.975em;line-height:1.2}.content-detail__info{overflow:hidden;padding-top:20px;padding-bottom:40px}.time-author__item{display:block;font-size:.6875em;color:#000;line-height:19px}.content-detail__short-desc{font-size:1.1em;color:#000;line-height:25px;font-style:italic;font-weight:300;padding-top:45px;padding-bottom:15px}.content-detail h1,.content-detail h2{text-transform:uppercase;font-weight:300;color:#000;font-family:'Elle Gabor Std',Georgia,serif;display:block;margin-top:1.75em;margin-bottom:1em}.banner-left-detail{padding-top:150px;padding-right:22px}.content-detail__avatar{width:36px;height:36px;text-align:center;line-height:36px;border-radius:50%;float:left;background:#f0c;margin-right:8px}.detail-share.detail-share--fixed{display:none;position:fixed;left:2px;top:20%}.detail-share__item{display:block;margin-bottom:2px}.detail-share__item a{display:inline-block;color:#fff;width:52px;height:52px;text-align:center}.detail-share__item a i{line-height:52px}.detail-share__link--facebook{background:#3b5998}.detail-share__link--gmail{background:#8cc20a}@media (min-width:992px){.detail-share.detail-share--fixed{display:block}.main-menu-block{border-bottom:4px solid #000}.main-menu{float:left;display:block;width:auto;margin-left:25px}.main-menu__item{display:inline-block;padding-left:15px}.main-menu__link{font-size:.9375em}.bottom-header{padding-top:20px;padding-bottom:20px}.top-news{margin-bottom:50px}.top-news__inner:after,.top-news__inner:before{content:" ";display:table}.top-news__inner:after{clear:both}.top-news__item{width:20%;float:left}.top-news__title{padding:20px 7px;font-size:1em}.content-detail__title{font-size:2.5em;text-transform:uppercase}.time-author__item{font-size:.6875em}.content-detail__short-desc{font-size:1em}.fixed-block{position:absolute;display:block;top:0}}@media (max-width:350px){.main-menu__link{font-size:.65em}}img{max-width:100%;height:auto;aspect-ratio:attr(width) / attr(height)}input{border-radius:0;-webkit-border-radius:0}input[type="search"]{border-radius:0;-webkit-border-radius:0;-webkit-appearance:none!important}@media only screen and (max-width:800px){.container .li__sticky-show{display:none}form#bottom_hdsearch_form input{width:90%;font-size:.8em;font-style:italic;border:none;border-bottom:1px solid #000}form#bottom_hdsearch_form{text-align:right}form#bottom_hdsearch_form button.btn{right:0px;top:2px;padding:1px 10px 0 20px;border:none;background:none;position:absolute;background-color:#000;color:#ccc}}.post-item__thumb{overflow:hidden}.post-item__thumb img{width:100%}.img_16_9{overflow:hidden;position:relative;padding-bottom:56.25%}.img_16_9 img{position:absolute;top:0;left:0;width:100%}.back-to-top{position:fixed;bottom:20px;right:20px;padding:0 10px 5px;background:#000;color:#fff;font-size:1.7142857143em;text-align:center;z-index:9}.content-detail__info{padding-bottom:20px}@media (max-width:782px){html{margin-top:0!important}}.detail-share__item a{width:57px;font-size:22px}.banner-content{text-align:inherit;margin-bottom:auto}.banner-content{text-align:center}.banner-content>div{display:inline-block}.h-none>div{display:block}.content-detail__post-content img{display:block;max-width:100%;height:auto}@media (min-width:992px){.top-news__title{padding-bottom:0px}}.detail-share_mb li{vertical-align:bottom}.detail-share_mb .detail-share__item a{height:40px;font-size:18px}.detail-share_mb .detail-share__item a i{line-height:40px}.content-detail__short-desc{padding-bottom:0px}h1.content-detail__title{margin:0px;font-weight:900 lighter;text-transform:uppercase}.form-search-header--2{padding-top:15px;padding-bottom:15px}li.form-search-header__item:last-child{margin-bottom:-7px}.form-search-header--2{margin-top:0px}#search-form{position:relative;background:#fff;width:90%;margin:auto}#search-form span{display:block;font-size:2.429em;font-weight:normal;color:#000000;text-align:center;text-transform:uppercase;padding:18px 0}.form-group{margin-bottom:10px;text-align:left;min-height:30px}.content-detail .content-detail__content{font-size:1.1em}.no-free-space{margin:0;padding:0}.hiden-ctx-static{display:none!important}.newsletter-left-col img{width:40%;margin:15% 32%}input.form-control.newsletter-email{margin:auto;border:none;border-bottom:1px solid rgba(0,0,0,.3)}div.newsletter-input-mail input{width:100%}div.newsletter-input-mail{width:80%;margin:auto;padding-top:1em}.newsletter-email-lable{text-align:center}label.label-email{font-size:1.1em}.ico-newsletter-email::before{content:"\f003";font-family:'FontAwesome';font-size:1.6em;color:#000000;padding:1px;float:left}.inside-mail-input{margin-left:30px}.newsletter-description{font-size:1.3em;padding-bottom:1em;font-weight:600}.checkbox-group-newsletter{font-size:1.1em;margin:0 20%}.checkbox-group-newsletter .checkbox{border-bottom:1px solid rgba(0,0,0,.3);line-height:2em}.checkbox-group-title{font-size:1.1em;margin:0 10%;text-align:center;font-weight:bold}.checkbox-group-newsletter .checkbox-custom{opacity:0;position:absolute}.checkbox-group-newsletter .checkbox-custom,.checkbox-group-newsletter .checkbox-custom-label{display:inline-block;vertical-align:middle;margin:5px}.checkbox-group-newsletter .checkbox-custom-label{position:relative;width:100%;color:#cccccc;text-align:center}.checkbox-group-newsletter .checkbox-custom+.checkbox-custom-label:before{content:'';background:#fff;vertical-align:middle;width:20px;height:20px;text-align:center}.checkbox-group-newsletter .checkbox-custom:checked+.checkbox-custom-label:before{content:"\f00c";font-family:'FontAwesome';font-size:1.3em;color:#444242;float:left}.checkbox-group-newsletter .checkbox-custom:checked+.checkbox-custom-label{color:#000000}.newsletter-submit-btn{padding:5px;width:100%;border:none;background-color:#000;color:#fff}.btn-submit-newsletter{text-align:center;margin:5% 20%;font-size:1.1em}#newsletter-popup-message{font-size:2em;text-align:center;padding-top:30%}img.desk-logo{display:block}.top-row-form-group{margin:auto;background-color:#fff;opacity:.8;width:70%}.full-height{height:100%}.flex-display{display:flex}.btn-submit-newsletter a{width:100%;display:block}.newsletter-popup-btn{font-weight:600}.industry-listing{margin:0% 20%}.industry-group-title{text-align:center;font-size:1.2em;font-weight:600;margin:5% 0%}header.header .bottom-header{position:relative}.top-mobile-header img{display:flex;width:100%;min-height:0;justify-content:center}@media (max-width:992px){label.label-email{font-size:.9em}.checkbox-group-newsletter{font-size:1.1em}.checkbox-group-newsletter .checkbox-custom:checked+.checkbox-custom-label{color:#000000}.checkbox-group-newsletter .checkbox-custom+.checkbox-custom-label:before{background:none}.checkbox-group-newsletter .checkbox{border-bottom:1px solid #767676}.btn-submit-newsletter{font-size:1.1em;margin-top:3em}.newsletter-submit-btn{background-color:#000000;color:#ffffff}.ico-newsletter-email::before{color:#000000}.checkbox-group-title{font-size:1.1em}.top-row-form-group{color:#000000;height:98%;width:100%;opacity:.9;z-index:9}input.form-control.newsletter-email{background:none;border-bottom:1px solid #0000002e}.newsletter-description{padding-bottom:2em}div.newsletter-input-mail{margin-top:2em}}@media (max-width:479px){#search-form span{font-size:1.2em}}div.checklistContainer{padding:4px;background:#F7F7F7;border:1px solid #AAAAAA;margin-bottom:10px;font-family:Helvetica,arial,verdana,sans-serif;font-size:12px;line-height:1.6em}div.checklist{overflow-y:auto;overflow-x:hidden}div.checklist{border:1px solid #AAAAAA;color:#555555;background:#FFFFFF}ul.checklist{list-style-type:none;margin:0;padding:0}div.checklist li{padding:3px;margin-left:0}div.checklist li.even{background-color:#FFFFFF}div.checklist li.odd{background-color:#F7F7F7}div.checklist li input{display:block;float:left}div.checklist label{display:block;margin:0;padding:0}div.findInList{margin-bottom:5px}div.findInList input{width:100%;padding:3px 2px!important;margin:0;outline:0;border:1px solid #aaa;min-height:17px;background:#fff url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/img/bags.png) no-repeat 100% -22px;background:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/img/bags.png) no-repeat 100% -22px,-webkit-gradient(linear,left bottom,left top,color-stop(0.85,#fff),color-stop(0.99,#eee));background:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/img/bags.png) no-repeat 100% -22px,-webkit-linear-gradient(center bottom,#fff 85%,#eee 99%);background:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/img/bags.png) no-repeat 100% -22px,-moz-linear-gradient(center bottom,#fff 85%,#eee 99%);background:url(https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/img/bags.png) no-repeat 100% -22px,linear-gradient(top,#fff 85%,#eee 99%)}div.findInList input.blurred{color:gray}div.actionButtons{font-family:arial;font-size:12px;line-height:1.6em;margin-top:3px}div.actionButtons span{text-decoration:none;color:#555555}.ep-autosuggest-container{position:relative}.ep-autosuggest-container .ep-autosuggest{display:none;background:#fff;position:absolute;border:1px solid #ccc;-webkit-box-shadow:0 2px 4px rgba(0,0,0,.2);box-shadow:0 2px 4px rgba(0,0,0,.2);width:100%;z-index:200}.ep-autosuggest-container .ep-autosuggest>ul{margin:0!important;list-style:none}</style><link rel="preload" href="https://www.elle.vn/wp-content/cache/min/1/d0d2d0df08c4c36029823b31e905c2f8.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" media="all" data-minify="1" />
+	<meta name="description" content="Rosé Blackpink là điểm sáng của âm nhạc, thời trang và làm đẹp. Nhân dịp sinh nhật cô nàng, hãy cùng ELLE điểm lại khoảnh khắc đẹp nhất sự nghiệp Rosé nhé." />
+	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<link rel="canonical" href="https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Hành trình toả sắc rực rỡ của Rosé - &quot;Bông hồng&quot; nhóm Blackpink | ELLE" />
+	<meta property="og:description" content="Rosé Blackpink là điểm sáng của âm nhạc, thời trang và làm đẹp. Nhân dịp sinh nhật cô nàng, hãy cùng ELLE điểm lại khoảnh khắc đẹp nhất sự nghiệp Rosé nhé." />
+	<meta property="og:url" content="https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink" />
+	<meta property="og:site_name" content="ELLE Vietnam" />
+	<meta property="article:publisher" content="https://www.facebook.com/ELLEVietnam" />
+	<meta property="article:published_time" content="2021-02-17T04:59:30+00:00" />
+	<meta property="article:modified_time" content="2021-02-18T03:57:27+00:00" />
+	<meta property="og:image" content="https://www.elle.vn/wp-content/uploads/2021/02/17/424779/blackpink-rose-hanh-trinh-tim-kiem-ve-dep.jpg" />
+	<meta property="og:image:width" content="1080" />
+	<meta property="og:image:height" content="608" />
+	<meta name="twitter:label1" content="Written by">
+	<meta name="twitter:data1" content="Sophie Thanh Huyen">
+	<meta name="twitter:label2" content="Est. reading time">
+	<meta name="twitter:data2" content="10 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.elle.vn/#organization","name":"Ringier Vi\u1ec7t Nam","url":"https://www.elle.vn/","sameAs":["https://www.facebook.com/ELLEVietnam"],"logo":{"@type":"ImageObject","@id":"https://www.elle.vn/#logo","inLanguage":"en-US","url":"https://www.elle.vn/wp-content/uploads/2019/04/12/img-logo-elle.png","width":405,"height":142,"caption":"Ringier Vi\u1ec7t Nam"},"image":{"@id":"https://www.elle.vn/#logo"}},{"@type":"WebSite","@id":"https://www.elle.vn/#website","url":"https://www.elle.vn/","name":"ELLE","description":"Website th\u1eddi trang &amp; L\u00e0m \u0111\u1eb9p \u0111\u1eb3ng c\u1ea5p th\u1ebf gi\u1edbi","publisher":{"@id":"https://www.elle.vn/#organization"},"potentialAction":[{"@type":"SearchAction","target":"https://www.elle.vn/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink#primaryimage","inLanguage":"en-US","url":"https://www.elle.vn/wp-content/uploads/2021/02/17/424779/blackpink-rose-hanh-trinh-tim-kiem-ve-dep.jpg","width":1080,"height":608,"caption":"\u1ea2nh: YG Entertainment."},{"@type":"WebPage","@id":"https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink#webpage","url":"https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink","name":"H\u00e0nh tr\u00ecnh to\u1ea3 s\u1eafc r\u1ef1c r\u1ee1 c\u1ee7a Ros\u00e9 - \"B\u00f4ng h\u1ed3ng\" nh\u00f3m Blackpink | ELLE","isPartOf":{"@id":"https://www.elle.vn/#website"},"primaryImageOfPage":{"@id":"https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink#primaryimage"},"datePublished":"2021-02-17T04:59:30+00:00","dateModified":"2021-02-18T03:57:27+00:00","description":"Ros\u00e9 Blackpink l\u00e0 \u0111i\u1ec3m s\u00e1ng c\u1ee7a \u00e2m nh\u1ea1c, th\u1eddi trang v\u00e0 l\u00e0m \u0111\u1eb9p. Nh\u00e2n d\u1ecbp sinh nh\u1eadt c\u00f4 n\u00e0ng, h\u00e3y c\u00f9ng ELLE \u0111i\u1ec3m l\u1ea1i kho\u1ea3nh kh\u1eafc \u0111\u1eb9p nh\u1ea5t s\u1ef1 nghi\u1ec7p Ros\u00e9 nh\u00e9.","breadcrumb":{"@id":"https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink"]}]},{"@type":"BreadcrumbList","@id":"https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://www.elle.vn/","url":"https://www.elle.vn/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","@id":"https://www.elle.vn/lam-dep","url":"https://www.elle.vn/lam-dep","name":"L\u00e0m \u0111\u1eb9p"}},{"@type":"ListItem","position":3,"item":{"@type":"WebPage","@id":"https://www.elle.vn/lam-dep/xu-huong-lam-dep","url":"https://www.elle.vn/lam-dep/xu-huong-lam-dep","name":"Xu h\u01b0\u1edbng &amp; C\u1ea3m h\u1ee9ng"}},{"@type":"ListItem","position":4,"item":{"@type":"WebPage","@id":"https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink","url":"https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink","name":"H\u00e0nh tr\u00ecnh to\u1ea3 s\u1eafc r\u1ef1c r\u1ee1 c\u1ee7a Ros\u00e9 &#8211; &#8220;B\u00f4ng h\u1ed3ng&#8221; nh\u00f3m Blackpink"}}]},{"@type":"Article","@id":"https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink#article","isPartOf":{"@id":"https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink#webpage"},"author":{"@id":"https://www.elle.vn/#/schema/person/57cee4d223fc5385c6ad1aaa77a6a639"},"headline":"H\u00e0nh tr\u00ecnh to\u1ea3 s\u1eafc r\u1ef1c r\u1ee1 c\u1ee7a Ros\u00e9 &#8211; &#8220;B\u00f4ng h\u1ed3ng&#8221; nh\u00f3m Blackpink","datePublished":"2021-02-17T04:59:30+00:00","dateModified":"2021-02-18T03:57:27+00:00","mainEntityOfPage":{"@id":"https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink#webpage"},"publisher":{"@id":"https://www.elle.vn/#organization"},"image":{"@id":"https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink#primaryimage"},"keywords":"bi quyet lam dep,BLACKPINK,cach duong da,cach trang diem,kieu toc dep,lam dep nhu sao Han,rose,rose blackpink,sao han,xu huong va cam hung","articleSection":"Xu h\u01b0\u1edbng &amp; C\u1ea3m h\u1ee9ng","inLanguage":"en-US"},{"@type":"Person","@id":"https://www.elle.vn/#/schema/person/57cee4d223fc5385c6ad1aaa77a6a639","name":"Sophie Thanh Huyen"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="amphtml" href="https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink?amp" /><meta name="generator" content="AMP for WP 1.0.77.20"/><link rel='dns-prefetch' href='//www.elle.vn' />
+<link rel='dns-prefetch' href='//maps.googleapis.com' />
+<link rel='dns-prefetch' href='//maps.gstatic.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//fonts.gstatic.com' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//apis.google.com' />
+<link rel='dns-prefetch' href='//google-analytics.com' />
+<link rel='dns-prefetch' href='//www.google-analytics.com' />
+<link rel='dns-prefetch' href='//ssl.google-analytics.com' />
+<link rel='dns-prefetch' href='//youtube.com' />
+<link rel='dns-prefetch' href='//api.pinterest.com' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//connect.facebook.net' />
+<link rel='dns-prefetch' href='//platform.twitter.com' />
+<link rel='dns-prefetch' href='//syndication.twitter.com' />
+<link rel='dns-prefetch' href='//platform.instagram.com' />
+<link rel='dns-prefetch' href='//disqus.com' />
+<link rel='dns-prefetch' href='//sitename.disqus.com' />
+<link rel='dns-prefetch' href='//s7.addthis.com' />
+<link rel='dns-prefetch' href='//platform.linkedin.com' />
+<link rel='dns-prefetch' href='//w.sharethis.com' />
+<link rel='dns-prefetch' href='//i0.wp.com' />
+<link rel='dns-prefetch' href='//i1.wp.com' />
+<link rel='dns-prefetch' href='//i2.wp.com' />
+<link rel='dns-prefetch' href='//stats.wp.com' />
+<link rel='dns-prefetch' href='//pixel.wp.com' />
+<link rel='dns-prefetch' href='//s.gravatar.com' />
+<link rel='dns-prefetch' href='//0.gravatar.com' />
+<link rel='dns-prefetch' href='//2.gravatar.com' />
+<link rel='dns-prefetch' href='//1.gravatar.com' />
+
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+
+
+
+
+
+
+
+
+
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;cursor:pointer;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:72px;width:72px;left:50%;top:50%;margin-left:-36px;margin-top:-36px;position:absolute;background:url(https://www.elle.vn/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat;cursor:pointer}
+</style>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.elle.vn/wp-content/cache/min/1/wp-content/plugins/ringier-v2/app/Views/_assets/js/jquery.js?ver=1635413581' id='jquery-js' defer></script>
+<link rel="https://api.w.org/" href="https://www.elle.vn/wp-json/" /><link rel="alternate" type="application/json" href="https://www.elle.vn/wp-json/wp/v2/posts/424779" />
+<link rel="preload" as="font" href="https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/fontawesome-webfont.woff2?v=4.7.0" crossorigin>
+<link rel="preload" as="font" href="https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-Text.woff2" crossorigin>
+<link rel="preload" as="font" href="https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-DemiBold.woff2" crossorigin>
+<link rel="preload" as="font" href="https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-Medium.woff2" crossorigin>
+<link rel="preload" as="font" href="https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-Light.woff2" crossorigin>
+<link rel="preload" as="font" href="https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-Book.woff2" crossorigin>
+<link rel="preload" as="font" href="https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/fonts/ElleGaborStd-Bold.woff2" crossorigin><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script>
+    <!-- Pixel for elle -->
+    <!-- <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+        (function(window, document, script, dataLayer, id) {
+            window[dataLayer] = window[dataLayer] || [], window[dataLayer].push({
+                start: (new Date).getTime(),
+                event: "stg.start"
+            });
+            var scripts = document.getElementsByTagName(script)[0],
+                tags = document.createElement(script),
+                dl = "dataLayer" != dataLayer ? "?dataLayer=" + dataLayer : "";
+            tags.async = !0, tags.src = "//7.p.tdf.ringier.ch/b0c2aa6d-47b5-440d-8a2f-4fa66c701f0e.js" + dl, scripts.parentNode.insertBefore(tags, scripts);
+        })(window, document, 'script', 'dataLayer', 'b0c2aa6d-47b5-440d-8a2f-4fa66c701f0e');
+    </script><noscript><iframe src="//7.p.tdf.ringier.ch/b0c2aa6d-47b5-440d-8a2f-4fa66c701f0e/noscript.html" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+
+<!-- Onesignal  -->
+<!-- <script type="rocketlazyloadscript">var OneSignal = OneSignal || [];</script> -->
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WG4ZPMF');</script>
+<!-- End Google Tag Manager -->
+
+    <!-- <script type="rocketlazyloadscript" async src="https://cdn.onthe.io/io.js/37IJw9OwGyde"></script> -->
+
+    <script type="rocketlazyloadscript" data-minify="1" async src="https://www.elle.vn/wp-content/cache/min/1/tag/js/gpt.js?ver=1635413582"></script>
+    <script type="rocketlazyloadscript">
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script type="rocketlazyloadscript">
+        googletag.cmd.push(function() {
+              /////////////////
+             // desktop Ads //
+            /////////////////
+            
+            // Cateogory
+                                    // article Ads 
+            googletag.defineSlot('/7725849/elle-desktop-article-atf-a-160x600', [160, 600], 'div-gpt-ad-1589747650593-0').addService(googletag.pubads());
+
+            googletag.defineSlot('/7725849/elle-desktop-article-atf-a-920x90', [920, 90], 'div-gpt-ad-1589749138170-0').addService(googletag.pubads());
+            googletag.defineSlot('/7725849/elle-desktop-article-btf-b-920x90', [920, 90], 'div-gpt-ad-1589872840274-0').addService(googletag.pubads());
+            googletag.defineSlot('/7725849/elle-desktop-article-btf-c-920x90', [920, 90], 'div-gpt-ad-1589873039884-0').addService(googletag.pubads());
+            googletag.defineSlot('/7725849/ELLE-desktop-article-BTF-D-930x180', [930, 180], 'div-gpt-ad-1611041207394-0').addService(googletag.pubads());
+            // article Ads 
+            googletag.defineSlot('/7725849/elle-mobile-article-atf-a-300x250', [[300, 250], [320, 50]], 'div-gpt-ad-1589749726228-0').addService(googletag.pubads());
+            googletag.defineSlot('/7725849/elle-mobile-article-btf-b-300x250', [[320, 50], [300, 250]], 'div-gpt-ad-1589872018526-0').addService(googletag.pubads());
+            googletag.defineSlot('/7725849/elle-mobile-article-btf-c-300x250', [[320, 50], [300, 250]], 'div-gpt-ad-1589873125553-0').addService(googletag.pubads());
+            googletag.defineSlot('/7725849/ELLE-mobile-article-BTF-D-300x250', [[300, 50], [300, 250]], 'div-gpt-ad-1611041599257-0').addService(googletag.pubads());
+                          //////////////
+             // AMP Ads ///
+            //////////////
+            
+            googletag.pubads().enableSingleRequest();
+            googletag.pubads().collapseEmptyDivs();
+            // C) Enable lazy loading with...
+            googletag.pubads().enableLazyLoad({
+                // Fetch slots within 3 viewports.
+                fetchMarginPercent: 300,
+                // Render slots within 2 viewports.
+                renderMarginPercent: 300,
+                // Double the above values on mobile, where viewports are smaller
+                // and users tend to scroll faster.
+                mobileScaling: 2.0
+            });
+            googletag.enableServices();
+        });
+    </script>
+    <script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() { 
+    let sub_clicked = false
+    function getCookie(name) {
+    let matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+    function showPopup(){
+        if (sub_clicked) {
+            $('.newsletter-popup-btn').trigger('click');
+            $('#newsletter-popup').removeClass('newsletter-desk-bakg')
+            $('#newsletter-popup').addClass('popup-desk-bakg')
+        }
+    }
+    function showTimePP() {
+        sub_clicked = true
+        setTimeout(showPopup,4000)
+    }
+    
+    $(document).ready(function(){
+        if (getCookie('popup_visted')===undefined) {
+            setTimeout(showTimePP,26000)
+            $.cookie("popup_visted", true, { expires : 10 })
+        }
+    });
+
+    });</script>
+
+    <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+        var ajax_url = ajaxurl = "https://www.elle.vn/wp-admin/admin-ajax.php";
+    </script>
+    <!-- <script type="rocketlazyloadscript" data-ad-client="ca-pub-7385179368279294" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+            <script type="rocketlazyloadscript" data-rocket-type="text/javascript" class="teads" src="//a.teads.tv/page/136288/tag" async="true"></script>
+    </head>
+
+<body class="post-template-default single single-post postid-424779 single-format-standard">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WG4ZPMF"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <div id="wrapper" class="mm-page mm-slideout">
+                    <header class="header">
+                <div class="banner-header hidden-lg hidden-md hidden-xs hidden-sm">
+                    <div class="container">
+                        <img width="1112" height="233" class="img-responsive" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201112%20233'%3E%3C/svg%3E" data-lazy-src="https://www.elle.vn/wp-content/themes/ellev3/images/img-header-banner.jpg"><noscript><img width="1112" height="233" class="img-responsive" alt="" src="https://www.elle.vn/wp-content/themes/ellev3/images/img-header-banner.jpg"></noscript>
+                    </div>
+                </div>
+                <div class="top-mobile-header hidden-md hidden-lg" id="header__banner__top">
+                    <a href="https://www.elle.vn">
+                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" srcset="" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/10/25/Oct_Web.jpg"><noscript><img src="https://www.elle.vn/wp-content/uploads/2021/10/25/Oct_Web.jpg" alt="" srcset=""></noscript>
+                    </a>
+                </div>
+                <div class="container" id="header__navbar__bottom">
+                    <div class="main-menu-block">
+                        <ul class="form-search-header list-unstyled form-search-header--2 hidden-xs hidden-sm">
+                            <li class="form-search-header__item">
+                                <a class="form-search-header__link newsletter-popup-btn" href="#newsletter-popup">NEWSLETTER</a>
+                            </li>
+                            <!-- <li class="form-search-header__item">
+                                <a class="form-search-header__link" href="https://www.elle.vn/dat-bao/">Đặt báo</a>
+                            </li> -->
+                            <!-- <li class="form-search-header__item">
+                                <a class="form-search-header__link" href="#">Đăng nhập</a>
+                            </li> -->
+                            <li class="form-search-header__item">
+                                <form class="form-search-header">
+                                    <a href="#search-form" class="form-search-header__button top-mobile-header__btn-search form-search-header__link" type="submit">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                    </a>
+                                </form>
+                            </li>
+                        </ul>
+                        <div class="bottom-header">
+                            <div class="bottom-header__inner">
+                                <h1>
+                                <a class="logo hidden-sm hidden-xs" href="https://www.elle.vn"><img alt="" src="https://www.elle.vn/wp-content/themes/ellev3/images/img-logo-elle.svg" width="80"></a>
+                                </h1>
+                                <ul class="main-menu list-unstyled">
+                                    <li class="main-menu__item hdhamber__nav main-menu__item--">
+                                        <a class="top-mobile-header__btn top-mobile-header__btn-menu hidden-md hidden-lg" href="#" style="color:#000000;"><i class="fa fa-bars"></i></a>
+                                    </li>
+                                    <li class="main-menu__item li__sticky-hide main-menu__item--blue ">
+                                        <a class="main-menu__link" href="https://www.elle.vn/thoi-trang/">THỜI TRANG</a>
+                                    </li>
+                                    <li class="main-menu__item li__sticky-hide main-menu__item--blue active">
+                                        <a class="main-menu__link" href="https://www.elle.vn/lam-dep/">LÀM ĐẸP</a>
+                                    </li>
+                                    <li class="main-menu__item li__sticky-hide main-menu__item--blue ">
+                                        <a class="main-menu__link" href="https://www.elle.vn/ngoi-sao-cua-elle-vn/">VĂN HÓA</a>
+                                    </li>
+                                    <li class="main-menu__item li__sticky-hide main-menu__item--blue ">
+                                        <a class="main-menu__link" href="https://www.elle.vn/cong-dong/">LIFESTYLE</a>
+                                    </li>
+                                    <li class="main-menu__item li__sticky-hide main-menu__item--blue ">
+                                        <a class="main-menu__link" href="https://www.elle.vn/boi-vui/">CHÀO NGÀY MỚI</a>
+                                    </li>
+                                    <!-- <li class="main-menu__item main-menu__item--blue ">
+                                        <a class="main-menu__link" href="https://www.elle.vn/elle-moi-ngay/">ELLE EXTRA</a>
+                                    </li> -->
+                                    <li class="main-menu__item li__sticky-hide main-menu__item--video ">
+                                        <a class="main-menu__link" href="https://www.elle.vn/video/">VIDEO</a>
+                                    </li>
+                                    <li class="main-menu__item li__sticky-hide main-menu__item--video ">
+                                        <a class="main-menu__link" href="https://www.elle.vn/elleshop">ELLE<img alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%201'%3E%3C/svg%3E" width="40" height="1" data-lazy-src="https://www.elle.vn/wp-content/themes/ellev3/images/elleshop_navi.png"><noscript><img alt="" src="https://www.elle.vn/wp-content/themes/ellev3/images/elleshop_navi.png" width="40" height="1"></noscript></a>
+                                    </li>
+                                    <li class="main-menu__item li__sticky-show hidden-md hidden-lg">
+                                        <form id="bottom_hdsearch_form" action="https://www.elle.vn/" method="get" role="search" class="search-form">
+                                            <div class="search-form-group">
+                                                <input type="search" name="s" value="" placeholder="Tìm Kiếm" id="search-input-bottom_hd"/>
+                                                <button type="submit" class="btn btn-success">
+                                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                                            <ul class="sub-menu sub-menu--blue list-unstyled hidden-sm hidden-xs">
+                                                                <li class="sub-menu__item ">
+                                        <a class="sub-menu__link" href="https://www.elle.vn/lam-dep/bi-quyet-khoe-va-dep">Bí quyết khỏe và đẹp</a>
+                                    </li>
+                                                                    <li class="sub-menu__item active">
+                                        <a class="sub-menu__link" href="https://www.elle.vn/lam-dep/xu-huong-lam-dep">Xu hướng &amp; Cảm hứng</a>
+                                    </li>
+                                                                    <li class="sub-menu__item ">
+                                        <a class="sub-menu__link" href="https://www.elle.vn/lam-dep/tin-lam-dep">Tin làm đẹp</a>
+                                    </li>
+                                                                    <li class="sub-menu__item ">
+                                        <a class="sub-menu__link" href="https://www.elle.vn/lam-dep/bi-quyet-cua-sao">Bí quyết của sao</a>
+                                    </li>
+                                                        </ul>
+                                    </div>
+
+            </header>
+            <div class="elle-breadcrumb-wrapper gray-background">
+                <div class="container">
+                                        <!-- 		<div class="breadcrumb elle-breadcrumb"><a href="#">ELLE NETWORK</a>  /  <a href="#">Nhân vật</a>  /  <a href="#">Người mẫu</a></div> -->
+                </div>
+            </div>
+                <form id="search-form" action="https://www.elle.vn/" method="get" role="search" class="search-form mfp-hide">
+            <div class="search-form-group">
+                <span>Nhập từ khóa tìm kiếm</span>
+                <input type="search" name="s" value="" placeholder="Tìm Kiếm" id="search-input-top"/>
+            </div>
+        </form>
+        <nav id="mobile-menu" class="hidden-md hidden-lg mobile-menu-contaiiner">
+            <div>
+                <div>
+                    <div class="footer-social-list list-unstyled">
+                        <div class="footer-social-list__item">
+                            <a class="footer-social-list__link footer-social-list__link-1" href="https://www.facebook.com/ELLEVietnam">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="footer-social-list__item">
+                            <a class="footer-social-list__link footer-social-list__link-2" href="http://instagram.com/ellevietnam">
+                                <i class="fa fa-camera-retro" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="footer-social-list__item">
+                            <a class="footer-social-list__link footer-social-list__link-3" href="http://www.youtube.com/user/ellevietnam">
+                                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                        <div class="footer-social-list__item">
+                            <a class="footer-social-list__link footer-social-list__link-4" href="http://zalo.me/ellevietnam">
+                                <span class="zalo">Zalo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        <a href="https://www.elle.vn/thoi-trang/">THỜI TRANG</a>
+                    </li>
+                    <li>
+                        <a href="https://www.elle.vn/lam-dep/">LÀM ĐẸP</a>
+                    </li>
+                    <li>
+                        <a href="https://www.elle.vn/ngoi-sao-cua-elle-vn/">VĂN HÓA - GIẢI TRÍ</a>
+                    </li>
+                    <li>
+                        <a href="https://www.elle.vn/cong-dong/">LIFESTYLE</a>
+                    </li>
+                    <li>
+                        <a href="https://www.elle.vn/boi-vui/">CHÀO NGÀY MỚI</a>
+                    </li>
+                    <li>
+                        <a href="https://www.elle.vn/video/">VIDEO</a>
+                    </li>
+                    <!-- <li>
+                        <a href="https://www.elle.vn/elle-shop/">ELLE<img alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%200'%3E%3C/svg%3E" width="40" data-lazy-src="https://www.elle.vn/wp-content/themes/ellev3/images/elleshop_navi.png"><noscript><img alt="" src="https://www.elle.vn/wp-content/themes/ellev3/images/elleshop_navi.png" width="40"></noscript></a>
+                    </li> -->
+                </ul>
+                <ul class="mt20">
+                    <li><a href="http://www.elleman.vn" target="_blank">ELLE MAN</a></li>
+                    <li><a href="https://www.elle.vn/elle-network" target="_blank">ELLE NETWORK</a></li>
+                    <li><a href="http://www.elledecoration.vn" target="_blank">ELLE DECOR</a></li>
+                    <li><a href="https://www.elle.vn/elle-moi-ngay" target="_blank">ELLE EXTRA</a></li>
+                </ul>
+                <ul class="mt20">
+                    <li><a href="https://www.elle.vn/dat-bao/" target="_blank">ĐẶT BÁO</a></li>
+                    <li><a class="newsletter-popup-btn" href="#newsletter-popup">NEWSLETTER</a></li>
+                    <!-- <li><a href="https://www.elle.vn/dang-ky-thanh-vien/" target="_blank">ĐĂNG KÝ</a></li>
+                    <li><a href="https://www.elle.vn/dien-dan-thoi-trang-lam-dep/" target="_blank">DIỄN ĐÀN</a></li> -->
+                    <li><a href="https://www.elle.vn/lien-he" target="_blank">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+        </nav>
+        <style>
+.newsletter-desk-bakg{
+  background-image: url("https://www.elle.vn/wp-content/uploads/2020/09/09/backgrounddesktop.jpg");
+}
+.popup-desk-bakg{
+  background-image: url("https://www.elle.vn/wp-content/uploads/2020/09/09/p2backgrounddesktop.jpg");
+  height: 550px;
+  width: 1100px;
+  margin-top: 10%;
+}
+.mfp-content{
+  height: 100%;
+}
+.float-right{
+  float: right;
+}
+@media (max-width: 992px) {
+  .newsletter-desk-bakg{
+  background-image: url("https://www.elle.vn/wp-content/uploads/2020/09/09/backgroundmobile.jpg");
+  }
+  .popup-desk-bakg{
+    background-image: url("https://www.elle.vn/wp-content/uploads/2020/09/09/p2backgroundmobile.jpg");
+    height: 100%;
+    width: 100%;
+    margin-top: 0;
+  }
+  .float-right {
+    float: none;
+  }
+}
+
+</style>
+<div id="newsletter-popup" class="newsletter-popup mfp-hide white-popup-block newsletter-desk-bakg">
+  <div class="full-height">
+    <div id="newsletter-popup-message"></div>
+
+    <form action="#" method="POST" accept-charset="utf-8"  class="newsletter-popup__form clearfix full-height">
+
+      <div class="row no-free-space full-height">
+        <div class="col-md-6 float-right full-height flex-display">
+          <div class="no-free-space top-row-form-group">
+            <div class="newsletter-left-col">
+              <img width="2929" height="1261" class='desk-logo' src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202929%201261'%3E%3C/svg%3E" alt="" srcset="" data-lazy-src="https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/images/newsletter_src/Logo/ELLE_Logo_Digital_copy.png"><noscript><img width="2929" height="1261" class='desk-logo' src="https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/images/newsletter_src/Logo/ELLE_Logo_Digital_copy.png" alt="" srcset=""></noscript>
+            </div>
+
+            <div id="first_email_input">
+              
+              <div class="form-group newsletter-email-lable">
+                <div class="newsletter-description">KẾT NỐI VỚI ELLE! <br>BẮT KỊP NHỊP ĐẬP THỜI TRANG,<br>LÀM ĐẸP VÀ PHONG CÁCH SỐNG</div>
+                <label for="Email" class="label-email">Nhập email của bạn bên dưới để nhận các bước:</label>
+                
+                <div class="newsletter-input-mail">
+                <span class="ico-newsletter-email"></span>
+                  <div class="inside-mail-input"><input id="subscriber_email" type="email" name="email" class="form-control newsletter-email" placeholder="Email của bạn" required />
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div id="industry_listinng" class="industry-listing" >
+            <div class="form-group industry-group-title">
+              Bạn đang làm trong lĩnh vực nào?:
+            </div>
+              <style>
+  #industry_datbao.checklistContainer, #industry_newsletter.checklistContainer{
+    border:none;
+    background: none;
+    width: 100% !important;
+  }
+  #industry_datbao.checklistContainer {
+    font-family: Helvetica Neue, Arial, sans-serif;
+    font-style: italic;
+  }
+  input.contains-placeholder, #industry_datbao_findInList, #industry_newsletter_findInList{
+      width: 100% !important;
+      text-align: center;
+      color: #cccccc;
+  }
+  #industry_datbao_checklist.checklist, #industry_newsletter_checklist.checklist{
+      width:100% !important;
+      height: 10em !important;
+  }
+  .show-industry-list{
+    display: block;
+  }
+  .hide-industry-list{
+    display: none;
+  }
+  #industry_datbao_checklist.checklist ul.checklist li label{
+    text-align: center;
+    font-size: 1.1em;
+  } 
+  #industry_newsletter_checklist ul.checklist li label{
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: .2em;
+    margin-bottom: .2em;
+  }
+</style>
+<select name=industry_newsletter id=industry_newsletter multiple="multiple" size="15" required>
+    <option value="An toàn lao động">An toàn lao động </option>
+    <option value="Bác sĩ">Bác sĩ </option>
+    <option value="Bán hàng kỹ thuật">Bán hàng kỹ thuật </option>
+    <option value="Bán hàng">Bán hàng </option>
+    <option value="Bán sỉ/Bán lẻ">Bán sỉ/Bán lẻ</option>
+    <option value="Bảo hiểm">Bảo hiểm </option>
+    <option value="Bảo trì/Sửa chữa ">Bảo trì/Sữa chữa </option>
+    <option value="Bất động sản">Bất động sản </option>
+    <option value="Biên phiên dịch">Biên phiên dịch </option>
+    <option value="Cấp quản lí điều hành">Cấp quản lí điều hành </option>
+    <option value="Chứng khoán">Chứng khoán</option>
+    <option value="Cơ khí">Cơ khí </option>
+    <option value="Công nghệ cao">Công nghệ cao </option>
+    <option value="Dầu khí">Dầu khí </option>
+    <option value="Dệt may/Da giày">Dệt may/Da giày</option>
+    <option value="Dịch vụ khách hàng">Dịch vụ khách hàng</option>
+    <option value="Dược phẩm/Công nghệ sinnh học">Dược phẩm/Công nghệ sinnh học</option>
+    <option value="Dược sĩ">Dược sĩ</option>
+    <option value="Giáo dục/Đào tạo">Giáo dục/Đào tạo</option>
+    <option value="Hàng cao cấp">Hàng cao cấp"</option>
+    <option value="Hàng gia dụng">Hàng gia dụng</option>
+    <option value="Hàng hải">Hàng hải</option>
+    <option value="Hàng không/Du lịch">Hàng không/Du lịch </option>
+    <option value="Hàng tiêu dùng">Hàng tiêu dùng</option>
+    <option value="Hành chánh/Thư ký">Hành chánh/Thư ký</option>
+    <option value="Hoá học/Hoá Sinh">Hoá học/Hoá Sinh</option>
+    <option value="Hoạch định/Dự án">Hoạch định/Dự án</option>
+    <option value="In ấn/Xuấn bản">In ấn/Xuất bản </option>
+    <option value="Internet/Online Media">Internet/Online Media</option>
+    <option value="IT - Phần mềm">IT - Phần mềm </option>
+    <option value="IT - Phần cứng/Mạng">IT - Phần cứng/Mạng</option>
+    <option value="Kế toán">Kế toán </option>
+    <option value="Khác">Khác </option>
+    <option value="Kho vận">Kho vận </option>
+    <option value="Kiểm toán">Kiểm toán </option>
+    <option value="Kiến trúc/ Thiết kế nội thất">Kiến trúc/ Thiết kế nội thất </option>
+    <option value="Marketing">Marketing </option>
+    <option value="Mới tốt nghiệp">Mới tốt nghiệp </option>
+    <option value="Môi trường/ Xử lý chất thải">Môi trường/ Xử lý chất thải </option>
+    <option value="Mỹ thuật/ Nghệ thuật/ Thiết kế">Mỹ thuật/ Nghệ thuật/ Thiết kế </option>
+    <option value="Ngân hàng">Ngân hàng </option>
+    <option value="Người nước ngoài/ Việt kiều">Người nước ngoài/ Việt kiều </option>
+    <option value="Nhà hàng/ Khách sạn">Nhà hàng/ Khách sạn </option>
+    <option value="Nhân sự">Nhân sự </option>
+    <option value="Nông nghiệp/ Lâm nghiệp">Nông nghiệp/ Lâm nghiệp </option>
+    <option value="Overseas jobs">Overseas jobs </option>
+    <option value="Pháp lý">Pháp lý </option>
+    <option value="Phi chính phủ/ Phi lợi nhuận">Phi chính phủ/ Phi lợi nhuận </option>
+    <option value="QA/QC">QA/QC </option>
+    <option value="Quảng cáo/ Khuyến mãi/ Đối ngoại">Quảng cáo/ Khuyến mãi/ Đối ngoại </option>
+    <option value="Sản phẩm công nghiệp">Sản phẩm công nghiệp </option>
+    <option value="Sản xuất">Sản xuất </option>
+    <option value="Tài chính/ Đầu tư">Tài chính/ Đầu tư </option>
+    <option value="Thời trang">Thời trang </option>
+    <option value="Thời vụ/ Hợp đồng ngắn hạn">Thời vụ/ Hợp đồng ngắn hạn </option>
+    <option value="Thu mua/ Vật tư/ Cung vận">Thu mua/ Vật tư/ Cung vận </option>
+    <option value="Thực phẩm và đồ uống">Thực phẩm và đồ uống </option>
+    <option value="Trình dược viên">Trình dược viên </option>
+    <option value="Truyền hình/ Truyền thông/ Báo chí">Truyền hình/ Truyền thông/ Báo chí </option>
+    <option value="Tư vấn">Tư vấn </option>
+    <option value="Tự động hóa/ Ô tô">Tự động hóa/ Ô tô </option>
+    <option value="Vận chuyển/ Giao nhận">Vận chuyển/ Giao nhận </option>
+    <option value="Viễn thông">Viễn thông </option>
+    <option value="Xây dựng">Xây dựng </option>
+    <option value="Xuất nhập khẩu">Xuất nhập khẩu </option>
+    <option value="Y sĩ/ Hộ lý">Y sĩ, Hộ lý </option>
+    <option value="Y tế/ Chăm sóc sức khỏe">Y tế/ Chăm sóc sức khỏe </option>
+    <option value="Địa chất/ Khoáng sản">Địa chất/ Khoáng sản </option>
+    <option value="Điện lạnh/ Nhiệt lạnh">Điện lạnh/ Nhiệt lạnh </option>
+    <option value="Điện/ Điện tử">Điện/ Điện tử </option>
+  </select>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
+$(function(){
+$industryOpt = $(industry_newsletter);
+$industryOpt.multiselect({
+    addSearchBox: true,
+    addActionBox: true,
+    animateSearch: 'normal', // Can be 'normal', 'slow', 'fast', or int number
+    searchBoxText: 'Nhập tìm kiếm ngành nghề ...',
+    showCheckboxes: false,
+    preferIdOverName: true,
+    overwriteName: true,
+    showSelectedItems: true,
+    submitDataAsArray: true,
+
+});
+});
+});</script>            </div>
+
+            <div id="checkbox_form_group">
+              <div class="checkbox-group-title">
+                Bạn muốn nhận thông tin mới nhất từ ELLE theo chủ đề:
+              </div>
+              <div class="checkbox-group-newsletter">
+                
+                <div class="checkbox">
+                  <input class="checkbox-custom" type="checkbox" name="fashion" id="fashion" checked>
+                  <label class="checkbox-custom-label" for="fashion"> Thời trang</label>
+                </div>
+              
+                <div class="checkbox">
+                  <input class="checkbox-custom" type="checkbox" name="beauty" id="beauty" checked>
+                  <label class="checkbox-custom-label" for="beauty"> Sắc đẹp</label>
+                </div>
+                <div class="checkbox">
+                  <input class="checkbox-custom" type="checkbox" name="entertainment" id="entertainment" checked>
+                  <label class="checkbox-custom-label" for="entertainment"> Giải trí</label>
+                </div>
+                <div class="checkbox">
+                  <input class="checkbox-custom" type="checkbox" name="horoscope" id="horoscope" checked>
+                  <label class="checkbox-custom-label" for="horoscope"> Cung hoàng đạo</label>
+                </div>
+                <div class="checkbox">
+                  <input class="checkbox-custom" type="checkbox" name="all_in_one" id="all_in_one" checked>
+                  <label class="checkbox-custom-label" for="all_in_one"> Điểm nhấn</label>
+                </div>
+                
+              </div>
+            </div>
+
+            <div class="col-md-4 hiden-ctx-static">
+              <div class="form-group">
+                <label for="phone">Phone*:</label>
+                <input type="tel" name="phone" class="form-control" placeholder="Phone" required pattern="^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4,5})$" />
+              </div>
+            </div>
+            <div class="col-md-4 hiden-ctx-static">
+              <div class="form-group">
+                <label for="name">Họ Tên:</label>
+                <input type="text" name="name" class="form-control" placeholder="Họ và Tên" required />
+              </div>
+            </div>
+
+            <div class="btn-submit-newsletter">
+              <a type="button" id="newsletter_submit_email" class="newsletter-submit-btn">Tiếp tục</a>
+              <a type="button" id="newsletter_submit_favorite" class="newsletter-submit-btn">Tiếp tục</a>
+              <input type="submit" id="newsletter_submit_form" class="newsletter-submit-btn" value="Theo dõi">
+              <div id="reg_js_img"><i class="fa fa-spinner" aria-hidden="true"></i></div>
+              
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      
+    </form>
+
+  </div>
+</div>
+<script type="rocketlazyloadscript">
+    // var numVisitsTrigger = 6; /* Number of page visits before tagging user */
+    // let category = "xu-huong-lam-dep";
+    // OneSignal.push(function() {
+    //     OneSignal.on('subscriptionChange', function(isSubscribed) {
+    //         if (isSubscribed === true) {
+    //             console.log('The user subscription state is now:', isSubscribed);
+    //             OneSignal.sendTags({
+    //                 "sub_cat": category,
+    //             }).then(function(tagsSent) {
+    //                 // Callback called when tags have finished sending
+    //                 console.log(tagsSent);
+    //             });
+    //         }
+    //     });
+    // });
+    // function tagUserWithPageTopic(key, value) {
+    //     OneSignal.push(function() {
+    //         OneSignal.isPushNotificationsEnabled(function(isEnabled) {
+    //         console.log("isEnabled: ", isEnabled);
+    //         if (isEnabled) {        
+    //             OneSignal.sendTag(key, value, function(tagsSent) {
+    //                 // Callback called when tags have finished sending
+    //                 console.log('tags sent: ', tagsSent);
+    //             });      
+    //         }
+    //         });
+    //     });
+    //     }
+
+    //     if (typeof localStorage !== "undefined") {
+    //     var topicVisits = parseInt(localStorage.getItem(category), 10);
+    //     if (!isNaN(topicVisits)) {
+    //         topicVisits += 1;
+    //     } else {
+    //         topicVisits = 0;
+    //     }    
+    //     localStorage.setItem(category, topicVisits)
+
+    //     if (topicVisits >= numVisitsTrigger) {
+    //         tagUserWithPageTopic(category, topicVisits);
+    //         tagUserWithPageTopic('category', category);
+    //     }
+    //     }
+</script>
+<!-- Content -->
+<div class="main-content">
+    <ul class="detail-share detail-share--fixed list-unstyled">
+        <li class="detail-share__item">
+            <div class="fb-like" data-href="https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink" data-layout="box_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+        </li>
+        <li class="detail-share__item">
+        <!-- https://www.facebook.com/sharer/sharer.php -->
+                    <a class="detail-share__link--facebook" target="_blank"  href="https://www.facebook.com/dialog/share?app_id=265637887877898&display=popup&href=https%3A%2F%2Fwww.elle.vn%2Fxu-huong-lam-dep%2Fhanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink%3Futm_campaign%3Dshare-button%26utm_source%3Dfacebook%26utm_medium%3Dsocial%26utm_content%3Dxu-huong-lam-dep">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+        </li>
+        <li class="detail-share__item">
+            <a class="detail-share__link--gmail" target="_blank"  href="mailto:?Subject=Hành trình toả sắc rực rỡ của Rosé &#8211; &#8220;Bông hồng&#8221; nhóm Blackpink&body=Rosé là một thành viên nổi bật của Blackpink trong cả âm nhạc, thời trang lẫn phong cách làm đẹp. Thế nhưng, bạn có biết trước khi có được khí chất nữ thần như hiện tại, cô nàng cũng đã trải qua hành trình tìm kiếm điều phù hợp nhất của bản thân? %0D%0A%0D%0Ahttps://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink" title="Chia sẻ qua email">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+    <div class="container">
+                <!-- Top-news -->
+                <div class="top-news">
+            <div class="top-news__inner mobile-free-slide">
+                                            <div class="top-news__item">
+                            <a href="https://www.elle.vn/xu-huong-lam-dep/mau-toc-nau-khong-can-tay" class="post-item__thumb img_16_9">
+                                <img class="img-responsive" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/10/04/451459/toc-nau-khong-can-tay-7-445x250.jpg"><noscript><img class="img-responsive" src="https://www.elle.vn/wp-content/uploads/2021/10/04/451459/toc-nau-khong-can-tay-7-445x250.jpg" alt=""></noscript>
+                            </a>
+                            <a class="top-news__title"
+                               href="https://www.elle.vn/xu-huong-lam-dep/mau-toc-nau-khong-can-tay">Biến hoá cùng 5 màu tóc nâu mùa Thu đầy lôi cuốn và thời thượng</a>
+                        </div>
+                                            <div class="top-news__item">
+                            <a href="https://www.elle.vn/xu-huong-lam-dep/toc-ngan-thoi-thuong-mua-thu" class="post-item__thumb img_16_9">
+                                <img class="img-responsive" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/10/25/454028/toc-ngan-tao-kieu-dep-15-445x250.jpg"><noscript><img class="img-responsive" src="https://www.elle.vn/wp-content/uploads/2021/10/25/454028/toc-ngan-tao-kieu-dep-15-445x250.jpg" alt=""></noscript>
+                            </a>
+                            <a class="top-news__title"
+                               href="https://www.elle.vn/xu-huong-lam-dep/toc-ngan-thoi-thuong-mua-thu">5 kiểu tóc ngắn thời thượng chào Thu sang</a>
+                        </div>
+                                            <div class="top-news__item">
+                            <a href="https://www.elle.vn/xu-huong-lam-dep/nguoi-mau-thap-nien-90s-tuan-le-thoi-trang-2022" class="post-item__thumb img_16_9">
+                                <img class="img-responsive" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/10/01/451042/nguoi-mau-feature-445x250.jpg"><noscript><img class="img-responsive" src="https://www.elle.vn/wp-content/uploads/2021/10/01/451042/nguoi-mau-feature-445x250.jpg" alt=""></noscript>
+                            </a>
+                            <a class="top-news__title"
+                               href="https://www.elle.vn/xu-huong-lam-dep/nguoi-mau-thap-nien-90s-tuan-le-thoi-trang-2022">Người mẫu thập niên 90 trở lại sàn diễn Xuân Hè 2022</a>
+                        </div>
+                                            <div class="top-news__item">
+                            <a href="https://www.elle.vn/xu-huong-lam-dep/instagram-hinh-xam-viet-nam" class="post-item__thumb img_16_9">
+                                <img class="img-responsive" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/10/20/453773/tai-khoan-instagram-o-viet-nam-ve-hinh-xam-1-ftn-445x250.jpg"><noscript><img class="img-responsive" src="https://www.elle.vn/wp-content/uploads/2021/10/20/453773/tai-khoan-instagram-o-viet-nam-ve-hinh-xam-1-ftn-445x250.jpg" alt=""></noscript>
+                            </a>
+                            <a class="top-news__title"
+                               href="https://www.elle.vn/xu-huong-lam-dep/instagram-hinh-xam-viet-nam">10 tài khoản Instagram nổi tiếng về hình xăm ở Việt Nam</a>
+                        </div>
+                                            <div class="top-news__item">
+                            <a href="https://www.elle.vn/xu-huong-lam-dep/huong-nuoc-hoa-mua-thu" class="post-item__thumb img_16_9">
+                                <img class="img-responsive" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/10/08/452366/nuoc-hoa-cho-mua-thu-se-lanh-445x250.jpg"><noscript><img class="img-responsive" src="https://www.elle.vn/wp-content/uploads/2021/10/08/452366/nuoc-hoa-cho-mua-thu-se-lanh-445x250.jpg" alt=""></noscript>
+                            </a>
+                            <a class="top-news__title"
+                               href="https://www.elle.vn/xu-huong-lam-dep/huong-nuoc-hoa-mua-thu">Nước hoa dành cho mùa Thu: nốt hương nồng nàn và quyến rũ</a>
+                        </div>
+                                </div>
+        </div>
+                <!-- /Top-news -->
+
+        <div class="content-detail">
+            <div class="row sticky-parent" data-sticky_parent >
+                <div class="col-md-8" data-sticky_column>
+                    					
+                    <div class="banner-content hidden-sm hidden-xs">
+                        <!-- /7725849/elle-desktop-article-atf-a-920x90 -->
+                        <div id='div-gpt-ad-1589749138170-0'>
+                        <script type="rocketlazyloadscript">
+                            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589749138170-0'); });
+                        </script>
+                        </div>
+                    </div>
+
+                    <div class="banner-content hidden-md hidden-lg">
+                        <!-- /7725849/elle-mobile-article-atf-a-300x250 -->
+                        <div id='div-gpt-ad-1589749726228-0'>
+                        <script type="rocketlazyloadscript">
+                            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589749726228-0'); });
+                        </script>
+                        </div>
+                    </div>
+                    
+                    <div itemscope itemtype="https://schema.org/Article" class="content-detail__post-content">
+						<h1 itemprop="name headline" class="content-detail__title">
+                            Hành trình toả sắc rực rỡ của Rosé &#8211; &#8220;Bông hồng&#8221; nhóm Blackpink                        </h1>
+                        <div class="clearfix content-detail__info">
+							<span class="content-detail__avatar" itemprop="author" itemscope itemtype="http://schema.org/Person">
+								<img itemprop="image" class="img-circle" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://www.elle.vn/wp-content/uploads/2019/01/02/46780473_10213297962786148_8424223616870121472_n-255x255.jpg"><noscript><img itemprop="image" class="img-circle" src="https://www.elle.vn/wp-content/uploads/2019/01/02/46780473_10213297962786148_8424223616870121472_n-255x255.jpg" alt=""></noscript>
+								<meta itemprop="name" content="Sophie Thanh Huyen">
+							</span>
+							<div class="pull-left">
+								<div class="time-author__item">
+									<!--Bài viết của Sophie Thanh Huyen-->
+									Biên tập <a href="https://www.elle.vn/u/sophie-thanh-huyen" title="Posts by Sophie Thanh Huyen" rel="author">Sophie Thanh Huyen</a>								</div>
+								<div class="time-author__item">
+																			Xuất bản: <span itemprop="datePublished">17/02/2021 11:59:30</span>
+
+																			| Chỉnh sửa:<span itemprop="dateModified"> 18/02/2021 10:57:27</span>
+								</div>
+							</div>
+                            <div itemprop="description" class="content-detail__short-desc">
+                                <p>Rosé là một thành viên nổi bật của Blackpink trong cả âm nhạc, thời trang lẫn phong cách làm đẹp. Thế nhưng, bạn có biết trước khi có được khí chất nữ thần như hiện tại, cô nàng cũng đã trải qua hành trình tìm kiếm điều phù hợp nhất của bản thân? </p>
+                            </div>
+                            <div itemprop="articleBody" class="content-detail__content">
+                                <p>Ở điểm xuất phát cách đây 5 năm, Rosé (Blackpink) không gây ấn tượng quá mạnh mẽ với công chúng với vẻ đẹp của mình. Theo thời gian, &#8220;bông hồng&#8221; nước Úc đã nhiều lần thử nghiệm, tìm kiếm để mài dũa vẻ đẹp tự tin nhất dành cho bản thân. Thành quả là hôm nay, người hâm mộ tự hào khi nhìn thấy idol của mình không những có giọng hát độc đáo mà còn nổi bật trên sân khấu với mái tóc vàng đặc trưng cùng phong cách nữ tính, sang trọng. Có lẽ, đó là chuyến hành trình mà ai theo đuổi sứ mệnh làm đẹp cũng đều ao ước.</p>
+<p>Nhân dịp tháng sinh nhật của cô nàng, hãy cùng ELLE ngắm nhìn hành trình sắc đẹp của Rosé từ khi ra mắt công chúng đến hiện tại nhé.</p>
+<h2>2016-2017: Nữ tân binh vừa ra mắt</h2>
+<p><a href="https://www.elle.vn/bi-quyet-cua-sao/bi-quyet-so-huu-vong-eo-con-kien-tu-rose-blackpink">Rosé</a> là thành viên cuối cùng của Blackpink được công bố chính thức. Từ những tấm hình đầu tiên, cô nàng mang phong cách trang điểm Hàn kiều rất rõ. Tuy nhiên vào thời điểm này, nhan sắc của cô không được đánh giá cao như các thành viên còn lại.</p>
+<div id="attachment_424790" style="width: 670px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-424790" class="size-full wp-image-424790" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20660%20937'%3E%3C/svg%3E" alt="cô gái tóc đỏ đang đứng" width="660" height="937" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-pre-debut.jpg" /><noscript><img aria-describedby="caption-attachment-424790" class="size-full wp-image-424790" src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-pre-debut.jpg" alt="cô gái tóc đỏ đang đứng" width="660" height="937" /></noscript><p id="caption-attachment-424790" class="wp-caption-text">Hình ảnh teaser giới thiệu Blackpink được công bố cuối cùng. Ảnh: YG Entertainment</p></div>
+<p>Trong MV đầu tiên, Rosé mang phong cách <a href="https://www.elle.vn/xu-huong-lam-dep/cac-buoc-trang-diem-de-selfie-dep">trang điểm Hàn</a> hơn với phấn mắt hồng, lông mày ngang trùng màu tóc và đánh son lòng môi. Mái tóc của<span style="color: #000000;"> giọng ca chính Blackpink </span>lúc này nhuộm màu cam sáng. Tổng thể, Rosé giai đoạn này mang phong cách hiphop và girl crushđầy ấn tượng.</p>
+<div id="attachment_424791" style="width: 1930px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-424791" class="size-full wp-image-424791" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201080'%3E%3C/svg%3E" alt="blackpink rose mv boombayah" width="1920" height="1080" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-boombayah.jpg" /><noscript><img aria-describedby="caption-attachment-424791" class="size-full wp-image-424791" src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-boombayah.jpg" alt="blackpink rose mv boombayah" width="1920" height="1080" /></noscript><p id="caption-attachment-424791" class="wp-caption-text">Mái tóc cam trong MV Boombayah tạo cảm giác mạnh mẽ và nổi loạn. Ảnh: YG Entertainment.</p></div>
+<p>Đến cuối năm 2016, Blackpink thử sức<span style="color: #000000;"> thể loại nhạc ballad với </span>ca khúc Stay. Nhờ đó, Rosé có dịp thay đổi sang hình ảnh dịu dàng, nữ tính hơn. Trên sân khấu, cô nàng uốn nhẹ mái tóc nâu vàng thể hiện phong cách tiểu thư yêu kiều.</p>
+<div id="attachment_424793" style="width: 1210px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-424793" class="size-full wp-image-424793" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201200%20675'%3E%3C/svg%3E" alt="rosé ngồi trên ghế " width="1200" height="675" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-stay.jpg" /><noscript><img aria-describedby="caption-attachment-424793" class="size-full wp-image-424793" src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-stay.jpg" alt="rosé ngồi trên ghế " width="1200" height="675" /></noscript><p id="caption-attachment-424793" class="wp-caption-text">Uốn dợn lọn tóc trước trán sẽ giúp vẻ ngoài nữ tính và mềm mại hơn. Ảnh: SBS.</p></div>
+<div class="row block__2 affiliate__big--image inline__article--box">
+    <div class="col-sm-12 col-md-12 affiliate__left--box">
+        <div class="col-sm-12 col-md-12 affiliate__box">
+            <div class="img__title_box">
+                <a href="https://www.elle.vn/wp-content/uploads/2021/01/13/423021/kieu-toc-2021-ft.jpg" class="noLightbox">
+                    
+    <img src="https://www.elle.vn/wp-content/themes/ellev3"/images/default-loading.jpg" data-src="https://www.elle.vn/wp-content/uploads/2021/01/13/423021/kieu-toc-2021-ft-730x410.jpg" alt="" class="lazy img-responsive">
+                    </a>
+            </div>
+            <div class="text__title_box text__title--inline-article">
+                <a href=https://www.elle.vn/lam-dep/xu-huong-lam-dep class="button__category--trend">Xu hướng & Cảm hứng</a>
+                <a href="https://www.elle.vn/xu-huong-lam-dep/nhung-kieu-toc-dep-phu-song-nam-2021">
+                    <h2>Dự đoán những kiểu tóc đẹp sẽ phủ sóng năm 2021</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<p>Vào mùa hè năm 2017, Blackpink quay trở lại với ca khúc pop sôi động mang tên As if It&#8217;s Your Last. Rosé gây bất ngờ với<span style="color: #000000;"> khán</span> giả khi lần đầu tiên để tóc đen và để tóc mái. Nhằm thể hiện trọn vẹn không khí trẻ trung của bài hát, cô nàng trang điểm nhẹ <a href="https://www.elle.vn/xu-huong-lam-dep/kieu-trang-diem-tong-hong-cho-nang-du-xuan">tông hồng</a> cực kỳ ngọt ngào và không kém phần năng động.</p>
+<div id="attachment_424794" style="width: 1290px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-424794" class="size-full wp-image-424794" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20720'%3E%3C/svg%3E" alt="cô gái tóc đen đứng dựa tường" width="1280" height="720" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-AIIYL.jpg" /><noscript><img aria-describedby="caption-attachment-424794" class="size-full wp-image-424794" src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-AIIYL.jpg" alt="cô gái tóc đen đứng dựa tường" width="1280" height="720" /></noscript><p id="caption-attachment-424794" class="wp-caption-text">Tóc mái thưa là một cách &#8220;ăn gian&#8221; tuổi cực kỳ hiệu quả. Ảnh: YG Entertainment</p></div>
+<h2>2018-2019: Tìm ra phong cách của bản thân và toả sáng rực rỡ</h2>
+<p>Sang năm 2018, Blackpink ra mắt bài hát Ddu-du ddu-du sau một năm vắng bóng. Lần trở lại này đánh dấu bước chuyển mình mạnh mẽ trong độ nổi tiếng của nhóm trên thị trường thế giới. Đồng thời, đây cũng là thay đổi 180 độ trong phong cách của Rosé. Trong MV, cô nàng xuất hiện đầy sắc sảo với mái tóc đỏ rượu cá tính. Bên cạnh đó, phấn mắt màu đỏ tạo hiệu ứng cực kỳ ma mị cho đôi mắt. Cô nàng cũng thử nghiệm son hồng neon làm nổi bật đôi môi trên tổng thể sắc đỏ.</p>
+<div id="attachment_424795" style="width: 1282px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-424795" class="size-full wp-image-424795" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201272%20688'%3E%3C/svg%3E" alt="cô gái tóc đỏ" width="1272" height="688" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-dududu.png" /><noscript><img aria-describedby="caption-attachment-424795" class="size-full wp-image-424795" src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-dududu.png" alt="cô gái tóc đỏ" width="1272" height="688" /></noscript><p id="caption-attachment-424795" class="wp-caption-text">Ảnh: YG Entertainment.</p></div>
+<p>Đến tận năm 2019 với ca khúc Kill This Love, chúng ta mới được diện kiến một Rosé nhan sắc đỉnh cao. Cô nàng nhuộm <a href="https://www.elle.vn/bi-quyet-khoe-va-dep/thuc-pham-cham-soc-toc-dep">mái tóc</a> rose gold, màu sắc làm nên thương hiệu của Rosé đến tận sau này. Phong cách trang điểm của Rosé có thay đổi nhỏ nhưng mang lại cảm giác khác biệt. Cô đã chuyển sang tông rose gold và sử dụng kim tuyến làm điểm nhấn cho mắt. Quả thật, đây chính là phong cách phù hợp nhất dành cho Rosé.</p>
+<div id="attachment_424798" style="width: 1350px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-424798" class="size-full wp-image-424798" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201340%20754'%3E%3C/svg%3E" alt="cô gái đội vương miện " width="1340" height="754" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-KTL.png" /><noscript><img aria-describedby="caption-attachment-424798" class="size-full wp-image-424798" src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-KTL.png" alt="cô gái đội vương miện " width="1340" height="754" /></noscript><p id="caption-attachment-424798" class="wp-caption-text">Màu rose gold giúp gương mặt Rosé sáng bừng và nổi bật. Ảnh: YG Entertainment.</p></div>
+<div class="row block__2 affiliate__big--image inline__article--box">
+    <div class="col-sm-12 col-md-12 affiliate__left--box">
+        <div class="col-sm-12 col-md-12 affiliate__box">
+            <div class="img__title_box">
+                <a href="https://www.elle.vn/wp-content/uploads/2021/01/21/423357/phan-mat-1-a.jpg" class="noLightbox">
+                    
+    <img src="https://www.elle.vn/wp-content/themes/ellev3"/images/default-loading.jpg" data-src="https://www.elle.vn/wp-content/uploads/2021/01/21/423357/phan-mat-1-a-730x410.jpg" alt="" class="lazy img-responsive">
+                    </a>
+            </div>
+            <div class="text__title_box text__title--inline-article">
+                <a href=https://www.elle.vn/lam-dep/xu-huong-lam-dep class="button__category--trend">Xu hướng & Cảm hứng</a>
+                <a href="https://www.elle.vn/xu-huong-lam-dep/6-bang-phan-mat-giup-ban-luon-thoi-thuong-trong-nam-2021">
+                    <h2>6 bảng phấn mắt giúp bạn luôn thời thượng trong năm 2021</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<p>Kể từ đó, cô nàng trung thành với mái tóc vàng đặc trưng và lớp trang điểm màu gold. Cái tên &#8220;Rosé Blackpink&#8221; liên tục xuất hiện trên các diễn đàn của người hâm mộ KPop vì vẻ đẹp vô thực của mình.</p>
+<div id="attachment_424800" style="width: 1010px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-424800" class="size-full wp-image-424800" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%201251'%3E%3C/svg%3E" alt="cô gái tóc vàng thắt bím" width="1000" height="1251" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-forever-young-white.jpg" /><noscript><img aria-describedby="caption-attachment-424800" class="size-full wp-image-424800" src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-forever-young-white.jpg" alt="cô gái tóc vàng thắt bím" width="1000" height="1251" /></noscript><p id="caption-attachment-424800" class="wp-caption-text">Ảnh: SBS.</p></div>
+<p>Một trong những khoảnh khắc xuất thần nhất sự nghiệp của Rosé là màn biểu diễn tại lễ hội âm nhạc Coachella. Với chút hiệu ứng từ gió, mái tóc vàng của Rosé khoe trọn vẻ đẹp của mình. Sau đêm hội, từ khoá &#8220;cô gái tóc vàng&#8221; đã lọt top tìm kiếm nhiều nhất.</p>
+<div id="attachment_424801" style="width: 1034px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-424801" class="size-full wp-image-424801" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%201536'%3E%3C/svg%3E" alt="blackpink rosé ở coachella" width="1024" height="1536" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-coachella.jpg" /><noscript><img aria-describedby="caption-attachment-424801" class="size-full wp-image-424801" src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-coachella.jpg" alt="blackpink rosé ở coachella" width="1024" height="1536" /></noscript><p id="caption-attachment-424801" class="wp-caption-text">Màn trình diễn tại Coachella là một trong những khoảnh khắc đáng nhớ nhất của người hâm mộ. Ảnh: Twitter Firstlove</p></div>
+<p>Mái tóc vàng thương hiệu của Rosé được biến tấu để phù hợp tình huống và phong cách khác nhau. Nhìn chung, lớp trang điểm rose gold hoặc tông ấm được cô nàng ứng dụng nhiều nhất. Bí quyết trang điểm của cô là eyeliner mảnh, dài và <a href="https://www.elle.vn/bi-quyet-khoe-va-dep/cach-chuot-mascara-khong-lem">mascara</a> tự nhiên để làm mắt to hơn. Ngoài ra, cô nàng đánh phấn mắt màu đồng có nhũ dưới bọng mắt để bắt ánh sáng khi biểu diễn.</p>
+<div id="attachment_424803" style="width: 1090px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-424803" class="size-full wp-image-424803" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201080%201350'%3E%3C/svg%3E" alt="blackpink rose japan dome" width="1080" height="1350" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-toc-vang.jpg" /><noscript><img aria-describedby="caption-attachment-424803" class="size-full wp-image-424803" src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-toc-vang.jpg" alt="blackpink rose japan dome" width="1080" height="1350" /></noscript><p id="caption-attachment-424803" class="wp-caption-text">Mái tóc dài có thể được biến tấu bởi các bím tóc nhỏ. Ảnh: Instagram roses_are_rosie</p></div>
+<div id="attachment_424804" style="width: 1090px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-424804" class="size-full wp-image-424804" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201080%201350'%3E%3C/svg%3E" alt="rosé blackpink tại sydney" width="1080" height="1350" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-sydney.jpg" /><noscript><img aria-describedby="caption-attachment-424804" class="size-full wp-image-424804" src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-sydney.jpg" alt="rosé blackpink tại sydney" width="1080" height="1350" /></noscript><p id="caption-attachment-424804" class="wp-caption-text">Ảnh: Instagram roses_are_rosie.</p></div>
+<h2>2020-2021: Không ngại thử nghiệm để luôn tạo dấu ấn</h2>
+<p>Rosé một lần nữa chứng minh phong cách của mình vẫn còn nhiều tiềm năng khai phá. Với How You Like That, Rosé trở lại với mái tóc tím đầy ma mị và có phần thần thoại.</p>
+<p>Đặc biệt, cô nàng còn tạo xu hướng với kiểu trang điểm mới. Rosé đính đá nhỏ phủ toàn mí mắt, một cách biến tấu thú vị. Phần mắt dưới được cô đánh màu đỏ đậm, tạo hiệu ứng một cô gái quật cường.</p>
+<div id="attachment_424802" style="width: 1090px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-424802" class="size-full wp-image-424802" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201080%201080'%3E%3C/svg%3E" alt="cô gái tóc tím ngồi trên bàn" width="1080" height="1080" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-how-you-like-that.jpg" /><noscript><img aria-describedby="caption-attachment-424802" class="size-full wp-image-424802" src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-how-you-like-that.jpg" alt="cô gái tóc tím ngồi trên bàn" width="1080" height="1080" /></noscript><p id="caption-attachment-424802" class="wp-caption-text">Ảnh: YG Entertainment</p></div>
+<p class="p1"><div class="row block__2 affiliate__big--image inline__article--box">
+    <div class="col-sm-12 col-md-12 affiliate__left--box">
+        <div class="col-sm-12 col-md-12 affiliate__box">
+            <div class="img__title_box">
+                <a href="https://www.elle.vn/wp-content/uploads/2021/01/19/423242/toc-mau-tim.jpg" class="noLightbox">
+                    
+    <img src="https://www.elle.vn/wp-content/themes/ellev3"/images/default-loading.jpg" data-src="https://www.elle.vn/wp-content/uploads/2021/01/19/423242/toc-mau-tim-730x410.jpg" alt="" class="lazy img-responsive">
+                    </a>
+            </div>
+            <div class="text__title_box text__title--inline-article">
+                <a href=https://www.elle.vn/lam-dep/xu-huong-lam-dep class="button__category--trend">Xu hướng & Cảm hứng</a>
+                <a href="https://www.elle.vn/xu-huong-lam-dep/xu-huong-nhuom-toc-tim-2021-2">
+                    <h2>Xu hướng nhuộm tóc tím 2021 - Hãy thử dù chỉ một lần</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+</div></p>
+<p>Cùng năm, một Rosé hoàn toàn trái ngược với hình ảnh trên cũng đã xuất hiện. Trong ca khúc Ice Cream tươi sáng, Rosé trở thành nàng công chúa đáng yêu trong bộ váy hoa. Mái tóc tím giờ đây khi kết hợp với phấn mắt nhũ và <a href="https://www.elle.vn/xu-huong-lam-dep/cach-giu-lop-nen-lau-troi-toi-uu">lớp nền</a> căng bóng lại trở nên cực kỳ nữ tính.</p>
+<p>Đây cũng là năm Rosé nói riêng và Blackpink nói chung đã tạo rất nhiều xu hướng làm móng. Nếu chưa biết nên chọn kiểu móng nào, hãy thử tham khảo các <a href="https://www.elle.vn/xu-huong-lam-dep/xu-huong-mong-tay-dep-2021">kiểu móng tay</a> trong các MV của họ nhé.</p>
+<div id="attachment_424805" style="width: 1090px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-424805" class="size-full wp-image-424805" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201080%20720'%3E%3C/svg%3E" alt="cô gái ngồi giữa vườn hoa " width="1080" height="720" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-ice-cream.jpg" /><noscript><img aria-describedby="caption-attachment-424805" class="size-full wp-image-424805" src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-ice-cream.jpg" alt="cô gái ngồi giữa vườn hoa " width="1080" height="720" /></noscript><p id="caption-attachment-424805" class="wp-caption-text">Mái tóc tím mang lại hiệu ứng hoàn toàn khác biệt dựa trên hai phong cách trang điểm khác nhau. Ảnh: Instagram roses_are_rosie</p></div>
+<p>Rosé bắt đầu xuất hiện trong các show thời trang cao cấp của các nhà mốt đình đám nhiều hơn. Trong khoảng thời gian này, cô nàng lọt vào mắt xanh của nhà mốt Yves Saint Laurent. Sau đó, cô chính thức trở thành đại sứ toàn cầu của thương hiệu.</p>
+<div id="attachment_424806" style="width: 1010px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-424806" class="size-full wp-image-424806" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%201500'%3E%3C/svg%3E" alt="blackpink rose tham dự show thời trang" width="1000" height="1500" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-ysl-show.jpg" /><noscript><img aria-describedby="caption-attachment-424806" class="size-full wp-image-424806" src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-ysl-show.jpg" alt="blackpink rose tham dự show thời trang" width="1000" height="1500" /></noscript><p id="caption-attachment-424806" class="wp-caption-text">Ảnh: Twitter Firstlove</p></div>
+<p>Tháng 1 năm nay, Rosé đã trở thành nàng thơ của Yves Saint Laurent Beauty và đại diện cho nhiều sản phẩm làm đẹp từ hãng. Với phong cách thanh lịch, sang trọng nhưng đầy sáng tạo và nổi loạn, Rosé chính là hiện thân của hãng thời trang cao cấp đến từ Pháp.</p>
+<div id="attachment_424807" style="width: 778px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-424807" class="size-full wp-image-424807" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20768%201037'%3E%3C/svg%3E" alt="blackpink rosé trở thành đại sứ thương hiệu" width="768" height="1037" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-ysl-beauty.jpg" /><noscript><img aria-describedby="caption-attachment-424807" class="size-full wp-image-424807" src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-ysl-beauty.jpg" alt="blackpink rosé trở thành đại sứ thương hiệu" width="768" height="1037" /></noscript><p id="caption-attachment-424807" class="wp-caption-text">Ảnh: ELLE.</p></div>
+<div id="attachment_424808" style="width: 1610px" class="wp-caption aligncenter"><img aria-describedby="caption-attachment-424808" class="size-full wp-image-424808" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201600%20900'%3E%3C/svg%3E" alt="cô gái tóc tím chống cằm" width="1600" height="900" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-ysl-ambassador.jpg" /><noscript><img aria-describedby="caption-attachment-424808" class="size-full wp-image-424808" src="https://www.elle.vn/wp-content/uploads/2021/02/08/424779/blackpink-rose-ysl-ambassador.jpg" alt="cô gái tóc tím chống cằm" width="1600" height="900" /></noscript><p id="caption-attachment-424808" class="wp-caption-text">Màu mắt khói kết hợp cùng tóc màu tím tạo cho Rosé một phong cách quyền lực và bí ẩn. Ảnh: YG Entertainment.</p></div>
+<p>Có thể nói, hành trình thử nghiệm và tìm kiếm không ngừng nghỉ phong cách làm đẹp cho bản thân đã mài giũa Rosé trở thành viên ngọc sáng đặc biệt của làng giải trí Hàn.</p>
+                            </div>
+                            <div class='banner-content hidden-sm hidden-xs h-none'>
+                                <!-- /7725849/elle-desktop-article-btf-d-920x90 -->
+                                <div id='div-gpt-ad-1611041207394-0'>
+                                <script type="rocketlazyloadscript">
+                                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1611041207394-0'); });
+                                </script>
+                                </div>
+                            </div>
+
+                            <div class='banner-content hidden-md hidden-lg h-none'>
+                                <!-- /7725849/elle-mobile-article-btf-d-300x250 -->
+                                <div id='div-gpt-ad-1611041599257-0'>
+                                <script type="rocketlazyloadscript">
+                                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1611041599257-0'); });
+                                </script>
+                                </div>
+                            </div>
+                            
+                                                        <div class="page-editor">
+                                <div class="page-editor-headline">
+                                    <b>Nhóm thực hiện</b>
+                                </div>
+                                <div>
+                                    <p> <p>Bài: Phương Tống</p>
+<p>Nguồn: Tạp chí Phái đẹp ELLE</p>
+<p>Ảnh: Tổng hợp</p>
+</p>
+                                </div>
+                            </div>
+
+                                                                                    <span itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                                <meta itemprop="url" content="https://www.elle.vn/wp-content/uploads/2021/02/17/424779/blackpink-rose-hanh-trinh-tim-kiem-ve-dep.jpg">
+                                <meta itemprop="width" content="1080">
+                                <meta itemprop="height" content="608">
+                            </span>
+                            <meta itemprop="mainEntityOfPage" content="https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink">
+                            <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                <meta itemprop="name" content="ELLE Vietnam">
+                                <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+                                    <meta itemprop="url" content="https://www.elle.vn/wp-content/themes/ellev3/images/img-logo.png">
+								</span>
+							</span>
+							<!-- <div class="fb-comments" data-href="https://www.facebook.com/ELLEVietnam/?fref=ts" data-numposts="5" data-width="100%"></div>-->
+                            <ul class="detail-share detail-share_mb list-unstyled list-inline hidden-md hidden-lg mt20">
+                                <li class="detail-share__item">
+                                    <div class="fb-like" data-href="https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink" data-layout="box_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+                                </li>
+                                <li class="detail-share__item">
+                                    <a class="detail-share__link--facebook"  target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink">
+                                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="detail-share__item">
+                                    <a class="detail-share__link--gmail" target="_blank"  href="mailto:?Subject=Hành trình toả sắc rực rỡ của Rosé &#8211; &#8220;Bông hồng&#8221; nhóm Blackpink&body=Rosé là một thành viên nổi bật của Blackpink trong cả âm nhạc, thời trang lẫn phong cách làm đẹp. Thế nhưng, bạn có biết trước khi có được khí chất nữ thần như hiện tại, cô nàng cũng đã trải qua hành trình tìm kiếm điều phù hợp nhất của bản thân? %0D%0A%0D%0Ahttps://www.elle.vn/xu-huong-lam-dep/hanh-trinh-toa-sac-ruc-ro-cua-rose-bong-hong-nhom-blackpink" title="Chia sẻ qua email">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sticky-spacer">
+                    <div id="sticky_item" class="col-md-4" data-sticky_column>
+												<div class="content-detail__ads banner-left-detail hidden-sm hidden-xs">	
+                            <!-- /7725849/elle-desktop-article-atf-a-160x600 -->
+                            <div id='div-gpt-ad-1589747650593-0' style='width: 160px; height: 600px;'>
+                            <script type="rocketlazyloadscript">
+                                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1589747650593-0'); });
+                            </script>
+                            </div>
+						</div>	
+						                        
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        <!-- Onesignal button  -->
+        <div class="onsignal-element">
+            <div class="inside-base-elem">
+                <div class="bell-image">
+                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2029%2029'%3E%3C/svg%3E" alt="icons8-bell-90" width="29" height="29" data-lazy-src="https://www.elle.vn/wp-content/themes/ellev3/images/AlarmRedDesktop.png"><noscript><img src="https://www.elle.vn/wp-content/themes/ellev3/images/AlarmRedDesktop.png" alt="icons8-bell-90" width="29" height="29"></noscript>
+                </div>
+                <!-- <div class="onsignal-box"> -->
+                    <div class='paramgrap_ones'>Luôn giữ kết nối! Đăng ký để ELLE chia sẻ cùng bạn những bài viết thú vị.</div>
+                    <div class='onesignal-customlink-container'>
+                    <a class="newsletter-popup-btn onesignal-custombutton-subscribe" href="#newsletter-popup">Đăng ký</a>
+                    </div>
+            </div>
+        </div>
+        <!-- end Onesignal button  -->
+        
+                <a class="see-more" href="javascript:void(0)">Bài viết liên quan</a>
+        <div class="row">
+                                    <div class="col-md-6">
+                            <a class="img-detail-big img_16_9" href="https://www.elle.vn/?post_type=post&p=373224">
+                                <img class="lazy img-responsive" src="https://www.elle.vn/wp-content/themes/ellev3/images/default-loading.jpg" width="445" height="250" data-src="https://www.elle.vn/wp-content/uploads/2019/09/cac-buoc-trang-diem-nhu-han-quoc-730x410.png" alt="">
+                            </a>
+                            <a class="video-content-title-big" href="https://www.elle.vn/?post_type=post&p=373224">
+                                Các bước trang điểm để selfie rạng rỡ như sao Hàn                            </a>
+                        </div>
+                                                <div class="col-md-6">
+                            <div class="row">
+                                                <div class="col-md-6">
+                            <div class="video-content">
+                                <a class="video-content__link post-item__thumb img_16_9" href="https://www.elle.vn/?post_type=post&p=423242">
+                                    <img class="lazy img-responsive" src="https://www.elle.vn/wp-content/themes/ellev3/images/default-loading.jpg" width="445" height="250" data-src="https://www.elle.vn/wp-content/uploads/2021/01/19/423242/toc-mau-tim-445x250.jpg" alt="">
+                                </a>
+                                <a class="video-content__title"
+                                   href="https://www.elle.vn/?post_type=post&p=423242">Xu hướng nhuộm tóc tím 2021 - Hãy thử dù chỉ một lần</a>
+                            </div>
+                        </div>
+                                                                        <div class="col-md-6">
+                            <div class="video-content">
+                                <a class="video-content__link post-item__thumb img_16_9" href="https://www.elle.vn/?post_type=post&p=423542">
+                                    <img class="lazy img-responsive" src="https://www.elle.vn/wp-content/themes/ellev3/images/default-loading.jpg" width="445" height="250" data-src="https://www.elle.vn/wp-content/uploads/2021/01/25/423542/co-gai-trang-diem-tong-mau-tuoi-sang-ft-445x250.jpg" alt="">
+                                </a>
+                                <a class="video-content__title"
+                                   href="https://www.elle.vn/?post_type=post&p=423542">Dự đoán những xu hướng trang điểm sẽ "gây bão" trong năm 2021</a>
+                            </div>
+                        </div>
+                                                   <div class="clearfix"></div>
+                            <div class="banner-content hidden-md hidden-lg">
+                                <!-- <div id='div-gpt-ad-1496993192147-0'>
+                                    <script type="rocketlazyloadscript">
+                                        googletag.cmd.push(function () {
+                                            googletag.display('div-gpt-ad-1496993192147-0');
+                                        });
+                                    </script>
+                                </div> -->
+                            </div>
+                                                                       <div class="col-md-6">
+                            <div class="video-content">
+                                <a class="video-content__link post-item__thumb img_16_9" href="https://www.elle.vn/?post_type=post&p=423883">
+                                    <img class="lazy img-responsive" src="https://www.elle.vn/wp-content/themes/ellev3/images/default-loading.jpg" width="445" height="250" data-src="https://www.elle.vn/wp-content/uploads/2021/02/01/423883/co-gai-trang-diem-mau-hong-445x250.jpg" alt="">
+                                </a>
+                                <a class="video-content__title"
+                                   href="https://www.elle.vn/?post_type=post&p=423883">Mùa Xuân 2021: Trang điểm tông hồng để cả năm ngập tràn may mắn</a>
+                            </div>
+                        </div>
+                                                                        <div class="col-md-6">
+                            <div class="video-content">
+                                <a class="video-content__link post-item__thumb img_16_9" href="https://www.elle.vn/?post_type=post&p=424256">
+                                    <img class="lazy img-responsive" src="https://www.elle.vn/wp-content/themes/ellev3/images/default-loading.jpg" width="445" height="250" data-src="https://www.elle.vn/wp-content/uploads/2021/02/03/424256/blackpink-ice-cream-445x250.jpg" alt="">
+                                </a>
+                                <a class="video-content__title"
+                                   href="https://www.elle.vn/?post_type=post&p=424256">Bí quyết trang điểm của BLACKPINK tại sân khấu THE SHOW</a>
+                            </div>
+                        </div>
+                                                                            </div>
+                            </div>
+                                </div>
+                            <div class="video-content-detail">
+                <div class="video-content-detail__item embed-responsive embed-responsive-16by9">
+                    <div class="rll-youtube-player" data-src="https://www.youtube.com/embed/Kmlf3akI3_Y" data-id="Kmlf3akI3_Y" data-query=""></div><noscript><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Kmlf3akI3_Y"></iframe></noscript>
+                </div>
+                <a class="video-content-title-big" href="https://www.youtube.com/watch?v=Kmlf3akI3_Y">
+                    [GƯƠNG MẶT TRANG BÌA] MARIO MAURER - JING JING YU | ELLE Vietnam                </a>
+            </div>
+                <hr class="border-black border-width-5">
+        <h2 class="title-detail-big"><a href="https://www.elle.vn/lam-dep/xu-huong-lam-dep" title="Xu hướng & Cảm hứng"> Xu hướng & Cảm hứng</a></h2>
+
+        <div class="row">
+                                <div class="col-md-3">
+                        <div class="detail-content">
+                            <a class="detail-content__img img_16_9" href="https://www.elle.vn/xu-huong-lam-dep/trang-diem-halloween">
+                                <img class="lazy img-responsive" src="https://www.elle.vn/wp-content/themes/ellev3/images/default-loading.jpg" width="445" height="250" data-src="https://www.elle.vn/wp-content/uploads/2021/10/29/455096/hoa-trang-halloween-16-445x250.jpg" alt="">
+                            </a>
+                            <a class="video-content__title" href="https://www.elle.vn/xu-huong-lam-dep/trang-diem-halloween">Halloween hóa thân thành những cô nàng xinh đẹp trên phim</a>
+                        </div>
+                    </div>
+                                                                            <div class="col-md-3">
+                        <div class="detail-content">
+                            <a class="detail-content__img img_16_9" href="https://www.elle.vn/xu-huong-lam-dep/toc-ngan-thoi-thuong-mua-thu">
+                                <img class="lazy img-responsive" src="https://www.elle.vn/wp-content/themes/ellev3/images/default-loading.jpg" width="445" height="250" data-src="https://www.elle.vn/wp-content/uploads/2021/10/25/454028/toc-ngan-tao-kieu-dep-15-445x250.jpg" alt="">
+                            </a>
+                            <a class="video-content__title" href="https://www.elle.vn/xu-huong-lam-dep/toc-ngan-thoi-thuong-mua-thu">5 kiểu tóc ngắn thời thượng chào Thu sang</a>
+                        </div>
+                    </div>
+                                                                            <div class="col-md-3">
+                        <div class="detail-content">
+                            <a class="detail-content__img img_16_9" href="https://www.elle.vn/xu-huong-lam-dep/nhung-thiet-ke-nuoc-hoa-an-tuong">
+                                <img class="lazy img-responsive" src="https://www.elle.vn/wp-content/themes/ellev3/images/default-loading.jpg" width="445" height="250" data-src="https://www.elle.vn/wp-content/uploads/2021/10/05/451759/nuoc-hoa-cac-thiet-ke-dep-445x250.jpg" alt="">
+                            </a>
+                            <a class="video-content__title" href="https://www.elle.vn/xu-huong-lam-dep/nhung-thiet-ke-nuoc-hoa-an-tuong">Những thiết kế nước hoa ấn tượng khó quên</a>
+                        </div>
+                    </div>
+                                                                            <div class="col-md-3">
+                        <div class="detail-content">
+                            <a class="detail-content__img img_16_9" href="https://www.elle.vn/xu-huong-lam-dep/spa-thu-gian-tai-nha">
+                                <img class="lazy img-responsive" src="https://www.elle.vn/wp-content/themes/ellev3/images/default-loading.jpg" width="445" height="250" data-src="https://www.elle.vn/wp-content/uploads/2021/10/18/453520/thu-gian-tai-nha-don-gian-7-445x250.jpg" alt="">
+                            </a>
+                            <a class="video-content__title" href="https://www.elle.vn/xu-huong-lam-dep/spa-thu-gian-tai-nha">Liệu trình thư giãn tại nhà "chuẩn spa" với giá dưới 600 nghìn đồng</a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>                                                        <div class="col-md-3">
+                        <div class="detail-content">
+                            <a class="detail-content__img img_16_9" href="https://www.elle.vn/xu-huong-lam-dep/tao-toc-xoan-bang-may-duoi">
+                                <img class="lazy img-responsive" src="https://www.elle.vn/wp-content/themes/ellev3/images/default-loading.jpg" width="445" height="250" data-src="https://www.elle.vn/wp-content/uploads/2021/10/20/453268/toc-xoan-bang-may-duoi-tu-nhien-445x250.jpg" alt="">
+                            </a>
+                            <a class="video-content__title" href="https://www.elle.vn/xu-huong-lam-dep/tao-toc-xoan-bang-may-duoi">Một số kiểu tóc xoăn dễ thực hiện tại nhà bằng máy duỗi</a>
+                        </div>
+                    </div>
+                                                                            <div class="col-md-3">
+                        <div class="detail-content">
+                            <a class="detail-content__img img_16_9" href="https://www.elle.vn/xu-huong-lam-dep/kieu-danh-mat-chau-a">
+                                <img class="lazy img-responsive" src="https://www.elle.vn/wp-content/themes/ellev3/images/default-loading.jpg" width="445" height="250" data-src="https://www.elle.vn/wp-content/uploads/2021/10/15/453015/danh-mat-cho-co-nang-chau-a-445x250.jpg" alt="">
+                            </a>
+                            <a class="video-content__title" href="https://www.elle.vn/xu-huong-lam-dep/kieu-danh-mat-chau-a">Kiểu đánh mắt nào được "đo ni đóng giày" cho quý cô châu Á?</a>
+                        </div>
+                    </div>
+                                        
+                                                        <div class="col-md-3">
+                        <div class="detail-content">
+                            <a class="detail-content__img img_16_9" href="https://www.elle.vn/xu-huong-lam-dep/instagram-hinh-xam-viet-nam">
+                                <img class="lazy img-responsive" src="https://www.elle.vn/wp-content/themes/ellev3/images/default-loading.jpg" width="445" height="250" data-src="https://www.elle.vn/wp-content/uploads/2021/10/20/453773/tai-khoan-instagram-o-viet-nam-ve-hinh-xam-1-ftn-445x250.jpg" alt="">
+                            </a>
+                            <a class="video-content__title" href="https://www.elle.vn/xu-huong-lam-dep/instagram-hinh-xam-viet-nam">10 tài khoản Instagram nổi tiếng về hình xăm ở Việt Nam</a>
+                        </div>
+                    </div>
+                                                                            <div class="col-md-3">
+                        <div class="detail-content">
+                            <a class="detail-content__img img_16_9" href="https://www.elle.vn/xu-huong-lam-dep/lam-dep-cung-thien-binh">
+                                <img class="lazy img-responsive" src="https://www.elle.vn/wp-content/themes/ellev3/images/default-loading.jpg" width="445" height="250" data-src="https://www.elle.vn/wp-content/uploads/2021/10/15/452890/lam-dep-cung-thien-binh-ftn.000-445x250.jpg" alt="">
+                            </a>
+                            <a class="video-content__title" href="https://www.elle.vn/xu-huong-lam-dep/lam-dep-cung-thien-binh">Bí quyết làm đẹp của Thiên Bình: duy trì vẻ tinh tế và ngọt ngào tối thượng</a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>                                                        <div class="col-md-3">
+                        <div class="detail-content">
+                            <a class="detail-content__img img_16_9" href="https://www.elle.vn/xu-huong-lam-dep/nuoc-hoa-cua-ngoi-sao">
+                                <img class="lazy img-responsive" src="https://www.elle.vn/wp-content/themes/ellev3/images/default-loading.jpg" width="445" height="250" data-src="https://www.elle.vn/wp-content/uploads/2021/10/19/453455/nuoc-hoa-cua-ngoi-sao-co-chat-luong-tot-0-0-ftn-445x250.jpg" alt="">
+                            </a>
+                            <a class="video-content__title" href="https://www.elle.vn/xu-huong-lam-dep/nuoc-hoa-cua-ngoi-sao">Những mùi hương nước hoa diệu kỳ đến từ các ngôi sao</a>
+                        </div>
+                    </div>
+                                                                            <div class="col-md-3">
+                        <div class="detail-content">
+                            <a class="detail-content__img img_16_9" href="https://www.elle.vn/xu-huong-lam-dep/mon-qua-lam-dep">
+                                <img class="lazy img-responsive" src="https://www.elle.vn/wp-content/themes/ellev3/images/default-loading.jpg" width="445" height="250" data-src="https://www.elle.vn/wp-content/uploads/2021/10/18/452815/mon-qua-lam-dep-elle-445x250.jpeg" alt="">
+                            </a>
+                            <a class="video-content__title" href="https://www.elle.vn/xu-huong-lam-dep/mon-qua-lam-dep">Món quà làm đẹp tháng 10 nào đang trong wishlist của các BTV ELLE?</a>
+                        </div>
+                    </div>
+                                                                            <div class="col-md-3">
+                        <div class="detail-content">
+                            <a class="detail-content__img img_16_9" href="https://www.elle.vn/xu-huong-lam-dep/cach-trang-diem-karina-aespa">
+                                <img class="lazy img-responsive" src="https://www.elle.vn/wp-content/themes/ellev3/images/default-loading.jpg" width="445" height="250" data-src="https://www.elle.vn/wp-content/uploads/2021/10/18/453305/cach-trang-diem-sieu-thuc-nhu-karina-aespa-0-ftn-445x250.jpg" alt="">
+                            </a>
+                            <a class="video-content__title" href="https://www.elle.vn/xu-huong-lam-dep/cach-trang-diem-karina-aespa">Karina (aespa): Nữ idol với lối trang điểm siêu thực</a>
+                        </div>
+                    </div>
+                                                                            <div class="col-md-3">
+                        <div class="detail-content">
+                            <a class="detail-content__img img_16_9" href="https://www.elle.vn/xu-huong-lam-dep/huong-nuoc-hoa-mua-thu">
+                                <img class="lazy img-responsive" src="https://www.elle.vn/wp-content/themes/ellev3/images/default-loading.jpg" width="445" height="250" data-src="https://www.elle.vn/wp-content/uploads/2021/10/08/452366/nuoc-hoa-cho-mua-thu-se-lanh-445x250.jpg" alt="">
+                            </a>
+                            <a class="video-content__title" href="https://www.elle.vn/xu-huong-lam-dep/huong-nuoc-hoa-mua-thu">Nước hoa dành cho mùa Thu: nốt hương nồng nàn và quyến rũ</a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>                                                <a href="https://www.elle.vn/lam-dep/xu-huong-lam-dep" title="Xu hướng & Cảm hứng" class="readmore-homepage btn-viewmore">Xem thêm...</a>
+        </div>
+        <!-- /Detail-item -->
+    </div>
+    <div class="fixed-block">
+    <ul class="list-unstyled list-brand">
+        <li class="list-brand__item">
+            <a href="http://www.elleman.vn" target="_blank" class="list-brand__link"><img width="58" height="53" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2058%2053'%3E%3C/svg%3E" data-lazy-src="https://www.elle.vn/wp-content/themes/ellev3/images/icon-fixed-1.jpg"><noscript><img width="58" height="53" src="https://www.elle.vn/wp-content/themes/ellev3/images/icon-fixed-1.jpg"></noscript></a>
+        </li>
+        <li class="list-brand__item">
+            <a href="http://www.elledecoration.vn/" target="_blank" class="list-brand__link"><img width="58" height="53" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2058%2053'%3E%3C/svg%3E" data-lazy-src="https://www.elle.vn/wp-content/themes/ellev3/images/icon-fixed-2.jpg"><noscript><img width="58" height="53" src="https://www.elle.vn/wp-content/themes/ellev3/images/icon-fixed-2.jpg"></noscript></a>
+        </li>
+        <li class="list-brand__item">
+            <a href="https://www.elle.vn/elle-network" target="_blank" class="list-brand__link"><img width="58" height="53" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2058%2053'%3E%3C/svg%3E" data-lazy-src="https://www.elle.vn/wp-content/themes/ellev3/images/icon-fixed-3.jpg"><noscript><img width="58" height="53" src="https://www.elle.vn/wp-content/themes/ellev3/images/icon-fixed-3.jpg"></noscript></a>
+        </li>
+        <li class="list-brand__item">
+            <a href="https://www.elle.vn/elle-moi-ngay" target="_blank" class="list-brand__link"><img width="58" height="53" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2058%2053'%3E%3C/svg%3E" data-lazy-src="https://www.elle.vn/wp-content/themes/ellev3/images/icon-fixed-4.jpg"><noscript><img width="58" height="53" src="https://www.elle.vn/wp-content/themes/ellev3/images/icon-fixed-4.jpg"></noscript></a>
+        </li>
+        <li class="list-brand__item">
+            <a href="#newsletter-popup" class="newsletter-popup-btn list-brand__link"><img width="58" height="53" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2058%2053'%3E%3C/svg%3E" data-lazy-src="https://www.elle.vn/wp-content/themes/ellev3/images/Newsletter.jpg"><noscript><img width="58" height="53" src="https://www.elle.vn/wp-content/themes/ellev3/images/Newsletter.jpg"></noscript></a>
+        </li>
+    </ul>
+</div>
+</div>
+<!-- Content -->
+<!-- Tag-block -->
+    <div class="container">
+        <div class="tag-block hidden-xs hidden-sm">
+            <div class="title-tag-block">CHUYÊN MỤC XEM NHIỀU NHẤT</div>
+            <ul class="list-tags list-unstyled">
+
+                                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/lam-dep-da">Làm đẹp da</a>
+                    </li>
+					                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/my-pham">Mỹ phẩm</a>
+                    </li>
+					                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/cham-soc-da-mat">Chăm sóc da mặt</a>
+                    </li>
+					                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/trang-diem">Trang điểm</a>
+                    </li>
+					                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/thoi-trang-tre">Thời trang trẻ</a>
+                    </li>
+					                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/son-moi">Son môi</a>
+                    </li>
+					                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/cac-kieu-toc-dep">Các kiểu tóc đẹp</a>
+                    </li>
+					                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/the-gioi-nuoc-hoa">Nước hoa</a>
+                    </li>
+					                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/the-duc-tham-my">Thể dục thẩm mỹ</a>
+                    </li>
+					                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/xu-huong-thoi-trang-2018">Xu hướng thời trang 2018</a>
+                    </li>
+					                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/xu-huong-thoi-trang-2017">Xu hướng thời trang 2017</a>
+                    </li>
+					                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/vay-dam-dep">Váy đầm đẹp</a>
+                    </li>
+					                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/cach-lam-trang-da-mat">Cách làm trắng da mặt</a>
+                    </li>
+					                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/tinh-yeu">Tình yêu</a>
+                    </li>
+					                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/kem-chong-nang">Kem chống nắng</a>
+                    </li>
+					                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/nhung-cau-noi-hay">Những câu nói hay</a>
+                    </li>
+					                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/bai-tap-giam-mo-bung">Bài tập giảm mỡ bụng</a>
+                    </li>
+					                    <li class="list-tags__item">
+                        <a class="list-tags__link" href="https://www.elle.vn/chuyen-muc/phim-tinh-cam">Phim tình cảm</a>
+                    </li>
+					            </ul>
+            <div class="text-tag-block">
+                Elle.vn cung cấp những nội dung chính liên quan đến thế giới thời trang, làm đẹp chuyên nghiệp và những bí quyết giúp bạn luôn tự tin như một cô gái ELLE “Sắc sảo, sành điệu và sâu lắng”. Ngoài ra, Elle.vn còn luôn cập nhật những chia sẻ ngắn, bí quyết về thời trang, làm đẹp cùng những trang phục đẹp hàng ngày, đồng thời giới thiệu những tác phẩm văn hóa, nguồn cảm hứng và các blog thú vị bình luận về phong cách sống, quan điểm sống từ biên tập viên của Phái đẹp ELLE, độc giả và blogger.
+            </div>
+        </div>
+    </div>
+<!-- /Tag-block -->
+
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="left-footer">
+            <div class="left-footer__inner">
+                <a class="footer-logo" href="https://www.elle.vn"><img width="350" height="133" class="img-responsive" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20350%20133'%3E%3C/svg%3E" data-lazy-src="https://www.elle.vn/wp-content/themes/ellev3/images/img-logo-footer.png"><noscript><img width="350" height="133" class="img-responsive" alt="" src="https://www.elle.vn/wp-content/themes/ellev3/images/img-logo-footer.png"></noscript></a>
+                <div class="footer-title hidden-sm hidden-xs">KẾT NỐI</div>
+                <div class="footer-list hidden-xs hidden-sm">
+                    <ul class="footer-social-list list-unstyled">
+                        <li class="footer-social-list__item">
+                            <a class="footer-social-list__link footer-social-list__link-1"  href="https://www.facebook.com/ELLEVietnam" title="Elle Facebook" rel="nofollow" target="_blank">
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li class="footer-social-list__item">
+                            <a class="footer-social-list__link footer-social-list__link-2" href="http://instagram.com/ellevietnam" title="Elle Instagram" rel="nofollow" target="_blank">
+                                <i class="fa fa-camera-retro" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li class="footer-social-list__item">
+                            <a class="footer-social-list__link footer-social-list__link-3"  href="http://www.youtube.com/user/ellevietnam" title="Elle Youtube" rel="nofollow" target="_blank">
+                                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li class="footer-social-list__item">
+                            <a class="footer-social-list__link footer-social-list__link-4"  href="http://zalo.me/3796603906527839881" title="Elle Zalo" rel="nofollow" id="zalo_header"  target="_blank" >
+                                <span class="zalo">Zalo</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="register-link-footer newsletter-popup-btn" href="#newsletter-popup">ĐĂNG KÝ NHẬN</a>
+                    <div class="footer-title footer-title--last">E-NEWSLETTER TỪ ELLE.VN</div>
+                </div>
+                <ul class="list-support list-unstyled hidden-xs hidden-sm">
+                    <li class="list-support__item">
+                        <a class="list-support__link" rel="follow" href="https://www.elle.vn/gioi-thieu" title="Giới thiệu">Giới thiệu</a>
+                    </li>
+                    <li class="list-support__item">
+                        <a class="list-support__link" rel="follow" href="https://www.elle.vn/dieu-khoan-su-dung" title="Điều khoản sử dụng">Điều khoản sử dụng</a>
+                    </li>
+                    <li class="list-support__item">
+                        <a class="list-support__link" rel="follow" href="https://www.elle.vn/chinh-sach-rieng-tu" title="Chính sách riêng tư">Chính sách riêng tư</a>
+                    </li>
+                    <li class="list-support__item">
+                        <a class="list-support__link" rel="follow" href="https://www.elle.vn/faq" title="Câu hỏi thường gặp">Câu hỏi thường gặp</a>
+                    </li>
+                    <li class="list-support__item">
+                        <a class="list-support__link" rel="follow" href="https://www.elle.vn/elle-network-la-gi" title="Elle Network là gì?">Elle Network là gì?</a>
+                    </li>
+                    <li class="list-support__item">
+                        <a class="list-support__link" rel="follow" href="https://www.elle.vn/sitemap" title="Sitemap">Sitemap</a>
+                    </li>
+                </ul>
+                <div class="text-footer">CÔNG TY TNHH DỊCH VỤ QUẢNG CÁO VÀ TRUYỀN THÔNG CHÂU Á</div>
+                <div class="text-footer">124 Điện Biên Phủ, Phường Đakao, Quận 1, TPHCM</div>
+                <div class="text-footer">Điện thoại: +84982663849 | Email: <a rel="nofollow" href="mailto:lienhe@elle.vn">lienhe@elle.vn</a> | <a rel="follow" href="https://www.elle.vn/lien-he" title="Liên hệ">Liên hệ</a></div>
+                <div class="text-footer">Chịu trách nhiệm quản lý nội dung: Nguyễn Thị Hồng Hoa</div>
+                <div class="text-footer">Giấy phép số 541/ GP-BTTTT</div>
+            </div>
+        </div>
+        <a class="top-header__link" href="https://www.elle.vn/dat-bao/" target="_blank">
+        <img style="width: 310px;" class="img-right-footer img-responsive hidden-sm hidden-xs" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://www.elle.vn/wp-content/uploads/2021/10/25/Oct_DatBao-490x687.jpg"><noscript><img style="width: 310px;" class="img-right-footer img-responsive hidden-sm hidden-xs" src="https://www.elle.vn/wp-content/uploads/2021/10/25/Oct_DatBao-490x687.jpg" alt=""></noscript>
+        <div class="footer__datbao--link">
+          <span>Đặt báo</span>
+        </div>
+        </a>
+    </div>
+</footer>
+
+</div>
+<!-- /Footer -->
+<a href="javascript:void(0)" title="" class="back-to-top" id="backtotop"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+
+<!--Plugin WP Missed Schedule 2013.1231.2013 Active - Tag 6707293c0218e2d8b7aa38d418ffa608-->
+
+<!-- This website is patched against a big problem not solved from WordPress 2.5+ to date -->
+
+<script type='text/javascript' id='wp-postviews-cache-js-extra'>
+/* <![CDATA[ */
+var viewsCacheL10n = {"admin_ajax_url":"https:\/\/www.elle.vn\/wp-admin\/admin-ajax.php","post_id":"424779"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.elle.vn/wp-content/cache/min/1/wp-content/plugins/wp-postviews/postviews-cache.js?ver=1635413582' id='wp-postviews-cache-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin|\/logout|\/wp-login.php","usesTrailingSlash":"","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/www.elle.vn","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.elle.vn/wp-content/cache/min/1/wp-content/plugins/ringier-v2/app/Views/_assets/js/modernizr.js?ver=1635413582' id='js-modernizr-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.elle.vn/wp-content/cache/min/1/wp-content/plugins/ringier-v2/app/Views/_assets/js/plugins.js?ver=1635413582' id='js-plugins-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.elle.vn/wp-content/cache/min/1/wp-content/plugins/ringier-v2/app/Views/_assets/js/main.js?ver=1635413582' id='js-main-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.elle.vn/wp-content/cache/min/1/wp-content/plugins/ringier-v2/app/Views/_assets/js/app-ext.js?ver=1635413582' id='js-app-ext-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.elle.vn/wp-content/cache/min/1/wp-content/plugins/ringier-v2/app/Views/_assets/js/jquery.multiselect.js?ver=1635413582' id='multi-select-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/OwlCarousel2-2.3.4/dist/owl.carousel.min.js?ver=20191011' id='OwlCarousel2-2.3.4-js' defer></script>
+<script type='text/javascript' id='elasticpress-autosuggest-js-extra'>
+/* <![CDATA[ */
+var epas = {"query":"{\"from\":0,\"size\":18,\"sort\":[{\"_score\":{\"order\":\"desc\"}}],\"query\":{\"function_score\":{\"query\":{\"bool\":{\"should\":[{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"type\":\"phrase\",\"fields\":[\"post_title^80\",\"post_excerpt^60\",\"post_content^40\",\"post_author.display_name^20\",\"terms.category.name^41\",\"terms.post_tag.name^19\",\"terms.ep_custom_result.name^9999\"],\"boost\":3}},{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"fields\":[\"post_title^80\",\"post_excerpt^60\",\"post_content^40\",\"post_author.display_name^20\",\"terms.category.name^41\",\"terms.post_tag.name^19\",\"terms.ep_custom_result.name^9999\",\"post_title.suggest^79\"],\"type\":\"phrase\",\"slop\":5}}]}}],\"filter\":[{\"match\":{\"post_type.raw\":\"post\"}}]}},{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"type\":\"phrase\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\"],\"boost\":3}},{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\",\"post_title.suggest^1\"],\"type\":\"phrase\",\"slop\":5}}]}}],\"filter\":[{\"match\":{\"post_type.raw\":\"page\"}}]}},{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"type\":\"phrase\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\"],\"boost\":3}},{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\",\"post_title.suggest^1\"],\"type\":\"phrase\",\"slop\":5}}]}}],\"filter\":[{\"match\":{\"post_type.raw\":\"photo\"}}]}},{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"type\":\"phrase\",\"fields\":[\"post_title^80\",\"post_excerpt^60\",\"post_content^30\",\"post_author.display_name^21\",\"terms.ep_custom_result.name^9999\"],\"boost\":3}},{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"fields\":[\"post_title^80\",\"post_excerpt^60\",\"post_content^30\",\"post_author.display_name^21\",\"terms.ep_custom_result.name^9999\",\"post_title.suggest^79\"],\"type\":\"phrase\",\"slop\":5}}]}}],\"filter\":[{\"match\":{\"post_type.raw\":\"brand\"}}]}},{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"type\":\"phrase\",\"fields\":[\"post_title^74\",\"post_excerpt^57\",\"post_content^38\",\"post_author.display_name^36\",\"terms.ep_custom_result.name^9999\"],\"boost\":3}},{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"fields\":[\"post_title^74\",\"post_excerpt^57\",\"post_content^38\",\"post_author.display_name^36\",\"terms.ep_custom_result.name^9999\",\"post_title.suggest^73\"],\"type\":\"phrase\",\"slop\":5}}]}}],\"filter\":[{\"match\":{\"post_type.raw\":\"star\"}}]}},{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"type\":\"phrase\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\"],\"boost\":3}},{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\",\"post_title.suggest^1\"],\"type\":\"phrase\",\"slop\":5}}]}}],\"filter\":[{\"match\":{\"post_type.raw\":\"newsletter\"}}]}},{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"type\":\"phrase\",\"fields\":[\"post_title^74\",\"post_excerpt^62\",\"post_content^36\",\"post_author.display_name^29\",\"terms.category.name^47\",\"terms.ep_custom_result.name^9999\"],\"boost\":3}},{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"fields\":[\"post_title^74\",\"post_excerpt^62\",\"post_content^36\",\"post_author.display_name^29\",\"terms.category.name^47\",\"terms.ep_custom_result.name^9999\",\"post_title.suggest^73\"],\"type\":\"phrase\",\"slop\":5}}]}}],\"filter\":[{\"match\":{\"post_type.raw\":\"street_style\"}}]}},{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"type\":\"phrase\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\"],\"boost\":3}},{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\",\"post_title.suggest^1\"],\"type\":\"phrase\",\"slop\":5}}]}}],\"filter\":[{\"match\":{\"post_type.raw\":\"product\"}}]}},{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"type\":\"phrase\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\"],\"boost\":3}},{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\",\"post_title.suggest^1\"],\"type\":\"phrase\",\"slop\":5}}]}}],\"filter\":[{\"match\":{\"post_type.raw\":\"newsletter_v2\"}}]}},{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"type\":\"phrase\",\"fields\":[\"post_title^64\",\"post_excerpt^47\",\"post_content^22\",\"post_author.display_name^25\",\"terms.post_tag.name^14\",\"terms.ep_custom_result.name^9999\"],\"boost\":3}},{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"fields\":[\"post_title^64\",\"post_excerpt^47\",\"post_content^22\",\"post_author.display_name^25\",\"terms.post_tag.name^14\",\"terms.ep_custom_result.name^9999\",\"post_title.suggest^63\"],\"type\":\"phrase\",\"slop\":5}}]}}],\"filter\":[{\"match\":{\"post_type.raw\":\"network\"}}]}},{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"type\":\"phrase\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.post_tag.name^1\",\"terms.ep_custom_result.name^9999\"],\"boost\":3}},{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.post_tag.name^1\",\"terms.ep_custom_result.name^9999\",\"post_title.suggest^1\"],\"type\":\"phrase\",\"slop\":5}}]}}],\"filter\":[{\"match\":{\"post_type.raw\":\"topic\"}}]}},{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"type\":\"phrase\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\"],\"boost\":3}},{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\",\"post_title.suggest^1\"],\"type\":\"phrase\",\"slop\":5}}]}}],\"filter\":[{\"match\":{\"post_type.raw\":\"newsletter_v2016\"}}]}},{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"type\":\"phrase\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\"],\"boost\":3}},{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\",\"post_title.suggest^1\"],\"type\":\"phrase\",\"slop\":5}}]}}],\"filter\":[{\"match\":{\"post_type.raw\":\"newsletter_v2017\"}}]}},{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"type\":\"phrase\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\"],\"boost\":3}},{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\",\"post_title.suggest^1\"],\"type\":\"phrase\",\"slop\":5}}]}}],\"filter\":[{\"match\":{\"post_type.raw\":\"elle_worlds\"}}]}},{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"type\":\"phrase\",\"fields\":[\"post_title^80\",\"post_excerpt^70\",\"post_content^40\",\"post_author.display_name^20\",\"terms.post_tag.name^1\",\"terms.ep_custom_result.name^9999\"],\"boost\":3}},{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"fields\":[\"post_title^80\",\"post_excerpt^70\",\"post_content^40\",\"post_author.display_name^20\",\"terms.post_tag.name^1\",\"terms.ep_custom_result.name^9999\",\"post_title.suggest^79\"],\"type\":\"phrase\",\"slop\":5}}]}}],\"filter\":[{\"match\":{\"post_type.raw\":\"video\"}}]}},{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"type\":\"phrase\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\"],\"boost\":3}},{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"fields\":[\"post_title^1\",\"post_excerpt^1\",\"post_content^1\",\"post_author.display_name^1\",\"terms.ep_custom_result.name^9999\",\"post_title.suggest^1\"],\"type\":\"phrase\",\"slop\":5}}]}}],\"filter\":[{\"match\":{\"post_type.raw\":\"instagram\"}}]}},{\"bool\":{\"must\":[{\"bool\":{\"should\":[{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"type\":\"phrase\",\"fields\":[\"post_title^70\",\"post_excerpt^1\",\"post_content^25\",\"attachments.attachment.content^1\",\"post_author.display_name^21\",\"terms.ep_custom_result.name^9999\"],\"boost\":3}},{\"multi_match\":{\"query\":\"ep_autosuggest_placeholder\",\"fields\":[\"post_title^70\",\"post_excerpt^1\",\"post_content^25\",\"attachments.attachment.content^1\",\"post_author.display_name^21\",\"terms.ep_custom_result.name^9999\",\"post_title.suggest^69\"],\"type\":\"phrase\",\"slop\":5}}]}}],\"filter\":[{\"match\":{\"post_type.raw\":\"attachment\"}}]}}]}},\"functions\":[{\"exp\":{\"post_date_gmt\":{\"scale\":\"14d\",\"decay\":0.25,\"offset\":\"7d\"}}},{\"weight\":0.001}],\"score_mode\":\"sum\",\"boost_mode\":\"multiply\"}},\"post_filter\":{\"bool\":{\"must\":[{\"terms\":{\"post_mime_type\":[\"application\\\/pdf\",\"application\\\/vnd.ms-powerpoint\",\"application\\\/vnd.openxmlformats-officedocument.presentationml.presentation\",\"application\\\/vnd.ms-excel\",\"application\\\/vnd.openxmlformats-officedocument.spreadsheetml.sheet\",\"application\\\/msword\",\"application\\\/vnd.openxmlformats-officedocument.wordprocessingml.document\",\"\"]}},{\"terms\":{\"post_type.raw\":[\"post\",\"page\",\"photo\",\"brand\",\"star\",\"newsletter\",\"street_style\",\"product\",\"newsletter_v2\",\"network\",\"topic\",\"newsletter_v2016\",\"newsletter_v2017\",\"elle_worlds\",\"video\",\"instagram\",\"attachment\"]}},{\"terms\":{\"post_status\":[\"publish\",\"inherit\"]}}]}},\"highlight\":{\"fields\":{\"post_title\":{\"pre_tags\":[\"<strong class=\\\"ep-highlight\\\">\"],\"post_tags\":[\"<\\\/strong>\"],\"type\":\"plain\",\"number_of_fragments\":0},\"post_content\":{\"pre_tags\":[\"<strong class=\\\"ep-highlight\\\">\"],\"post_tags\":[\"<\\\/strong>\"],\"type\":\"plain\",\"number_of_fragments\":0}}}}","placeholder":"ep_autosuggest_placeholder","endpointUrl":"\/es-search\/_doc\/_search","selector":".ep-autosuggest","defaultSelectors":".ep-autosuggest, input[type=\"search\"], .search-field","action":"navigate","mimeTypes":{"pdf":"application\/pdf","ppt":"application\/vnd.ms-powerpoint","pptx":"application\/vnd.openxmlformats-officedocument.presentationml.presentation","xls":"application\/vnd.ms-excel","xlsx":"application\/vnd.openxmlformats-officedocument.spreadsheetml.sheet","doc":"application\/msword","docx":"application\/vnd.openxmlformats-officedocument.wordprocessingml.document","0":""},"http_headers":[],"triggerAnalytics":"1","addSearchTermHeader":"","highlightingEnabled":"1","highlightingTag":"strong","highlightingClass":"ep-highlight"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.elle.vn/wp-content/plugins/elasticpress/dist/js/autosuggest-script.min.js?ver=3.6.0' id='elasticpress-autosuggest-js' defer></script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.elle.vn/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img loading="lazy" data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<div class="play"></div>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.dataset.query.length?'':'&'+this.dataset.query;e.setAttribute("src",t.replace("ID",this.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.replaceChild(e,this)}document.addEventListener("DOMContentLoaded",function(){var e,t,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),e.onclick=lazyLoadYoutubeIframe,a[t].appendChild(e)});</script>
+<div id="fb-root"></div>
+<script type="rocketlazyloadscript">(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.10&appId=1328021227295842";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K85PW64"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	
+<!-- Google Code for Remarketing Tag -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 970163154;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js" defer>
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/970163154/?guid=ON&amp;script=0"/>
+</div>
+</noscript>
+<!-- End Google Code for Remarketing Tag -->
+
+
+<!-- Google Code for Signup Conversion Page-->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+  /* <![CDATA[ */
+  goog_snippet_vars = function() {
+    var w = window;
+    w.google_conversion_id = 970163154;
+    w.google_conversion_label = "lSt-CPbA1nMQ0ofOzgM";
+    w.google_remarketing_only = false;
+  }
+  // DO NOT CHANGE THE CODE BELOW.
+  goog_report_conversion = function(url) {
+    goog_snippet_vars();
+    window.google_conversion_format = "3";
+    var opt = new Object();
+    opt.onload_callback = function() {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  }
+  var conv_handler = window['google_trackConversion'];
+  if (typeof(conv_handler) == 'function') {
+    conv_handler(opt);
+  }
+}
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript"
+  src="//www.googleadservices.com/pagead/conversion_async.js" defer>
+</script>
+<!-- End Google Code for Signup Conversion Page -->
+
+
+<script type="rocketlazyloadscript" data-minify="1" src="https://www.elle.vn/wp-content/cache/min/1/ajax/jquery.validate/1.11.1/jquery.validate.js?ver=1635413583" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src="https://www.elle.vn/wp-content/cache/min/1/leizongmin/js-xss/master/dist/xss.min.js?ver=1635413583" defer></script>
+<!-- CrazyEgg-->
+<!-- <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+		var b=document.getElementsByTagName("script")[0];
+		a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0055/3949.js?"+Math.floor(new Date().getTime()/3600000);
+		a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script> -->
+<!-- End CrazyEgg-->
+<!-- Scroll Depth Tracking -->
+<script type="rocketlazyloadscript" src="https://www.elle.vn/wp-content/plugins/ringier-v2/app/Views/_assets/js/jquery.scrolldepth.min.js" defer></script>
+<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+jQuery(function() {
+	jQuery.scrollDepth({
+		//eventHandler: function(data) {
+			//console.log(data)
+		//}
+	});
+});
+});</script>
+<!-- End Scroll Depth Tracking -->
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
+  var apiUrl = 'https://baseapi.elle.vn';
+  $('form.newsletter-popup__form').validate({
+    rules: {
+      email: {
+        required: true,
+        email: true
+      },
+      phone: {
+        required: false
+      },
+      name: {
+        required: false
+      }
+    },
+    messages: {
+      // name: "Vui lòng nhập tên đầy đủ.",
+      email: {
+        required: "Vui lòng nhập email",
+        email: "Địa chỉ email cần theo định dạng name@domain.com"
+      },
+      // phone: {
+      //   required: "Vui lòng nhập số điện thoại."
+      // }
+    },
+    highlight: function(element) {
+      $(element).closest('.form-group').addClass('has-error');
+    },
+    unhighlight: function(element) {
+      $(element).closest('.form-group').removeClass('has-error');
+    }
+  });
+  $('#industry_listinng').hide()
+  $('#newsletter_submit_form').hide()
+  $('#checkbox_form_group').hide()
+  $('#newsletter_submit_favorite').hide()
+  $('#newsletter-popup-message').hide()
+  $('#newsletter_submit_email').click(function() {
+    
+    var isvalid = $('form.newsletter-popup__form').valid()
+    if (isvalid) {
+      var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+        if (testEmail.test($('#subscriber_email').val())){
+            $('#first_email_input').hide()
+            $('#newsletter_submit_email').hide()
+            $('#newsletter_submit_favorite').show()
+            $('#checkbox_form_group').show()
+
+        }
+    
+        else  $( "#subscriber_email" ).css({
+            background: "yellow",
+            border: "1px red solid"
+        });
+    }else{
+      return false
+    }
+    
+  })
+
+  $('#newsletter_submit_favorite').click(function() {
+    
+    var isvalid = $('form.newsletter-popup__form').valid()
+    if (isvalid) {
+      $('#newsletter_submit_favorite').hide()
+      $('#checkbox_form_group').hide()
+      $('#industry_listinng').show()
+      $('#newsletter_submit_form').show()
+    }else{
+      return false
+    }
+    
+  })
+  function clearPopup(){
+    
+    $('#newsletter-popup').removeClass('popup-desk-bakg')
+    $('#newsletter-popup').addClass('newsletter-desk-bakg')
+  }
+  $(".newsletter-popup-btn").click(function(){
+    sub_clicked = false
+    if ($('#newsletter-popup').hasClass("popup-desk-bakg")) {
+      clearPopup()
+    }
+  });
+/**
+* Handle newsletter subscriber submit
+* data from _getFormData function / this an the form
+* return if hash subscriber from getUniqueAudience then run updateAudience else run createNewAudience 
+*/
+  $('form.newsletter-popup__form').submit(function(e) {
+    var isvalid = $(this).valid();
+    var url = apiUrl + '/subscribers';
+    if (isvalid) {
+      var jsonData = _getFormData($(this));
+      if (jsonData) {
+        getUniqueAudience(url, jsonData); 
+      }
+    }
+    return false;
+  });
+  /**
+   * Author: Ngan Nguyen
+   * Function createNewAudience / for create new user subscribe add new record in baseapi.elle.vn microsite and mailchimp api
+   * Param string api / an define api url
+   * Param json subscriber / an user Object 
+   * return message
+   */
+  $('#reg_js_img').hide();
+  $.ajaxSetup({
+    beforeSend: function(){
+        $("#newsletter_submit_form").hide();
+        $('#reg_js_img').show();
+    },
+    error: function(xhr, status, error) {
+        $('#reg_js_img').hide();
+        $('#industry_listinng').hide()
+        $('#first_email_input').show()
+        $('#newsletter_submit_form').show()
+
+        $('#subscriber_email').css('border', 'solid 2px red')
+        swal(xhr.responseText)
+    }
+  });
+  function createNewAudience(api, subscriber) {
+    //TODO configable.
+    var message = '';
+    $('#newsletter-popup-message').html(message);
+    $.post(api, subscriber).done(function( data ) {
+      if (data.error == undefined) {
+        message = 'Chúc mừng bạn đã đăng ký nhận bản tin thành công!';
+        $('#newsletter-popup-message').html(message);
+        $('#newsletter-popup-message').show();
+        $('form.newsletter-popup__form').html('');
+      }
+      else {
+        message = '<span style="color:red;font-size:12px;margin-bottom:5px;">Vui lòng kiểm tra lại kết nối internet của bạn.</span>';
+        $('#newsletter-popup-message').html(message);
+        return false
+      }
+    }); 
+  }
+  /**
+  * Author: Ngan Nguyen
+  * Function getUniqueAudience / for if get user subscribe with unique email
+  * Param string api 
+  * Param json subscriber
+  * return json subscriber plus subscriber ID
+  */
+  function getUniqueAudience(api, subscriber) {
+    $.get(api+"?email="+subscriber.email).done(function( data ){
+      if (data.error==undefined) {
+        if (data.length === 0) {
+          subscriber.elle = true
+          subscriber.elleman = false
+          subscriber.elledecoration = false
+          createNewAudience(api, subscriber)
+        } else {
+          subscriber.elle = true
+          subscriber.elleman = data[0].elleman
+          subscriber.elledecoration = data[0].elledecoration 
+          updateAudience(api, data[0]._id, subscriber) 
+        }
+      }else{
+        return false
+      }
+    })
+  }
+  /**
+  * Author: Ngan Nguyen
+  * Function updateAudience / for update user subscribe
+  * Param string api
+  * Param id
+  * Param json subscriber
+  * return message
+  */
+
+  function updateAudience(api, id, subscriber) {
+    //TODO configable.
+    
+    var message = '';
+    $('#newsletter-popup-message').html(message);
+    $.ajax({
+      url: api+"/"+id,
+      type: 'PUT',
+      data: subscriber, 
+      success: function(data) {
+
+        if (data.error == undefined) {
+          message = 'Chúc mừng bạn đã cập nhật bản tin thành công!';
+          $('#newsletter-popup-message').html(message);
+          $('#newsletter-popup-message').show();
+          $('form.newsletter-popup__form').html('');
+        }
+        else {
+          message = '<span style="color:red;font-size:12px;margin-bottom:5px;">Vui lòng kiểm tra lại kết nối internet của bạn. </span>';
+          $('#newsletter-popup-message').html(message);
+          return false
+        }
+      }
+    });
+
+  }
+  function _getFormData($form){
+    var unindexed_array = $form.serializeArray();
+    var indexed_array = {
+      'fashion' : false,
+      'all_in_one': false,
+      'beauty': false,
+      'entertainment': false,
+      'horoscope': false,
+      'status': 'subscribed'
+    };
+    let industry_arr = []
+    $.map(unindexed_array, function(n, i){
+      if (n['value'] == 'on') {
+        n['value'] = true;
+      }
+      
+      if (n['name'] === 'industry_newsletter[]') {
+        industry_arr.push(n['value'])
+        // unindexed_array.splice(i, 1) 
+      }else{
+        indexed_array[n['name']] = n['value'];
+      }
+      
+    });
+    indexed_array['industry'] = industry_arr.join();
+    if (indexed_array['industry']) {
+      return indexed_array; 
+    }else{
+      swal("Vui lòng chọn lĩnh vực !")
+      return false
+    }
+    
+  }
+
+
+  $( document ).ready(function() {
+    var hash = location.hash.replace("'", '');
+    const hashtags=location.hash.match(new RegExp('#([^&]*)'));
+    
+    var params = {};
+    
+    hash.split('&').map(hk => {
+      let temp = hk.split('=');
+      var key  = filterXSS(temp[0]);
+      var value  = filterXSS(temp[1]);
+      params[key] = value;
+    });
+    if (params['subscriber'] && params['subscriber'].length > 0 ) {
+      var url = apiUrl + 'subscribe';
+      $.get(url, {"hash": params['subscriber']}, ).done(function( data ) {
+        $('.newsletter-popup__form input[name*="email"]').val(data.email);
+        $('.newsletter-popup__form input[name*="phone"]').val(data.phone);
+        $('.newsletter-popup__form input[name*="name"]').val(data.name);
+        
+        $('.newsletter-popup__form input[name*="fashion"]').prop('checked', data.fashion);
+        $('.newsletter-popup__form input[name*="beauty"]').prop('checked', data.beauty);
+        $('.newsletter-popup__form input[name*="entertainment"]').prop('checked', data.entertainment);
+        $('.newsletter-popup__form input[name*="horoscope"]').prop('checked', data.horoscope);
+        $('.newsletter-popup__form input[name*="all_in_one"]').prop('checked', data.all_in_one);
+        var string = '<input type="hidden" name="id" value="' + params['subscriber'] + '" />';
+        $(string).appendTo('.newsletter-popup__form');
+      });
+    }
+    
+    if (hashtags != null && hashtags.length > 0 && hashtags[1] == 'newsletter-popup') {
+      $.magnificPopup.open({
+        items: { src: '#' + hashtags[1] },
+        type: 'inline'
+      });
+    }
+
+  });
+  
+});</script>
+<script type="rocketlazyloadscript">"use strict";var wprRemoveCPCSS=function wprRemoveCPCSS(){var elem;document.querySelector('link[data-rocket-async="style"][rel="preload"]')?setTimeout(wprRemoveCPCSS,200):(elem=document.getElementById("rocket-critical-css"))&&"remove"in elem&&elem.remove()};window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel="stylesheet" href="https://www.elle.vn/wp-content/cache/min/1/d0d2d0df08c4c36029823b31e905c2f8.css" media="all" data-minify="1" /></noscript></body>
+
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1635602357 -->
